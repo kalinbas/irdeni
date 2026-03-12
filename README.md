@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://kalinbas.github.io/Irdeni/"><strong>Play the live game on GitHub Pages</strong></a>
+  <a href="https://kalinbas.github.io/irdeni/"><strong>Play the live game on GitHub Pages</strong></a>
 </p>
 
 We originally made Irdeni during high school, and because of that this project has a lot of emotional value for us. This repository exists to make that game playable again on modern machines and in modern browsers, while staying as close as possible to the original work.
@@ -51,10 +51,10 @@ The goal of this GitHub project is not to remake Irdeni into something completel
 
 ## Play
 
-- Live game: [kalinbas.github.io/Irdeni](https://kalinbas.github.io/Irdeni/)
+- Live game: [kalinbas.github.io/irdeni](https://kalinbas.github.io/irdeni/)
 - Local dev server: `http://localhost:5173/`
 
-If this project is deployed from another GitHub account, the GitHub Pages URL becomes `https://<owner>.github.io/Irdeni/`.
+If this project is deployed from another GitHub account, the GitHub Pages URL becomes `https://<owner>.github.io/irdeni/`.
 
 ## Controls
 

@@ -300,7 +300,6 @@ type ScreenState =
   | 'bootLogo2'
   | 'menu'
   | 'newGame'
-  | 'options'
   | 'creditsMenu'
   | 'death'
   | 'game'
@@ -1225,8 +1224,6 @@ function App() {
   const [dialogChoiceSelection, setDialogChoiceSelection] = useState(1)
   const [menuSelection, setMenuSelection] = useState(0)
   const [screen, setScreen] = useState<ScreenState>('loading')
-  const [fightSpeedChoice, setFightSpeedChoice] = useState(3)
-  const [walkSpeedChoice, setWalkSpeedChoice] = useState(3)
   const [saveSlots, setSaveSlots] = useState<SaveSlotSummary[]>(() => createEmptySaveSummaries())
   const [saveScreenMessage, setSaveScreenMessage] = useState('')
   const [hideSceneUntilReveal, setHideSceneUntilReveal] = useState(false)
@@ -1268,11 +1265,6 @@ function App() {
       label: 'Credits',
       variant: 'ghost',
       action: () => setScreen('creditsMenu'),
-    },
-    {
-      label: 'Optionen',
-      variant: 'ghost',
-      action: () => setScreen('options'),
     },
     {
       label: 'Beenden',
@@ -1904,6 +1896,27 @@ function App() {
       return
     }
 
+    if (overlay?.type === 'message') {
+      if (!isInlineDialogTextFullyVisible) {
+        revealInlineDialogText()
+        return
+      }
+
+      if (overlay.blocking !== false) {
+        advanceMessageOverlay()
+        return
+      }
+
+      dismissAmbientMessageOverlay()
+
+      if (!canControl || gameInteractionLockRef.current) {
+        return
+      }
+
+      void runLockedGameInteraction(() => movePlayer(direction))
+      return
+    }
+
     if ((overlay?.type === 'choice' || overlay?.type === 'textInput') && !isInlineDialogTextFullyVisible) {
       return
     }
@@ -1933,7 +1946,7 @@ function App() {
       return
     }
 
-    if (overlay?.type && !(overlay.type === 'message' && overlay.blocking === false)) {
+    if (overlay?.type) {
       return
     }
 
@@ -2091,7 +2104,23 @@ function App() {
     void runLockedGameInteraction(() => quicksaveCurrentGame())
   }
 
+  function handleLoadShortcut() {
+    if (screen !== 'game' || overlay || !canControl || gameInteractionLockRef.current) {
+      return
+    }
+
+    void runLockedGameInteraction(() => quickloadCurrentGame())
+  }
+
   const handleGlobalKeyDown = useEffectEvent((event: KeyboardEvent) => {
+    const isPlainContinueKey =
+      !event.isComposing &&
+      !(event.ctrlKey && event.key !== 'Control') &&
+      !(event.altKey && event.key !== 'Alt') &&
+      !(event.metaKey && event.key !== 'Meta')
+    const isDirectionalKey =
+      event.key === 'ArrowUp' || event.key === 'ArrowDown' || event.key === 'ArrowLeft' || event.key === 'ArrowRight'
+
     if (screen === 'bootLogo' || screen === 'bootLogo2') {
       event.preventDefault()
       setScreen('menu')
@@ -2136,7 +2165,7 @@ function App() {
       }
     }
 
-    if (screen === 'death' && (event.key === 'Enter' || event.key === 'Escape' || event.key === ' ')) {
+    if (screen === 'death' && isPlainContinueKey) {
       event.preventDefault()
       acknowledgeDeathScreen()
       return
@@ -2218,7 +2247,7 @@ function App() {
       }
     }
 
-    if ((screen === 'newGame' || screen === 'options') && event.key === 'Escape') {
+    if (screen === 'newGame' && event.key === 'Escape') {
       event.preventDefault()
       setScreen('menu')
       return
@@ -2231,6 +2260,23 @@ function App() {
     }
 
     if (screen !== 'game') {
+      return
+    }
+
+    if (overlay?.type === 'message' && isPlainContinueKey && !isDirectionalKey) {
+      event.preventDefault()
+
+      if (!isInlineDialogTextFullyVisible) {
+        revealInlineDialogText()
+        return
+      }
+
+      if (isBlockingMessageOverlay) {
+        advanceMessageOverlay()
+        return
+      }
+
+      dismissAmbientMessageOverlay()
       return
     }
 
@@ -2273,6 +2319,9 @@ function App() {
     } else if (event.key.toLowerCase() === 's') {
       event.preventDefault()
       handleSaveShortcut()
+    } else if (event.key.toLowerCase() === 'l') {
+      event.preventDefault()
+      handleLoadShortcut()
     } else if (event.key.toLowerCase() === 'f' && event.shiftKey && fullscreenSupported) {
       event.preventDefault()
       void toggleFullscreen()
@@ -2600,6 +2649,22 @@ function App() {
     await saveGameToSlot('quicksave')
   }
 
+  async function quickloadCurrentGame() {
+    const message = await loadGameFromSlot('quicksave')
+
+    if (!message) {
+      return
+    }
+
+    setSaveScreenMessage(message)
+    setDialogPageIndex(0)
+    setOverlay({
+      type: 'message',
+      text: message,
+      blocking: false,
+    })
+  }
+
   async function loadSavedGameFromMenu() {
     if (!savedGameSummary?.hasSave) {
       setSaveScreenMessage('Kein Spielstand vorhanden.')
@@ -2613,15 +2678,24 @@ function App() {
     const content = contentRef.current
 
     if (!content) {
-      return
+      return 'Laden fehlgeschlagen.'
     }
 
     try {
       const record = await readSaveRecord(slotId)
 
       if (!record) {
-        setSaveScreenMessage('Dieser Spielstand ist leer.')
-        return
+        const message = 'Dieser Spielstand ist leer.'
+        const activeRuntime = runtimeRef.current
+
+        setSaveScreenMessage(message)
+
+        if (activeRuntime) {
+          activeRuntime.status = message
+          refresh()
+        }
+
+        return message
       }
 
       runtimeRef.current = restoreRuntime(content, record.runtime)
@@ -2632,9 +2706,19 @@ function App() {
       setScreen('game')
       setSaveScreenMessage('')
       refresh()
+      return null
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Laden fehlgeschlagen.'
+      const activeRuntime = runtimeRef.current
+
       setSaveScreenMessage(message)
+
+      if (activeRuntime) {
+        activeRuntime.status = message
+        refresh()
+      }
+
+      return message
     }
   }
 
@@ -3873,8 +3957,6 @@ function App() {
   const armorBonus = (runtime?.inventory[23]?.power ?? 0) + (runtime?.inventory[24]?.power ?? 0)
   const dexterityBonus = (runtime?.inventory[21]?.power ?? 0) + (runtime?.inventory[25]?.power ?? 0)
   const journalText = runtime?.almanach || 'Noch kein Tagebucheintrag vorhanden.'
-  const fightSpeedLabels = ['sehr langsam', 'langsam', 'mittel', 'schnell', 'aeusserst schnell']
-  const walkSpeedLabels = ['sehr langsam', 'langsam', 'mittel', 'schnell', 'sehr schnell', 'abartig schnell', 'maximus']
   const landscapeNotice = requiresLandscapeMode ? (
     <section className="mobile-landscape-notice" aria-live="polite">
       <div className="mobile-landscape-card">
@@ -3954,12 +4036,14 @@ function App() {
         {screen !== 'loading' && screen !== 'bootLogo' && screen !== 'bootLogo2' && screen !== 'menu' ? (
           <section className="front-window-shell">
             {screen === 'death' ? (
-              <section className="front-main-window death-window">
-                <div className="front-window-banner death-banner">
-                  <img src={screenArt.death} alt="Todesscreen" className="front-window-art death-art" />
-                </div>
-                <span className="screen-skip death-hint">Enter, Space oder Esc</span>
-              </section>
+              <button type="button" className="death-screen-button" onClick={() => acknowledgeDeathScreen()}>
+                <section className="front-main-window death-window">
+                  <div className="front-window-banner death-banner">
+                    <img src={screenArt.death} alt="Todesscreen" className="front-window-art death-art" />
+                  </div>
+                  <span className="screen-skip death-hint">Beliebige Taste oder tippen</span>
+                </section>
+              </button>
             ) : (
               <section className={`front-main-window front-content-screen front-screen-${screen}`}>
                 <div className="front-window-body front-fullscreen-body">
@@ -4031,51 +4115,6 @@ function App() {
                     </>
                   ) : null}
 
-                  {screen === 'options' ? (
-                    <>
-                      <div className="front-screen-heading">
-                        <p className="eyebrow">Optionen</p>
-                        <button type="button" className="window-close-button" onClick={() => setScreen('menu')} aria-label="Zurueck zum Hauptmenu">
-                          X
-                        </button>
-                      </div>
-                      <div className="front-screen-content front-options-layout">
-                        <div className="options-grid">
-                          <div className="setting-card">
-                            <h2>Kampfgeschwindigkeit</h2>
-                            <div className="setting-list">
-                              {fightSpeedLabels.map((label, index) => (
-                                <button
-                                  key={label}
-                                  type="button"
-                                  className={`choice-button menu-choice${fightSpeedChoice === index + 1 ? ' active' : ''}`}
-                                  onClick={() => setFightSpeedChoice(index + 1)}
-                                >
-                                  <strong>{label}</strong>
-                                </button>
-                              ))}
-                            </div>
-                          </div>
-                          <div className="setting-card">
-                            <h2>Spielgeschwindigkeit</h2>
-                            <div className="setting-list">
-                              {walkSpeedLabels.map((label, index) => (
-                                <button
-                                  key={label}
-                                  type="button"
-                                  className={`choice-button menu-choice${walkSpeedChoice === index + 1 ? ' active' : ''}`}
-                                  onClick={() => setWalkSpeedChoice(index + 1)}
-                                >
-                                  <strong>{label}</strong>
-                                </button>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </>
-                  ) : null}
-
                   {screen === 'creditsMenu' ? (
                     <>
                       <div className="front-screen-heading">
@@ -4121,7 +4160,7 @@ function App() {
                       ? `${activeMap.width}x${activeMap.height} · Explore mode`
                       : 'Gold runtime not started yet'}
                 </span>
-                <span className="toolbar-hint">Enter/Space Aktion · S Speichern · I Inventar · J Almanach · F Fenster · Shift+F Browser · Esc Menu</span>
+                <span className="toolbar-hint">Enter/Space Aktion · S Speichern · L Laden · I Inventar · J Almanach · F Fenster · Shift+F Browser · Esc Menu</span>
               </div>
 
               <div className="toolbar-actions">
