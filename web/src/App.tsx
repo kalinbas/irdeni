@@ -14,6 +14,8 @@ const DIALOG_LINE_LENGTH = 50
 const DIALOG_PAGE_LINES = 3
 const DIALOG_CHARACTER_DELAY_MS = 30
 const MAP_TRANSITION_FADE_MS = 320
+const BATTLE_PAUSE_MS = 60 * 16
+const BATTLE_PAUSE_POLL_MS = 50
 const SAVE_SCHEMA_VERSION = 1
 const SAVE_DATABASE_NAME = 'irdeni-web-saves'
 const SAVE_STORE_NAME = 'slots'
@@ -175,6 +177,16 @@ type BattleEnemy = {
   maxHp: number
 }
 
+type BattleDuelState = {
+  enemyId: number
+  enemyMaxHp: number
+  playerHitText: string
+  previousPlayerHitText: string
+  enemyHitText: string
+  previousEnemyHitText: string
+  allowInventory: boolean
+}
+
 type BattleState = {
   sourceMapName: string
   sourceTarget: {
@@ -200,6 +212,7 @@ type BattleState = {
   map: GameMap
   enemies: BattleEnemy[]
   stepCounter: number
+  duel: BattleDuelState | null
 }
 
 type PlayerState = {
@@ -428,6 +441,7 @@ function createRuntimeSnapshot(runtime: Runtime): RuntimeSnapshot {
           exitDirections: { ...runtime.battle.exitDirections },
           map: cloneMap(runtime.battle.map),
           enemies: runtime.battle.enemies.map((enemy) => ({ ...enemy })),
+          duel: runtime.battle.duel ? { ...runtime.battle.duel } : null,
         }
       : null,
     gameStarted: runtime.gameStarted,
@@ -481,6 +495,7 @@ function restoreRuntime(content: LoadedContent, snapshot: RuntimeSnapshot): Runt
           exitDirections: { ...snapshot.battle.exitDirections },
           map: cloneMap(snapshot.battle.map),
           enemies: snapshot.battle.enemies.map((enemy) => ({ ...enemy })),
+          duel: snapshot.battle.duel ? { ...snapshot.battle.duel } : null,
         }
       : null,
     gameStarted: snapshot.gameStarted !== false,
@@ -741,6 +756,48 @@ function AvatarPreview({
   return <canvas ref={canvasRef} width={56} height={44} className={className} aria-hidden="true" />
 }
 
+function BattleAvatarIcon({
+  avatarId,
+  spriteSheets,
+  className = '',
+}: {
+  avatarId: number
+  spriteSheets: Map<number, SpriteSheetSet>
+  className?: string
+}) {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null)
+
+  useEffect(() => {
+    const canvas = canvasRef.current
+
+    if (!canvas) {
+      return
+    }
+
+    const context = canvas.getContext('2d')
+
+    if (!context) {
+      return
+    }
+
+    context.imageSmoothingEnabled = false
+    context.clearRect(0, 0, TILE_SIZE, TILE_SIZE)
+
+    const playerSheet = spriteSheets.get(PLAYER_SHEET_INDEX)
+
+    if (!playerSheet) {
+      return
+    }
+
+    const sourceX = 80
+    const sourceY = (avatarId - 1) * TILE_SIZE
+
+    context.drawImage(playerSheet.transparent, sourceX, sourceY, TILE_SIZE, TILE_SIZE, 0, 0, TILE_SIZE, TILE_SIZE)
+  }, [avatarId, spriteSheets])
+
+  return <canvas ref={canvasRef} width={TILE_SIZE} height={TILE_SIZE} className={className} aria-hidden="true" />
+}
+
 function clampAnimatedTile(tileId: number, animationFrame: number) {
   const absolute = Math.abs(tileId)
 
@@ -808,6 +865,11 @@ function drawTile(
 
 function randomInt(minInclusive: number, maxInclusive: number) {
   return Math.floor(Math.random() * (maxInclusive - minInclusive + 1)) + minInclusive
+}
+
+function calculateBattleDamage(attack: number, defense: number) {
+  const damageAbsorb = (100 * defense) / Math.max(1, attack + defense)
+  return Math.max(0, Math.floor(attack - attack * (damageAbsorb / 100) + Math.floor((Math.random() * attack) / 4 + 1) - attack / 8))
 }
 
 function diceNumber(formula: string) {
@@ -1184,10 +1246,15 @@ function chooseEnemyStep(enemy: BattleEnemy, player: PlayerState, map: GameMap) 
   return { x: enemy.x, y: enemy.y }
 }
 
+function findBattleEnemyById(battle: BattleState, enemyId: number) {
+  return battle.enemies.find((enemy) => enemy.id === enemyId) ?? null
+}
+
 function App() {
   const runtimeRef = useRef<Runtime | null>(null)
   const contentRef = useRef<LoadedContent | null>(null)
   const overlayResolverRef = useRef<((value: unknown) => void) | null>(null)
+  const overlayRef = useRef<OverlayState | null>(null)
   const eventDepthRef = useRef(0)
   const gameInteractionLockRef = useRef(false)
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
@@ -1230,8 +1297,13 @@ function App() {
   const [viewportState, setViewportState] = useState<ViewportState>(() => readViewportState())
   const [isGameInteractionLocked, setIsGameInteractionLocked] = useState(false)
 
+  overlayRef.current = overlay
+
   const runtime = runtimeRef.current
   const activeMap = runtime ? getActiveMap(runtime) : null
+  const activeBattle = runtime?.battle ?? null
+  const battleDuel = activeBattle?.duel ?? null
+  const battleDuelEnemy = battleDuel && activeBattle ? findBattleEnemyById(activeBattle, battleDuel.enemyId) : null
   const hasActiveRun = Boolean(runtime?.gameStarted && !runtime?.gameEnded)
   const savedGameSummary = saveSlots[0] ?? null
   const isDebugMode = typeof window !== 'undefined' && new URLSearchParams(window.location.search).has('debug')
@@ -1297,6 +1369,7 @@ function App() {
     screen === 'game' &&
       runtime?.gameStarted &&
       !runtime?.gameEnded &&
+      !runtime?.battle?.duel &&
       (!overlay || isAmbientMessageOverlay) &&
       eventDepthRef.current === 0 &&
       !isGameInteractionLocked,
@@ -1347,6 +1420,11 @@ function App() {
   const visibleInlineDialogText = inlineDialogText.slice(0, dialogVisibleCharacterCount)
   const isInlineDialogTextFullyVisible = dialogVisibleCharacterCount >= inlineDialogText.length
   const isLastMessagePage = inlineDialogOverlay?.type === 'message' && dialogPageIndex >= messagePages.length - 1
+  const battleDescriptionLines =
+    battleDuel && activeBattle ? wrapDialogText(activeBattle.enemyDescription, 36).slice(0, 2) : []
+  const battlePlayerHpRatio = runtime && runtime.stats[2] > 0 ? Math.max(0, Math.min(1, runtime.stats[1] / runtime.stats[2])) : 0
+  const battleEnemyHpRatio =
+    battleDuelEnemy && battleDuel && battleDuel.enemyMaxHp > 0 ? Math.max(0, Math.min(1, battleDuelEnemy.hp / battleDuel.enemyMaxHp)) : 0
   const dialogPanelStyle = {
     height: `${inlineDialogHeightRem}rem`,
   }
@@ -1997,7 +2075,14 @@ function App() {
     }
 
     if (overlay?.type === 'inventory') {
-      if (gameInteractionLockRef.current) {
+      const allowBattlePauseInventory = Boolean(runtimeRef.current?.battle?.duel?.allowInventory)
+
+      if (gameInteractionLockRef.current && !allowBattlePauseInventory) {
+        return
+      }
+
+      if (allowBattlePauseInventory) {
+        void applyInventorySelection()
         return
       }
 
@@ -2081,7 +2166,13 @@ function App() {
   }
 
   function handleInventoryShortcut() {
-    if (screen !== 'game' || overlay || !canControl || gameInteractionLockRef.current) {
+    const allowBattlePauseInventory = Boolean(runtimeRef.current?.battle?.duel?.allowInventory)
+
+    if (screen !== 'game' || overlay) {
+      return
+    }
+
+    if (!allowBattlePauseInventory && (!canControl || gameInteractionLockRef.current)) {
       return
     }
 
@@ -3229,6 +3320,7 @@ function App() {
           map: battleMap,
           enemies,
           stepCounter: 0,
+          duel: null,
         }
 
         refresh()
@@ -3559,6 +3651,56 @@ function App() {
     }
   }
 
+  async function pauseBattleDuel(enemyId: number) {
+    const activeBattle = runtimeRef.current?.battle
+    const activeDuel = activeBattle?.duel
+
+    if (!activeBattle || !activeDuel || activeDuel.enemyId !== enemyId) {
+      return
+    }
+
+    activeDuel.allowInventory = true
+    refresh()
+
+    const pauseDeadline = Date.now() + BATTLE_PAUSE_MS
+    let inventoryOpened = false
+
+    for (;;) {
+      const currentBattle = runtimeRef.current?.battle
+      const currentDuel = currentBattle?.duel
+
+      if (!currentBattle || !currentDuel || currentDuel.enemyId !== enemyId) {
+        return
+      }
+
+      const currentOverlay = overlayRef.current
+
+      if (currentOverlay?.type === 'inventory') {
+        inventoryOpened = true
+      }
+
+      if (inventoryOpened) {
+        if (currentOverlay === null && eventDepthRef.current === 0) {
+          break
+        }
+      } else if (Date.now() >= pauseDeadline) {
+        break
+      }
+
+      await sleep(BATTLE_PAUSE_POLL_MS)
+    }
+
+    const resumedBattle = runtimeRef.current?.battle
+    const resumedDuel = resumedBattle?.duel
+
+    if (!resumedBattle || !resumedDuel || resumedDuel.enemyId !== enemyId) {
+      return
+    }
+
+    resumedDuel.allowInventory = false
+    refresh()
+  }
+
   async function duelEnemy(enemyIndex: number) {
     const activeRuntime = runtimeRef.current
     const battle = activeRuntime?.battle
@@ -3573,31 +3715,46 @@ function App() {
       return
     }
 
-    let playerDamageTotal = 0
-    let enemyDamageTotal = 0
-    let rounds = 0
+    battle.duel = {
+      enemyId: enemy.id,
+      enemyMaxHp: enemy.maxHp,
+      playerHitText: '',
+      previousPlayerHitText: '',
+      enemyHitText: '',
+      previousEnemyHitText: '',
+      allowInventory: false,
+    }
+    refresh()
 
-    const playerAttack = activeRuntime.stats[5]
-    const playerDefense = activeRuntime.stats[6]
-    const playerDexterity = activeRuntime.stats[10]
+    while (enemy.hp > 0 && activeRuntime.stats[1] > 0) {
+      const currentDuel = battle.duel
 
-    const proHit = 100 / Math.max(1, playerDexterity + battle.enemyDexterity)
-    const enemyHitChance = proHit * battle.enemyDexterity
-    const playerHitChance = proHit * playerDexterity
+      if (!currentDuel || currentDuel.enemyId !== enemy.id) {
+        return
+      }
 
-    while (enemy.hp > 0 && activeRuntime.stats[1] > 0 && rounds < 200) {
-      rounds += 1
+      const playerDexterity = activeRuntime.stats[10]
+      const proHit = 100 / Math.max(1, playerDexterity + battle.enemyDexterity)
+      const enemyHitChance = proHit * battle.enemyDexterity
+      const playerHitChance = proHit * playerDexterity
       const playerGoesFirst = randomInt(1, 100) < playerHitChance
 
       if (playerGoesFirst) {
         if (randomInt(1, 100) < playerHitChance) {
-          const damageAbsorb = (100 * battle.enemyDefense) / Math.max(1, playerAttack + battle.enemyDefense)
-          const damage = Math.max(
-            0,
-            Math.floor(playerAttack - playerAttack * (damageAbsorb / 100) + Math.floor(Math.random() * playerAttack / 4 + 1) - playerAttack / 8),
-          )
+          const damage = calculateBattleDamage(activeRuntime.stats[5], battle.enemyDefense)
           enemy.hp -= damage
-          playerDamageTotal += damage
+          currentDuel.previousPlayerHitText = currentDuel.playerHitText
+          currentDuel.playerHitText = `-${damage}`
+        } else {
+          currentDuel.previousPlayerHitText = currentDuel.playerHitText
+          currentDuel.playerHitText = '-0'
+        }
+
+        refresh()
+        await pauseBattleDuel(enemy.id)
+
+        if (!runtimeRef.current?.battle || runtimeRef.current.battle.duel?.enemyId !== enemy.id) {
+          return
         }
 
         if (enemy.hp <= 0) {
@@ -3605,33 +3762,37 @@ function App() {
         }
 
         if (randomInt(1, 100) < enemyHitChance) {
-          const damageAbsorb = (100 * playerDefense) / Math.max(1, playerDefense + battle.enemyAttack)
-          const damage = Math.max(
-            0,
-            Math.floor(
-              battle.enemyAttack -
-                battle.enemyAttack * (damageAbsorb / 100) +
-                Math.floor(Math.random() * battle.enemyAttack / 4 + 1) -
-                battle.enemyAttack / 8,
-            ),
-          )
+          const damage = calculateBattleDamage(battle.enemyAttack, activeRuntime.stats[6])
           activeRuntime.stats[1] -= damage
-          enemyDamageTotal += damage
+          currentDuel.previousEnemyHitText = currentDuel.enemyHitText
+          currentDuel.enemyHitText = `-${damage}`
+        } else {
+          currentDuel.previousEnemyHitText = currentDuel.enemyHitText
+          currentDuel.enemyHitText = '-0'
+        }
+
+        refresh()
+        await pauseBattleDuel(enemy.id)
+
+        if (!runtimeRef.current?.battle || runtimeRef.current.battle.duel?.enemyId !== enemy.id) {
+          return
         }
       } else {
         if (randomInt(1, 100) < enemyHitChance) {
-          const damageAbsorb = (100 * playerDefense) / Math.max(1, playerDefense + battle.enemyAttack)
-          const damage = Math.max(
-            0,
-            Math.floor(
-              battle.enemyAttack -
-                battle.enemyAttack * (damageAbsorb / 100) +
-                Math.floor(Math.random() * battle.enemyAttack / 4 + 1) -
-                battle.enemyAttack / 8,
-            ),
-          )
+          const damage = calculateBattleDamage(battle.enemyAttack, activeRuntime.stats[6])
           activeRuntime.stats[1] -= damage
-          enemyDamageTotal += damage
+          currentDuel.previousEnemyHitText = currentDuel.enemyHitText
+          currentDuel.enemyHitText = `-${damage}`
+        } else {
+          currentDuel.previousEnemyHitText = currentDuel.enemyHitText
+          currentDuel.enemyHitText = '-0'
+        }
+
+        refresh()
+        await pauseBattleDuel(enemy.id)
+
+        if (!runtimeRef.current?.battle || runtimeRef.current.battle.duel?.enemyId !== enemy.id) {
+          return
         }
 
         if (activeRuntime.stats[1] <= 0) {
@@ -3639,16 +3800,26 @@ function App() {
         }
 
         if (randomInt(1, 100) < playerHitChance) {
-          const damageAbsorb = (100 * battle.enemyDefense) / Math.max(1, playerAttack + battle.enemyDefense)
-          const damage = Math.max(
-            0,
-            Math.floor(playerAttack - playerAttack * (damageAbsorb / 100) + Math.floor(Math.random() * playerAttack / 4 + 1) - playerAttack / 8),
-          )
+          const damage = calculateBattleDamage(activeRuntime.stats[5], battle.enemyDefense)
           enemy.hp -= damage
-          playerDamageTotal += damage
+          currentDuel.previousPlayerHitText = currentDuel.playerHitText
+          currentDuel.playerHitText = `-${damage}`
+        } else {
+          currentDuel.previousPlayerHitText = currentDuel.playerHitText
+          currentDuel.playerHitText = '-0'
+        }
+
+        refresh()
+        await pauseBattleDuel(enemy.id)
+
+        if (!runtimeRef.current?.battle || runtimeRef.current.battle.duel?.enemyId !== enemy.id) {
+          return
         }
       }
     }
+
+    battle.duel = null
+    refresh()
 
     if (activeRuntime.stats[1] <= 0) {
       activeRuntime.status = `${battle.enemyName} war zu stark.`
@@ -3664,15 +3835,12 @@ function App() {
       activeRuntime.stats[7] += diceNumber(battle.enemyGoldFormula)
       const inventoryMessage = addInventoryItem(activeRuntime, battle.enemyReward, 1)
       handleLevelUps(activeRuntime)
-      activeRuntime.status =
-        inventoryMessage ||
-        `${battle.enemyName} besiegt. Ihr verursacht ${playerDamageTotal} Schaden und erhaltet Beute.`
+      activeRuntime.status = inventoryMessage || `${battle.enemyName} besiegt.`
       refresh()
 
-      await waitForMessage(
-        `${battle.enemyName} besiegt.\nEuer Schaden: ${playerDamageTotal}\nEingesteckter Schaden: ${enemyDamageTotal}`,
-        'Kampf',
-      )
+      if (inventoryMessage) {
+        await waitForMessage(inventoryMessage, 'Kampf')
+      }
 
       if (battle.enemies.length === 0) {
         await executeEventInternal(1000, {
@@ -4205,6 +4373,56 @@ function App() {
                   className="game-canvas"
                   aria-label="Irdeni canvas"
                 />
+
+                {battleDuel && battleDuelEnemy && activeBattle ? (
+                  <>
+                    <section className="battle-fight-panel battle-fight-top-panel" aria-label="Kampfstatus">
+                      <div className="battle-fighter battle-fighter-player">
+                        <div className="battle-hit-stack battle-hit-stack-player">
+                          <strong className="battle-hit-current">{battleDuel.enemyHitText || '\u00a0'}</strong>
+                          <span className="battle-hit-previous">{battleDuel.previousEnemyHitText || '\u00a0'}</span>
+                        </div>
+                        <div className="battle-portrait-frame">
+                          <BattleAvatarIcon avatarId={runtime.player.avatar} spriteSheets={spriteSheets} className="battle-portrait-sprite" />
+                        </div>
+                      </div>
+
+                      <div className="battle-center-panel">
+                        <div className="battle-health-block">
+                          <span>{runtime.player.name}</span>
+                          <div className="battle-health-track" aria-hidden="true">
+                            <div className="battle-health-fill player" style={{ width: `${battlePlayerHpRatio * 100}%` }} />
+                          </div>
+                        </div>
+
+                        <div className="battle-health-block">
+                          <span>{activeBattle.enemyName}</span>
+                          <div className="battle-health-track" aria-hidden="true">
+                            <div className="battle-health-fill enemy" style={{ width: `${battleEnemyHpRatio * 100}%` }} />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="battle-fighter battle-fighter-enemy">
+                        <div className="battle-hit-stack battle-hit-stack-enemy">
+                          <strong className="battle-hit-current">{battleDuel.playerHitText || '\u00a0'}</strong>
+                          <span className="battle-hit-previous">{battleDuel.previousPlayerHitText || '\u00a0'}</span>
+                        </div>
+                        <div className="battle-portrait-frame">
+                          <SpriteIcon tileId={activeBattle.enemySprite} spriteSheets={spriteSheets} className="battle-portrait-sprite" />
+                        </div>
+                      </div>
+                    </section>
+
+                    <section className="battle-fight-panel battle-fight-bottom-panel" aria-label="Kampfbeschreibung">
+                      <h2>{activeBattle.enemyName}:</h2>
+                      {battleDescriptionLines.map((line, index) => (
+                        <p key={`${activeBattle.enemyName}-${index}`}>{line}</p>
+                      ))}
+                      {battleDuel.allowInventory ? <span className="battle-fight-hint">I Inventar</span> : null}
+                    </section>
+                  </>
+                ) : null}
 
                 {inlineDialogOverlay?.type === 'message' ? (
                   <section
