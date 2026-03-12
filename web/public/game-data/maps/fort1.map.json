@@ -1,0 +1,1323 @@
+{
+  "name": "fort1.map",
+  "originalName": "FORT1.MAP",
+  "width": 15,
+  "height": 17,
+  "start": {
+    "x": 0,
+    "y": 0
+  },
+  "outsideTile": 0,
+  "source": "map",
+  "rows": [
+    [
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      }
+    ],
+    [
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -127,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 818
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -127,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      }
+    ],
+    [
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 1333
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 817
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 1332
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      }
+    ],
+    [
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      }
+    ],
+    [
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      }
+    ],
+    [
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 1334
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 833,
+        "object": 236
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 1335
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      }
+    ],
+    [
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      }
+    ],
+    [
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      }
+    ],
+    [
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -127,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -127,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      }
+    ],
+    [
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 1332
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 1334
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      }
+    ],
+    [
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      }
+    ],
+    [
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -127,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -127,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      }
+    ],
+    [
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 1335
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": -852,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 1332
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      }
+    ],
+    [
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      }
+    ],
+    [
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      }
+    ],
+    [
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      }
+    ],
+    [
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 85,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -60,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      }
+    ]
+  ]
+}

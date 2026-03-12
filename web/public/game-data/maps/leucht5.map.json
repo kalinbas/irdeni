@@ -1,0 +1,149 @@
+{
+  "name": "leucht5.map",
+  "originalName": "LEUCHT5.MAP",
+  "width": 5,
+  "height": 5,
+  "start": {
+    "x": 4,
+    "y": 2
+  },
+  "outsideTile": 0,
+  "source": "map",
+  "rows": [
+    [
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -6,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -6,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -6,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      }
+    ],
+    [
+      {
+        "terrain": -6,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 8,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -6,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 8,
+        "event": -248,
+        "object": -872
+      },
+      {
+        "terrain": -6,
+        "event": 0,
+        "object": 0
+      }
+    ],
+    [
+      {
+        "terrain": -6,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 8,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 8,
+        "event": 387,
+        "object": 388
+      },
+      {
+        "terrain": 8,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -6,
+        "event": 0,
+        "object": 0
+      }
+    ],
+    [
+      {
+        "terrain": -6,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 8,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 8,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 8,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -6,
+        "event": 0,
+        "object": 0
+      }
+    ],
+    [
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -6,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -6,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -6,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 0,
+        "event": 0,
+        "object": 0
+      }
+    ]
+  ]
+}

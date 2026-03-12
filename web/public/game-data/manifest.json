@@ -1,0 +1,845 @@
+{
+  "generatedAt": "2026-03-12T15:51:51.671Z",
+  "sourceRoot": "../d_irdeni",
+  "eventSource": "../d_irdeni/ird_gold/DATA.SBT",
+  "rescuedMaps": [
+    "wueste.map"
+  ],
+  "missingReferencedMaps": [],
+  "counts": {
+    "maps": 61,
+    "eventBlocks": 889,
+    "assets": 14
+  },
+  "events": {
+    "byType": {
+      "1": 324,
+      "2": 86,
+      "3": 18,
+      "4": 20,
+      "5": 8,
+      "6": 1,
+      "7": 4,
+      "8": 3,
+      "9": 14,
+      "10": 56,
+      "11": 4,
+      "12": 17,
+      "13": 33,
+      "14": 6,
+      "15": 4,
+      "16": 10,
+      "20": 23,
+      "21": 1,
+      "22": 19,
+      "23": 50,
+      "24": 4,
+      "25": 64,
+      "26": 19,
+      "27": 9,
+      "28": 3,
+      "30": 6,
+      "40": 73,
+      "45": 4,
+      "46": 3,
+      "50": 1,
+      "51": 1,
+      "99": 1
+    },
+    "referencedMaps": [
+      "chapel.map",
+      "darkmap.map",
+      "demomap.map",
+      "dung1.map",
+      "dworf.map",
+      "fight1.map",
+      "fight10.map",
+      "fight11.map",
+      "fight12.map",
+      "fight2.map",
+      "fight3.map",
+      "fight4.map",
+      "fight5.map",
+      "fight6.map",
+      "fight7.map",
+      "fight8.map",
+      "fight9.map",
+      "flower0.map",
+      "flower1.map",
+      "flower10.map",
+      "flower11.map",
+      "flower12.map",
+      "flower13.map",
+      "flower14.map",
+      "flower15.map",
+      "flower2.map",
+      "flower3.map",
+      "flower4.map",
+      "flower5.map",
+      "flower6.map",
+      "flower7.map",
+      "flower8.map",
+      "flower9.map",
+      "fort1.map",
+      "gang1.map",
+      "gang2.map",
+      "gangx.map",
+      "grab1.map",
+      "grab2.map",
+      "grab3.map",
+      "grab4.map",
+      "heimap.map",
+      "hole1.map",
+      "hole2.map",
+      "kella.map",
+      "kerker.map",
+      "leucht1.map",
+      "leucht2.map",
+      "leucht3.map",
+      "leucht4.map",
+      "leucht5.map",
+      "lichtung.map",
+      "schatz.map",
+      "seeli.map",
+      "stadt1.map",
+      "stadt2.map",
+      "sternw.map",
+      "tor.map",
+      "wueste.map"
+    ]
+  },
+  "maps": [
+    {
+      "name": "chapel.map",
+      "originalName": "CHAPEL.MAP",
+      "width": 30,
+      "height": 34,
+      "source": "map",
+      "start": {
+        "x": 16,
+        "y": 30
+      },
+      "outsideTile": 1
+    },
+    {
+      "name": "darkmap.map",
+      "originalName": "DARKMAP.MAP",
+      "width": 10,
+      "height": 10,
+      "source": "map",
+      "start": {
+        "x": 2,
+        "y": 6
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "demomap.map",
+      "originalName": "DEMOMAP.MAP",
+      "width": 75,
+      "height": 75,
+      "source": "map",
+      "start": {
+        "x": 11,
+        "y": 7
+      },
+      "outsideTile": 1336
+    },
+    {
+      "name": "dung1.map",
+      "originalName": "DUNG1.MAP",
+      "width": 100,
+      "height": 100,
+      "source": "map",
+      "start": {
+        "x": 1,
+        "y": 100
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "dworf.map",
+      "originalName": "DWORF.MAP",
+      "width": 20,
+      "height": 20,
+      "source": "map",
+      "start": {
+        "x": 2,
+        "y": 14
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "fight1.map",
+      "originalName": "FIGHT1.MAP",
+      "width": 8,
+      "height": 8,
+      "source": "map",
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "fight10.map",
+      "originalName": "FIGHT10.MAP",
+      "width": 5,
+      "height": 12,
+      "source": "map",
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "fight11.map",
+      "originalName": "FIGHT11.MAP",
+      "width": 5,
+      "height": 5,
+      "source": "map",
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "fight12.map",
+      "originalName": "FIGHT12.MAP",
+      "width": 16,
+      "height": 10,
+      "source": "map",
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "fight2.map",
+      "originalName": "FIGHT2.map",
+      "width": 8,
+      "height": 8,
+      "source": "map",
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "fight3.map",
+      "originalName": "FIGHT3.MAP",
+      "width": 8,
+      "height": 8,
+      "source": "map",
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "fight4.map",
+      "originalName": "FIGHT4.MAP",
+      "width": 8,
+      "height": 8,
+      "source": "map",
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "fight5.map",
+      "originalName": "FIGHT5.MAP",
+      "width": 8,
+      "height": 8,
+      "source": "map",
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "fight6.map",
+      "originalName": "FIGHT6.MAP",
+      "width": 10,
+      "height": 10,
+      "source": "map",
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "fight7.map",
+      "originalName": "FIGHT7.MAP",
+      "width": 10,
+      "height": 10,
+      "source": "map",
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "fight8.map",
+      "originalName": "FIGHT8.MAP",
+      "width": 8,
+      "height": 8,
+      "source": "map",
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "fight9.map",
+      "originalName": "FIGHT9.MAP",
+      "width": 30,
+      "height": 30,
+      "source": "map",
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "flower0.map",
+      "originalName": "FLOWER0.MAP",
+      "width": 12,
+      "height": 12,
+      "source": "map",
+      "start": {
+        "x": 6,
+        "y": 6
+      },
+      "outsideTile": 1
+    },
+    {
+      "name": "flower1.map",
+      "originalName": "FLOWER1.MAP",
+      "width": 12,
+      "height": 12,
+      "source": "map",
+      "start": {
+        "x": 6,
+        "y": 6
+      },
+      "outsideTile": 1
+    },
+    {
+      "name": "flower10.map",
+      "originalName": "FLOWER10.MAP",
+      "width": 12,
+      "height": 12,
+      "source": "map",
+      "start": {
+        "x": 6,
+        "y": 6
+      },
+      "outsideTile": 1
+    },
+    {
+      "name": "flower11.map",
+      "originalName": "FLOWER11.MAP",
+      "width": 12,
+      "height": 12,
+      "source": "map",
+      "start": {
+        "x": 6,
+        "y": 6
+      },
+      "outsideTile": 1
+    },
+    {
+      "name": "flower12.map",
+      "originalName": "FLOWER12.MAP",
+      "width": 12,
+      "height": 12,
+      "source": "map",
+      "start": {
+        "x": 6,
+        "y": 6
+      },
+      "outsideTile": 1
+    },
+    {
+      "name": "flower13.map",
+      "originalName": "FLOWER13.MAP",
+      "width": 12,
+      "height": 12,
+      "source": "map",
+      "start": {
+        "x": 6,
+        "y": 6
+      },
+      "outsideTile": 1
+    },
+    {
+      "name": "flower14.map",
+      "originalName": "FLOWER14.MAP",
+      "width": 12,
+      "height": 12,
+      "source": "map",
+      "start": {
+        "x": 6,
+        "y": 6
+      },
+      "outsideTile": 1
+    },
+    {
+      "name": "flower15.map",
+      "originalName": "FLOWER15.MAP",
+      "width": 12,
+      "height": 12,
+      "source": "map",
+      "start": {
+        "x": 6,
+        "y": 6
+      },
+      "outsideTile": 1
+    },
+    {
+      "name": "flower2.map",
+      "originalName": "FLOWER2.MAP",
+      "width": 12,
+      "height": 12,
+      "source": "map",
+      "start": {
+        "x": 6,
+        "y": 6
+      },
+      "outsideTile": 1
+    },
+    {
+      "name": "flower3.map",
+      "originalName": "FLOWER3.MAP",
+      "width": 12,
+      "height": 12,
+      "source": "map",
+      "start": {
+        "x": 6,
+        "y": 6
+      },
+      "outsideTile": 1
+    },
+    {
+      "name": "flower4.map",
+      "originalName": "FLOWER4.MAP",
+      "width": 12,
+      "height": 12,
+      "source": "map",
+      "start": {
+        "x": 6,
+        "y": 6
+      },
+      "outsideTile": 1
+    },
+    {
+      "name": "flower5.map",
+      "originalName": "FLOWER5.MAP",
+      "width": 12,
+      "height": 12,
+      "source": "map",
+      "start": {
+        "x": 6,
+        "y": 6
+      },
+      "outsideTile": 1
+    },
+    {
+      "name": "flower6.map",
+      "originalName": "FLOWER6.MAP",
+      "width": 12,
+      "height": 12,
+      "source": "map",
+      "start": {
+        "x": 6,
+        "y": 6
+      },
+      "outsideTile": 1
+    },
+    {
+      "name": "flower7.map",
+      "originalName": "FLOWER7.MAP",
+      "width": 12,
+      "height": 12,
+      "source": "map",
+      "start": {
+        "x": 6,
+        "y": 6
+      },
+      "outsideTile": 1
+    },
+    {
+      "name": "flower8.map",
+      "originalName": "FLOWER8.MAP",
+      "width": 12,
+      "height": 12,
+      "source": "map",
+      "start": {
+        "x": 6,
+        "y": 6
+      },
+      "outsideTile": 1
+    },
+    {
+      "name": "flower9.map",
+      "originalName": "FLOWER9.MAP",
+      "width": 12,
+      "height": 12,
+      "source": "map",
+      "start": {
+        "x": 6,
+        "y": 6
+      },
+      "outsideTile": 1
+    },
+    {
+      "name": "fort1.map",
+      "originalName": "FORT1.MAP",
+      "width": 15,
+      "height": 17,
+      "source": "map",
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "gang1.map",
+      "originalName": "GANG1.MAP",
+      "width": 10,
+      "height": 75,
+      "source": "map",
+      "start": {
+        "x": 10,
+        "y": 74
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "gang2.map",
+      "originalName": "GANG2.MAP",
+      "width": 6,
+      "height": 15,
+      "source": "map",
+      "start": {
+        "x": 5,
+        "y": 15
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "gangx.map",
+      "originalName": "GANGX.MAP",
+      "width": 18,
+      "height": 5,
+      "source": "map",
+      "start": {
+        "x": 18,
+        "y": 3
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "grab1.map",
+      "originalName": "GRAB1.MAP",
+      "width": 3,
+      "height": 6,
+      "source": "map",
+      "start": {
+        "x": 3,
+        "y": 1
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "grab2.map",
+      "originalName": "GRAB2.MAP",
+      "width": 3,
+      "height": 6,
+      "source": "map",
+      "start": {
+        "x": 3,
+        "y": 1
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "grab3.map",
+      "originalName": "GRAB3.MAP",
+      "width": 3,
+      "height": 6,
+      "source": "map",
+      "start": {
+        "x": 3,
+        "y": 1
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "grab4.map",
+      "originalName": "GRAB4.MAP",
+      "width": 3,
+      "height": 6,
+      "source": "map",
+      "start": {
+        "x": 3,
+        "y": 1
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "heimap.map",
+      "originalName": "HEIMAP.MAP",
+      "width": 20,
+      "height": 15,
+      "source": "map",
+      "start": {
+        "x": 6,
+        "y": 4
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "hole1.map",
+      "originalName": "HOLE1.MAP",
+      "width": 10,
+      "height": 10,
+      "source": "map",
+      "start": {
+        "x": 9,
+        "y": 10
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "hole2.map",
+      "originalName": "HOLE2.MAP",
+      "width": 15,
+      "height": 15,
+      "source": "map",
+      "start": {
+        "x": 6,
+        "y": 15
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "kella.map",
+      "originalName": "KELLA.MAP",
+      "width": 8,
+      "height": 8,
+      "source": "map",
+      "start": {
+        "x": 6,
+        "y": 2
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "kerker.map",
+      "originalName": "KERKER.MAP",
+      "width": 15,
+      "height": 15,
+      "source": "map",
+      "start": {
+        "x": 8,
+        "y": 15
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "leucht1.map",
+      "originalName": "LEUCHT1.MAP",
+      "width": 13,
+      "height": 13,
+      "source": "map",
+      "start": {
+        "x": 2,
+        "y": 11
+      },
+      "outsideTile": 1
+    },
+    {
+      "name": "leucht2.map",
+      "originalName": "LEUCHT2.MAP",
+      "width": 11,
+      "height": 11,
+      "source": "map",
+      "start": {
+        "x": 8,
+        "y": 5
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "leucht3.map",
+      "originalName": "LEUCHT3.MAP",
+      "width": 9,
+      "height": 9,
+      "source": "map",
+      "start": {
+        "x": 7,
+        "y": 4
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "leucht4.map",
+      "originalName": "LEUCHT4.MAP",
+      "width": 7,
+      "height": 7,
+      "source": "map",
+      "start": {
+        "x": 6,
+        "y": 3
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "leucht5.map",
+      "originalName": "LEUCHT5.MAP",
+      "width": 5,
+      "height": 5,
+      "source": "map",
+      "start": {
+        "x": 4,
+        "y": 2
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "lichtung.map",
+      "originalName": "LICHTUNG.MAP",
+      "width": 20,
+      "height": 20,
+      "source": "map",
+      "start": {
+        "x": 19,
+        "y": 15
+      },
+      "outsideTile": 54
+    },
+    {
+      "name": "schatz.map",
+      "originalName": "SCHATZ.MAP",
+      "width": 13,
+      "height": 13,
+      "source": "map",
+      "start": {
+        "x": 7,
+        "y": 13
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "seeli.map",
+      "originalName": "SEELI.MAP",
+      "width": 20,
+      "height": 20,
+      "source": "map",
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "stadt1.map",
+      "originalName": "STADT1.MAP",
+      "width": 50,
+      "height": 55,
+      "source": "map",
+      "start": {
+        "x": 25,
+        "y": 49
+      },
+      "outsideTile": 1336
+    },
+    {
+      "name": "stadt2.map",
+      "originalName": "STADT2.MAP",
+      "width": 30,
+      "height": 33,
+      "source": "map",
+      "start": {
+        "x": 16,
+        "y": 29
+      },
+      "outsideTile": 1
+    },
+    {
+      "name": "sternw.map",
+      "originalName": "STERNW.MAP",
+      "width": 11,
+      "height": 9,
+      "source": "map",
+      "start": {
+        "x": 11,
+        "y": 6
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "tescht.map",
+      "originalName": "TESCHT.MAP",
+      "width": 10,
+      "height": 10,
+      "source": "map",
+      "start": {
+        "x": 6,
+        "y": 6
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "tor.map",
+      "originalName": "TOR.MAP",
+      "width": 5,
+      "height": 6,
+      "source": "map",
+      "start": {
+        "x": 3,
+        "y": 6
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "weapons.map",
+      "originalName": "WEAPONS.MAP",
+      "width": 10,
+      "height": 11,
+      "source": "map",
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "outsideTile": 0
+    },
+    {
+      "name": "wueste.map",
+      "originalName": "WUESTE.MAP",
+      "width": 100,
+      "height": 100,
+      "source": "backup",
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "outsideTile": 0
+    }
+  ]
+}

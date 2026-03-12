@@ -1,0 +1,8095 @@
+#5
+40
+Ihr erwacht wie jeden Tag im Bauernhaus eures Vaters. Doch etwas ist anders als sonst...
+heimap.map
+0
+0
+
+Dungeon
+dung1.map
+36
+90
+
+Hellmode
+darkmap.map
+0
+0
+
+Stadtportal
+stadt2.map
+0
+0
+
+DWORF-TELEPORTER
+dworf.map
+0
+0
+
+Sehr sehr kurze AbkÅrzung...
+demomap.map
+0
+0
+
+Forciert
+fort1.map
+8
+11
+
+Leuchtturm
+leucht1.map
+0
+0
+
+MôNCH
+chapel.map
+0
+0
+
+Fischers Fritze...
+seeli.map
+5
+5
+
+GRABSCHéNDER!!!!
+grab1.map
+
+Freiwillig?
+kerker.map
+0
+0
+
+Extrem Shortcut
+lichtung.map
+0
+0
+
+Es lohnt sech
+hole2.map
+0
+0
+
+Zur himmlischen Erleuchtung
+sternw.map
+0
+0
+
+DER Lichtblick
+lichtung.map
+0
+0
+
+Speedy Desert Twister
+wueste.map
+50
+50
+
+Straight to death
+kella.map
+
+#8
+1
+
+0
+3
+-848
+
+#11
+1
+
+0
+2
+849
+
+#14
+1
+
+0
+5
+-850
+
+#17
+1
+
+0
+4
+851
+
+#20
+2
+Ihr findet ein altes KÅchenmesser und einige Kartoffeln. Wenn ihr mehr Åber die Objekte wissen wollt, so drÅckt im Inventar die Taste D.
+KöCHENMESSER=W001=333=Ihr kînnt dieses Messer als Waffe benÅtzen. WÑhlt es an und drÅckt die Taste B.
+1
+0
+-7
+0
+
+#23
+2
+
+KARTOFFELN=C005=334=Einige frische Kartoffeln. Wenn ihr sie essen wollt, dann benutzt die Taste B.
+1
+0
+0
+0
+
+#26
+2
+Ihr nehmt das Buch mit euch.
+BUCH=0010=379=--Die Lehren des weisen Konfuzius-- Sie besagen, dass an den Ufern mancher StÑdte vielerlei verborgen liege.
+1
+0
+182
+845
+20 X5
+
+#29
+1
+Auf dem kleinen Tischchen fristet eine Kerze ihr Dasein.
+0
+-1
+-1
+
+#32
+1
+Ein gewîhnlicher Stuhl.
+0
+-1
+-1
+
+#35
+13
+
+SCHLöSSEL
+1
+12
+146
+
+#38
+1
+
+0
+0
+0
+
+#41
+1
+Stadt Kanderburgh
+0
+-1
+-1
+
+#44
+1
+zum Planetarium
+0
+-1
+-1
+
+#47
+10
+Ein seltsam leuchtender Pilz... Wollt ihr ihn mitnehmen?
+80
+2
+Ja
+Nein
+50905
+17
+
+#50
+1
+Ich wÅrde euch empfehlen, an dem sÅdîstlichen Ufer des Sees euer GlÅck zu versuchen. Zwischen den SchilfbÑnken tummeln sich euresgleichen angemessene Opfer.
+0
+-1
+-1
+
+#53
+1
+Ihr lÑsst den Pilz unberÅhrt stehen.
+0
+-1
+-1
+
+#56
+1
+Euer Vater hat diese Blume vor einigen Jahren in den WÑldern gefunden.
+0
+-1
+-1
+
+#59
+2
+Voller Erwartung îffnet ihr die Truhe........doch darin liegt nur ein kleines, braunes Buch und ein unfîrmiges StÅck Stein.
+TAGEBUCH=U861=379=Dies ist das Tagebuch eures Vaters. Wenn ihr es mit der Taste B benÅtzt, kînnt ihr euren nÑchsten Auftrag betrachten.
+1
+0
+-862
+-1
+100 X5
+
+#62
+1
+Mein Sohn. Rasch....eile.....komm zu mir!
+0
+21
+0
+
+#65
+1
+Ihr solltet dringend euren Vater anhîren.
+0
+-1
+-1
+
+#68
+40
+Ihr tretet ins Freie.
+demomap.map
+0
+0
+
+#71
+40
+Ihr betretet eure Wohnung.
+heimap.map
+0
+0
+
+#74
+1
+Eure langjÑhrige Schuhsammlung. Ihr betrachtet sie mit Stolz und Genugtuung.
+0
+-1
+-1
+
+#77
+1
+Ein schîn gestalteter Schrank. Doch als ihr in îffnet, findet ihr nichts.
+0
+-1
+804
+
+#80
+25
+
+7
+23
+1
+169
+161
+0
+0
+-1
+
+#83
+2
+Ihr kînnt die Blume ausreissen.
+WIESENBLUME=F001=324=Eine nicht besonders seltene Blume.
+1
+0
+0
+0
+3 X1
+
+#86
+1
+
+0
+0
+-1
+
+#92
+40
+Ihr betretet die Stadt.
+stadt1.map
+0
+0
+
+#95
+1
+Seid willkommen in Kanderburgh. Verhaltet euch anstÑndig!
+0
+-1
+-1
+
+#98
+25
+Ihr spÅrt wie die BrÅcke erzittert....und ein Teil zusammenstÅrzt.
+28
+9
+-2
+0
+1336
+1336
+-26
+-1
+
+#101
+22
+
+27
+9
+34
+349
+
+#104
+25
+Ihr setzt den Holzbalken gewinnbringend ein.
+28
+9
+1336
+0
+-28
+0
+-35
+-1
+100X5
+
+#107
+3
+
+HOLZBALKEN
+1
+0
+-1
+-1
+
+#110
+24
+
+1
+0
+38
+37
+
+#113
+1
+Hier kînnt ihr nicht graben.
+0
+-1
+-1
+
+#116
+9
+
+2
+1000
+10000
+39
+40
+
+#119
+4
+Ihr findet hier einige GoldstÅcke.
+7
+50X5
+0
+-1
+-9
+5 X2
+
+#122
+1
+Ihr habt nichts gefunden.
+0
+-1
+-9
+
+#125
+1
+Die GerÑusche kommen von dort...ja genau von dort drÅben aus dem Wald.
+0
+-1
+-1
+
+#128
+24
+
+76
+-57
+44
+43
+
+#131
+1
+Es macht keinen Sinn, die Axt hier zu benÅtzen.
+0
+-1
+-1
+
+#134
+1
+Ihr entdeckt einen versteckten Eingang in den Wald.
+0
+-45
+-1
+500 X20
+
+#137
+21
+
+76
+-46
+0
+
+#140
+40
+Ihr betretet den geheimen Durchgang....
+gangx.map
+0
+0
+
+#143
+16
+Ich verkaufe euch allerlei Dinge.
+5
+SCHAUFEL=E036=327=Eine gewîhnliche Schaufel.
+FôRSTERAXT=E042=321=Eine gewîhnliche Axt.
+ANGEL=E519=431=War verdammt teuer.
+SEIL=E586=438=Lang und unzerreissbar.
+EIMER=E478=900=Blechern und gleichmÑssig ausgedellt.
+100
+80
+140
+130
+120
+
+#152
+1
+Willkommen in Kanderburgh; die Stadt mit der prÑchtig wehenden Flagge. Hier findet ihr alles was euer Herz begehrt.
+0
+-1
+-1
+
+#155
+10
+Ich brauche eure Hilfe. Wollt ihr mir zuhîren?
+80
+2
+Ja
+Nein
+52
+53
+
+#158
+1
+Ich bin stets auf der Suche nach verschiedensten Blumengattungen. Wenn ihr welche findet, so bringt sie mir doch. Ich werde euch auch belohnen dafÅr.
+0
+63
+-1
+25X5
+
+#161
+1
+Dann macht dass ihr weg kommt. Ihr habt hier nichts weiter zu suchen.
+0
+51
+-1
+
+#164
+40
+Ihr betretet den Keller.
+kella.map
+0
+0
+
+#167
+12
+
+SCHAUFEL
+1
+67
+56
+
+#170
+1
+Diese schînen Blumen scheinen hier Åberall zu wachsen. Ihr kînnt sie nicht von Hand pflÅcken.
+0
+55
+-1
+
+#173
+1
+VORSICHT! Einsturzgefahr!
+0
+-1
+-1
+
+#176
+12
+
+SICHEL
+1
+60
+59
+
+#179
+1
+Diese besondere Blume habt ihr nie zuvor gesehen. Auch mit einer Schaufel kînnt ihr den tiefen Wurzeln dieses GewÑchses nichts anhaben.
+0
+58
+-1
+
+#182
+2
+Ihr kînnt die Blume mit eurer Sichel Mutter Natur entreissen.
+GRUNISA=F500=325=Eine sehr besondere Blumengattung.
+1
+0
+0
+0
+1000X100
+
+#185
+23
+
+14
+31
+0
+-786
+-1
+
+#188
+1
+Ihr entsteigt frisch und ausgeruht eurem Bette.
+0
+73
+-1
+
+#191
+15
+Lasst mich sehen, was ihr gefunden habt.
+F
+F
+F
+F
+F
+3
+
+#194
+12
+
+SCHAUFEL
+1
+66
+65
+
+#197
+1
+Diese schînen Blumen scheinen hier Åberall zu wachsen. Ihr kînnt sie nicht von Hand pflÅcken.
+0
+64
+-1
+
+#200
+2
+Ihr kînnt die Blume aus der Erde entfernen.
+KITSCHROSE=F002=446=Kommt in diesen Gefilden hÑufig vor.
+1
+0
+0
+-9
+3X1
+
+#203
+2
+Ihr kînnt die Blume aus der Erde entfernen.
+KOMERZVEILCHEN=F003=447=Auf jeder Blumenwiese vorzufinden.
+1
+0
+0
+-9
+3X1
+
+#206
+16
+Die QualitÑt meiner Waffen ist grossartig.
+8
+KEULE=W003=383=Eine hîlzerne Keule von guter QualitÑt.
+KURZSCHWERT=W005=373=Dieses kleine Schwert besitzt einen verzierten Griff.
+SPEER=W006=382=Lang und spitz.
+KRIEGSAXT=W008=380=Kein Fîrster wÅrde diese schwere Axt verwenden. Sie ist vielmehr fÅrs Kriegshandwerk geschmiedet.
+BIHéNDER=W011=361=Bedarf grosser Kraft.
+UNHEILSKLINGE=W013=369=Vom Feind gefÅrchtet, vom TrÑger geehrt.
+URAXT VON GORGOTH=W018=356=Der Kriegsherr Gorgoth persîhnlich fÅhrte diese Waffe in der Schlacht von Aturgan.
+FLAMMENSCHWERT=W020=445=Macht mÑchtig Eindruck.
+180
+360
+420
+600
+890
+1430
+3540
+4000
+
+#209
+1
+Zur Sternwarte LINKS abbiegen!
+0
+-1
+-1
+
+#212
+1
+Ig habe heute viele Gristalle gefunden.....hehe
+0
+-1
+-1
+
+#215
+1
+Grosses hat das Mensengeslegt von den Swergen zu erwarten.
+0
+-1
+-1
+
+#218
+15
+-Axel's Brockenstube- Ihr kînnt hier eure alten Waren fÅr gutes Geld verkaufen. Neuerdings fÅhre ich auch eine Werkzeugsabteilung.
+0
+C
+E
+F
+0
+2
+
+#221
+10
+Seid gegrÅsst. Ihr kînnt hier Åbernachten und eure KrÑfte wieder auffrischen.
+320
+4
+Bier kaufen fÅr 5 Gold
+Zimmer mieten fÅr 40 Gold
+Wein kaufen fÅr 20 Gold
+Nichts konsumieren
+74
+77
+82
+113
+
+#224
+9
+
+2
+4000
+10000
+75
+76
+
+#227
+8
+Hier, nehmt diese Flasche Graubier.
+GRAUBIER=0004=372=Dieses Bier ist von einer krÑftigen Sorte.
+1
+5
+0
+-1
+-1
+
+#230
+8
+Hier, nehmt diese Flasche Burgbier.
+BURGBIER=0002=371=Dieses Bier riecht nicht besonders gut.
+1
+5
+0
+-1
+-1
+
+#233
+11
+
+7
+50
+78
+79
+
+#236
+4
+Schlaft gut!
+1
+1000X0
+0
+-81
+-1
+
+#239
+1
+Ihr habt nicht genug Geld.
+0
+73
+-1
+
+#242
+3
+
+EXCALIBUR
+1
+0
+0
+0
+1200 X100
+
+#245
+5
+
+7
+75 X0
+0
+-61
+-1
+
+#248
+8
+Hier, nehmt diese Flasche Blutwein.
+BLUTWEIN=C002=370=Diese Flasche Wein ist von sehr edler Herkunft.
+1
+20
+0
+-1
+-1
+10X2
+
+#251
+1
+ZugbrÅcke zu Kanderburgh
+0
+-1
+-1
+
+#254
+12
+
+SCHAUFEL
+1
+86
+85
+
+#257
+1
+Diese BÅsche haben Stacheln an den ésten.
+0
+84
+-1
+
+#260
+2
+Ihr kînnt den Busch ausgraben.
+DORNENBUSCH=U087=022=Ihr habt diesen Busch mit eurer Schaufel ausgegraben.
+1
+0
+0
+-9
+
+#263
+24
+
+1
+-9
+88
+89
+
+#266
+3
+Ihr kînnt den Busch hier einpflanzen.
+DORNENBUSCH
+1
+1
+84
+22
+
+#269
+1
+Ihr kînnt den Busch hier nicht benutzen.
+0
+-1
+-1
+
+#272
+10
+Die Zeit drÑngt, denn mein Leben ist bald zu Ende. Ich fÅhle den Tod bereits nahen. Du musst mir nun gut zuhîren.
+250
+1
+Aber Vater, was ist denn los?
+91
+
+#275
+10
+Ich muss dir jetzt etwas erzÑhlen, was dich wohl erstaunen wird. Obwohl ich hier auf dem Bauernhof gearbeitet habe, bin ich kein Bauer und auch dein Grossvater war es nicht. Hast du dich nicht auch schon gefragt, was ausserhalb der Insel liegen mag, auf der wir leben?
+150
+1
+Nein....wieso?
+92
+
+#278
+10
+Mein Leben lang war ich auf der Suche nach diesem Land das wir nicht kennen. Und ich fand eine Menge heraus, Dinge die ich nicht wissen sollte...
+250
+1
+Was geschah dann?
+93
+
+#281
+1
+Ich hatte etwas aufgeweckt und eine dunkle Macht begann mich zu verfolgen. Ich zog mich hierher zurÅck und dachte ich sei in Sicherheit. Doch dann, als du gerade vier warst, verschwand deine Mutter und nur ich wusste, was geschehen war.
+0
+-94
+-1
+
+#284
+10
+Seitdem lebe ich in Angst um dich, mein Sohn. Ich wollte dir diese Last nicht aufladen bevor es nîtig war, doch jetzt ist es an der Zeit. Ich sterbe bald und du sollst meine Arbeit vollenden. Du wirst vielleicht das Land erblicken und die Freiheit erlangen, die mir nicht vergînnt war.
+150
+1
+Aber wie...
+95
+
+#287
+1
+Gehe in den Keller und Suche nach einem SchlÅssel. Er wird die Truhe îffnen, die meine Manuskripte enthÑlt. Dort findest du alles, was dir auf der Suche von Nutzen sein kînnte. Dann eile nach Kanderburgh. Mein Freund Otto erwartet dich dort. Aber sei vorsichtig....der Feind lauert Åberall.......... NEEEEEEEEIIIIIIINN! Sie kommen!
+0
+-97
+-1
+
+#293
+25
+
+15
+12
+8
+4
+851
+0
+-98
+-1
+
+#296
+25
+
+15
+11
+8
+0
+0
+0
+99
+816
+100X10
+
+#299
+1
+Ihr kînnt es noch kaum fassen, aber euer Vater ist tot.
+0
+-1
+-1
+
+#302
+20
+Ihr greift die Ratten an.
+3
+2
+5
+5X2
+10X2
+187
+4
+RATTE
+Eine haarige, hÑssliche und ziemlich grosse Ratte.
+15X3
+RATTENSCHWANZ=0001=374=Diese RattenschwÑnze riechen hÑsslich.
+fight1.map
+0
+
+#305
+1
+Vor euch seht ihr einige Ratten. Vielleicht solltet ihr vorsichtig sein und eine Waffe zur Hand nehmen. Im Inventar kînnt ihr ein Objekt benÅtzen indem ihr die Taste B drÅckt.
+0
+0
+0
+
+#308
+1
+Der Kampf spielt sich auf einer speziellen Karte ab. Ihr und eure Gegner bewegt euch im Rundenmodus. Wenn ihr einen der Gegner berÅhrt, erscheint das Kampfmenu. Dort kînnt ihr eure Kampfaktionen auswÑhlen. Ihr kînnt die Kampfkarte auch verlassen und so aus dem Kampf fliehen.
+0
+0
+0
+
+#311
+2
+Ihr findet einen SchlÅssel.
+SCHLöSSEL=U000=338=Ein gewîhnlicher SchlÅssel.
+1
+0
+0
+0
+50X5
+
+#314
+1
+Insel Nerebrod
+0
+-1
+-1
+
+#317
+1
+Ihr mÅsst der Sohn von eurem Vater sein. Ja, ich sehe seine Augen in eurem Gesicht.
+0
+-863
+-1
+200 X10
+
+#320
+10
+Sagt, wie kann ich euch helfen?
+200
+6
+Wer seid ihr?
+Dunkle Macht?
+Vier Runen?
+Nerebrod?
+Was tun?
+Lebt wohl!
+107
+108
+575
+110
+111
+112
+
+#323
+1
+Mein Name ist Alatur. Zum Schutz vor den dunklen KrÑften, die mich verfolgen, nenne ich mich aber Otto. Ich war lange Zeit der GefÑhrte eures Vaters. Doch als wir auf das Unheil gestossen sind, mussten wir uns trennen.
+0
+106
+-1
+
+#326
+1
+Ich will euch nichts darÅber erzahlen, solange ihr nichts davon wissen mÅsst.
+0
+106
+-1
+
+#329
+2
+Vier Runen sind nîtig, um das Portal zu îffnen, welches den Weg in die wahre Welt îffnet. Wahrscheinlich liegt es auf der Insel Nerebrod, wie alte Schriften vermuten. Die vier Runen sind auf der ganzen Insel verstreut. Ich Åberreiche euch hiermit die Schriftrolle, die euren Vater das Leben gekostet hat.
+RUNENVERZEICHNIS=U000=442=Eine liegt im Dunkel, eine liegt im Licht. Die Dritte hat der MÅllersmann, die Vierte kennt man nicht.
+1
+0
+106
+-1
+
+#332
+1
+Die Insel Nerebrod liegt westlich von hier. Ihr solltet sie einmal aufsuchen.
+0
+106
+-1
+
+#335
+1
+Euer Ziel ist es, die vier Runensteine zu beschaffen. Seht euch auf der Insel um und redet mit den Leuten. Sie werden euch vielleicht helfen. Als erstes wuerde ich die Zwergenstadt aufsuchen.
+0
+106
+-1
+
+#338
+1
+Auf Wiedersehen und alles Gute. Hier seid ihr immer willkommen.
+0
+106
+-1
+
+#341
+1
+
+0
+-1
+-1
+
+#344
+1
+Du willst in den Hinterhof des GebÑudes dort gelangen? Dann musst du mir schon ein Bier bringen, damit ich dir helfe. Aber bedenke, ich gebe mich nicht mit billiger Ware zufrieden.
+0
+115
+-1
+
+#347
+13
+
+GRAUBIER
+1
+117
+116
+
+#350
+1
+Bringe mir gefÑlligst zuerst das Bier! Aber bedenke, ich gebe mich nicht mit billigem Burgbier zufrieden.
+0
+-1
+-1
+
+#353
+25
+Habe Dank, ich werde nun die TÅre fÅr dich îffnen lassen.
+12
+35
+7
+0
+-848
+0
+0
+-1
+100X5
+
+#356
+1
+Dieser Altar passt gut zu der schîn eingerichteten Kirche.
+0
+-1
+-1
+
+#359
+1
+Gott behÅte meine SchÑfchen und zÅrne den Wîlfen.
+0
+631
+-1
+
+#362
+2
+Ihr findet einen Smaragd.
+SMARAGD=0040=377=Ein wertvoller Stein. Wenn ihr ihn verkauft erhaltet ihr sicher viel Gold.
+1
+0
+261
+326
+
+#365
+10
+Hallo ihr!
+120
+2
+Was ist los?
+Verschwindet!
+123
+122
+
+#368
+1
+Unwissendes Etwas......
+0
+121
+-1
+
+#371
+1
+Hehe...ich kann euch einen magischen Trank brauen. Bringt mir hierzu sieben RattenschwÑnze und drei Spinnenbeine. 
+0
+124
+-1
+
+#374
+12
+
+RATTENSCHWANZ
+7
+125
+126
+
+#377
+13
+
+SPINNENBEIN
+3
+127
+126
+
+#380
+1
+Ihr habt die Zutaten noch nicht zusammen.
+0
+124
+-1
+
+#383
+3
+
+RATTENSCHWANZ
+7
+0
+-128
+-1
+
+#386
+2
+Hier, nehmt den Heiltrank.
+HEILTRUNK=C020=450=Heilt zwanzig Lebenspunkte.
+1
+0
+123
+-1
+100X10
+
+#389
+2
+Ein GemÑlde liegt zu euren FÅssen.
+GEMéLDE=0160=461=Wundervoll ausgearbeitet.
+1
+0
+0
+0
+500X50
+
+#392
+26
+
+25
+26
+1
+22
+131
+150
+
+#395
+26
+
+26
+26
+1
+22
+132
+150
+
+#398
+26
+
+27
+26
+1
+22
+133
+150
+
+#401
+26
+
+27
+25
+1
+22
+134
+150
+
+#404
+26
+
+27
+24
+1
+22
+135
+150
+
+#407
+26
+
+27
+23
+1
+22
+136
+150
+
+#410
+26
+
+27
+21
+1
+22
+137
+150
+
+#413
+26
+
+27
+20
+1
+22
+138
+150
+
+#416
+26
+
+27
+19
+1
+22
+149
+150
+
+#422
+1
+Habt ewigen Dank.
+0
+140
+-1
+
+#425
+2
+Ihr findet einen SchlÅssel in einer Nische des Steins.
+KLEINER SCHLöSSEL=U000=338=Ein SchlÅssel.
+1
+0
+0
+-1
+50X5
+
+#428
+2
+In den Dornen des Busches hÑngt eine Schriftrolle.
+SCHRIFTROLLE=0010=375=Im linken Baum des Zwillingstraum, da spalten musst um zu finden wovon nur wen'ge wusst.
+1
+0
+0
+-1
+100X10
+
+#431
+13
+
+FôRSTERAXT
+1
+144
+0
+
+#434
+2
+Ihr spaltet die Rinde der Tanne und siehe da...ein Schwert kommt zum Vorschein.
+LANGSCHWERT=W007=331=Ein schîn erhaltenes Schwert.
+1
+0
+-147
+-1
+
+#437
+2
+Die alte Pfeife eures Vaters.
+PFEIFE=U000=378=Der vertraute Geruch steigt euch in die NÅstern.
+1
+0
+182
+803
+
+#440
+1
+Ihr benîtigt einen SchlÅssel um diese TÅr zu îffnen.
+0
+11
+-1
+
+#443
+25
+Die Axt ist jedoch hin. Ihr werft sie weg.
+31
+8
+1
+0
+126
+0
+-299
+0
+50X5
+
+#446
+2
+Ihr bedient euch der TrÑnke.
+SCHWACHER HEILTRANK=C004=347=Dieser Trank heilt vier Lebenspunkte.
+1
+0
+0
+870
+
+#449
+2
+Yep! Ich wusste doch ihr seid ein Freund der Stadt! Hier... ich zeig' euch was. Ihr kînnt dieses Tool dazu benÅtzen den Raum zu verplanen.
+RAUMPLANUNGSVEKTOR=E155=448=Ihr seid nun befÑhigt den Raum zu verplanen.
+1
+0
+140
+-1
+300 X30
+
+#452
+10
+Hi, Fremda. Wie gefallt euch our coole Stadt? Nich schlecht, oder?
+200
+8
+Wieso fragt ihr?
+Eeeehhmm...
+Nicht schlecht...
+Nun....
+Freaky!
+Immerhin...
+Cool...
+Ich geh mal besser.
+151
+152
+152
+152
+153
+152
+152
+154
+
+#455
+1
+Ihr mÅsst wissen, dass es viele Criticer gibt. Viele sprechen von a SchÑndflec.
+0
+130
+-1
+
+#458
+1
+Sehr Åberseugt schaint ihr ja nich zu sein.
+0
+130
+-1
+
+#461
+1
+Yeah, der Meinung bin ich eben auch. But sagt mal, what denkt ihr Åber die Bepflanzung vor dem WÑffenladen? Liesse sich da nix machen?
+0
+130
+-1
+
+#464
+1
+Nun denn...
+0
+130
+-1
+
+#467
+9
+
+3
+50
+1000
+10000
+156
+157
+158
+0
+
+#470
+1
+Ihr erkundet einen Quadratmeter Boden und findet darin 2 riesige, 6 grosse und drei kleine Steine.
+0
+-1
+-1
+200X20
+
+#473
+1
+Ihr erkundet einen Quadratmeter Boden und findet darin 12 grosse Steine und 2 Ministeine.
+0
+-1
+-1
+20X2
+
+#476
+1
+Ihr erkundet einen Quadratmeter Boden und findet darin 7 mittelgrosse Steine.
+0
+-1
+-1
+2X1
+
+#479
+20
+Ihr greift die Spinnen an.
+14
+15
+8
+40X4
+80X8
+188
+3
+SPINNE
+Eine haarige, hÑssliche und ziemlich grosse Spinne.
+25X2
+SPINNENBEIN=0002=376=Frisch.
+fight5.map
+0
+
+#482
+1
+Grethe ist 84 Jahre alt. Die JÅngste von uns dreien war vor 38 Jahren doppelt so jung wie die élteste.
+0
+-1
+-1
+
+#485
+1
+Ich bin 6 Jahre jÅnger als die élteste.
+0
+-1
+-1
+
+#488
+14
+Ich heisse Anette. Wie alt bin ich?
+1
+64
+251
+250
+0
+-1
+-1
+
+#491
+1
+Saali. Mi Name isch Schdulz! I bi hie meh so dr Fîrschder. Was wosch?
+0
+-164
+-1
+
+#494
+10
+
+200
+4
+Edler Forstmann...
+Waldbestand?
+Raumplanung?
+Bis bald...
+165
+166
+167
+168
+
+#497
+1
+Nenei, so edu bin i de o nid. 
+0
+-164
+-1
+
+#500
+1
+Es isch nÅm wie frÅcher, aui chîmemer cho Bîim usloche u i cha mi nid wehre. Aber schnÑu wachsesi, momou.
+0
+-164
+-1
+
+#503
+1
+Ja das isch e Åsserschd nÅdzlichi FÑigkeid. Da chasch jede Bode usmÑsse, wode wosch. Ig wedd, ig chînnd das ou! 
+0
+-164
+-1
+
+#506
+1
+De gang haud wider. 
+0
+163
+-1
+
+#509
+10
+Hesch es Broblem?
+320
+2
+Die BrÅcke ist zusammengestÅrzt!
+Ich doch nicht
+180
+181
+0
+-1
+-1
+
+#512
+13
+
+PFEIFE
+1
+171
+172
+
+#515
+2
+Gib mer das Ding. Hie hesch es Laddli.
+HOLZBALKEN=E033=335=Hîlzern und nutzlos.
+1
+0
+163
+-1
+50X5
+
+#518
+1
+I hiufe nume fÅr ne GÑgeleischdig. Bring mer îbbis zur Beruehigung; I bi drum e chli nÑrvîs.
+0
+180
+-1
+
+#521
+1
+Ihr îffnet die Schublade des Tischchens, findet jedoch nichts
+0
+184
+886
+
+#524
+2
+Ihr nehmt die VorrÑte an euch
+VORRéTE=C003=389=Die letzten VorrÑte des harten Winters.
+1
+0
+0
+873
+
+#527
+1
+ACHTUNG! Betreten auf eigene Verantwortung
+0
+-1
+-1
+
+#530
+13
+
+KIRCHENSCHLöSSEL
+1
+12
+177
+
+#533
+1
+Ihr benîtigt den KirchenschlÅssel um diese TÅr zu îffnen.
+0
+176
+-1
+
+#536
+1
+Nehmt euch in acht. Unter dem verfluchten Boden lebt so manches Untier. Und wenn eines das Licht erblickt, mîcht ich nicht in seinem Blickfeld sein...
+0
+-1
+-1
+
+#539
+1
+Mein GrundstÅck, meine MÅhle, mein Feld!!! Unbefugtes Eindringen wird mit Todesverachtung bestraft. -Der MÅller-
+0
+-1
+-1
+
+#542
+10
+Zersch mau... Hesch du irgendîbbis fÅr mi?
+80
+2
+Ja.
+Nein.
+170
+181
+
+#545
+1
+Wieso chunnsch de zu mir? Gang wÑg... Ig ha schliesslech no angers z'dÅe.
+0
+169
+-1
+
+#548
+1
+Nichts drinn.
+0
+-1
+803
+
+#551
+1
+In dieser Schublade ist nichts vorzufinden.
+0
+-1
+805
+
+#554
+1
+Die Schublade ist leer
+0
+-1
+-1
+
+#557
+1
+Verschlossen
+0
+-1
+-1
+
+#560
+40
+Ihr betretet die dunkle Hîhle argwîhnisch.
+hole1.map
+0
+0
+
+#563
+40
+Das Licht erwartet euch schon.
+demomap.map
+0
+0
+
+#566
+40
+Ihr enteckt einen Durchgang.
+gang1.map
+0
+0
+
+#569
+40
+Freiheit!
+demomap.map
+14
+54
+
+#572
+40
+Eine unbekannte Ebene erscheint im Lichte der Aussenwelt.
+demomap.map
+21
+46
+
+#575
+40
+Ihr kehrt in den Gang zurÅck.
+gang1.map
+0
+0
+
+#578
+1
+Mammi hat gesagt, ich darf nicht mit Fremden reden.
+0
+193
+-1
+
+#581
+1
+Ich darf nicht mit Fremden reden.
+0
+194
+-1
+
+#584
+1
+Geh weg! Ich darf nicht mit dir reden.
+0
+195
+-1
+
+#587
+1
+Ich werde nicht mehr mit dir reden!
+0
+196
+-1
+
+#590
+10
+Ich sage nichts mehr!
+300
+5
+Du bist ja 'ne blîde Gîre!
+Hallo, mein liebstes aller Kinder
+Gibst du mir mal deinen Teddy?
+Grosser SchlÅssel?
+Ich sage jetzt nichts mehr!
+197
+199
+198
+197
+197
+
+#593
+1
+...
+0
+192
+-1
+
+#596
+10
+Neeeee, den hab' ich von meiner Mutter zum Geburtstag bekommen.
+300
+5
+Blond, blauÑugig und gross?
+Grell geschminkt und grossbusig?
+Brunette und BrillentrÑgerin?
+Klein, fett und dunkelblond?
+Ich kenne deine Mutter nicht...
+200
+200
+200
+201
+202
+
+#599
+1
+Schleimer hasse ich am allerallermeisten!
+0
+192
+-1
+50X5
+
+#602
+1
+Neee, das ist sie nicht.
+0
+192
+-1
+
+#605
+1
+Das ist sie! Du kennst sie? Dann bist du kein Fremder mehr...
+0
+203
+-1
+50X5
+
+#608
+1
+Tja, Pech...
+0
+192
+-1
+
+#611
+10
+Was willst du?
+200
+1
+Ich suche etwas...
+204
+
+#614
+2
+Tut mir leid, ich kann dir nicht helfen... Ich habe nur diese Brosche im Gras liegen sehen. 
+BROSCHE=U000=410=Eine Brosche. Der Besitzer vermisst sie sicher bereits.
+1
+0
+205
+-1
+100X10
+
+#617
+1
+Ich habe dir alles gesagt, was ich weiss... Du solltest den Besitzer der Brosche suchen gehen.
+0
+-1
+-1
+
+#620
+10
+Wau!
+200
+8
+Wau!
+Bell!
+Wuff!
+Gruff!
+Knurr!
+Grawuff!
+Arf!
+Du kannst reden???
+207
+208
+207
+207
+207
+207
+207
+207
+
+#623
+1
+
+0
+210
+1324
+
+#626
+1
+
+0
+209
+1312
+
+#629
+10
+Arf, ruff!
+200
+8
+Wau!
+Bell!
+Wuff!
+Gruff!
+Knurr!
+Grawuff!
+Arf!
+Du kannst reden???
+207
+207
+207
+207
+207
+207
+211
+207
+
+#632
+1
+Grawuff arf gruff... Knurr.
+0
+206
+1320
+
+#635
+1
+
+0
+212
+1316
+
+#638
+1
+Es scheint, als hÑtten sie den Hund Åberzeugt. Sie sollten versuchen, ihn einzufangen...
+0
+213
+-1
+
+#641
+2
+Ihr packt den Hund in euer Inventar... (Gab's das nicht schonmal in einem Spiel?)
+HUND=U000=411=Der Hund wird ihnen hoffentlich spÑter noch behilflich sein.
+1
+0
+0
+0
+250X25
+
+#644
+4
+Ihr findet hier einige GoldstÅcke.
+7
+60X12
+0
+261
+326
+250X25
+
+#647
+1
+Nicht alles ist, was scheint zu sein...
+0
+-1
+-1
+
+#650
+13
+
+BROSCHE
+1
+217
+218
+
+#653
+10
+Sobald der Zwerg eure Brosche erblickt, stÅrzt er sich auf sie.
+200
+1
+Was sollte das?
+219
+
+#656
+1
+Wir Swergen sind ein stolses Volg.
+0
+216
+-1
+
+#659
+25
+Mit diesem SmugstÅg habt ihr eug den Gontagt zum Swergenvolg ergauft. Spregt mit meinem Meister, der sig im Gasthaus sum tropfenden Weingrug aufhÑlt.
+7
+32
+8
+221
+200
+0
+218
+-1
+50X5
+
+#662
+1
+Die Fussstapfen des weisen Konfuzius sind hier immer noch zu sehen.
+0
+-1
+-1
+
+#665
+10
+Ihr seid der edle Smugspender?
+200
+4
+Eigentlich...
+Das bin ich!
+Niemals!
+Wir spregen uns
+222
+223
+223
+0
+
+#668
+2
+Ihr seid ehrwÅrdig und beseiden. Ihr besist den Geist eines Swergs. So sollt ihr Sugang su unserem Dorf erlangen. Dort mîgen wir uns wieder treffen... Hier. Nehmt die Parole an euch. HÅtet sie wie euer Augapfel!
+ZWERGENPAROLE=U000=375=CHRULIBUK
+1
+0
+-712
+0
+200X20
+
+#671
+1
+Mein Diener hat mir anderes berigtet... BelÅgt mig nigt!
+0
+221
+-1
+
+#674
+1
+MensengewÅrm!
+0
+-1
+-1
+
+#677
+1
+In goldenen Lettern schimmert die Einschrift: -Zum tropfenden Weinkrug-
+0
+-1
+-1
+
+#680
+1
+Lars' Waffen sind meine Favoriten. Man beachte den stÑhlernen Schimmer, der die Klinge gleich einer Aura umgibt.
+0
+-1
+-1
+
+#683
+40
+In der Ferne vernehmt ihr KlopfgrÑusche.
+gang2.map
+0
+0
+
+#686
+40
+Ihr verlÑsst den Zwergentunnel.
+demomap.map
+0
+0
+
+#689
+40
+Eine Hîhle tut sich vor euch auf.
+dworf.map
+2
+14
+
+#692
+40
+Ihr verlÑsst das Dorf.
+gang2.map
+5
+2
+
+#695
+2
+Ihr nehmt die Sandalen eures Vaters mit. Er benîtigt sie sehr wahrscheinlich nicht mehr...
+SANDALEN=B001=403=Diese Sandalen stellen einen leichten Schutz fÅr eure kostbaren Zehen dar.
+1
+0
+24
+892
+10X2
+
+#698
+1
+Mensen sind hier nigt gerne gesehen.
+0
+-1
+-1
+
+#701
+1
+Ig rede nigt mit MensengewÅrm!
+0
+-1
+-1
+
+#704
+1
+Nehmt eug in Agt vor dem sleigenden Trommler.
+0
+-1
+-1
+
+#707
+1
+Besugt den HÑndler. Er vergauft mangerlei NÅtzliges.
+0
+-1
+-1
+
+#710
+16
+Ig vergaufe RÅstungen. Benîtigt ihr welge?
+9
+LEDERRöSTUNG=A004=342=Eine zÑhe LederrÅstung.
+KETTENHEMD=A006=341=Ein edel verarbeitetes Kettenhemd. Auf der Innenseite ist der Name des Herstellers vermerkt.
+WANDERERSTIEFEL=B002=400=Aus sanftem Wildleder gefertigt.
+RABAUKENTRETER=B004=402=Farbenfroh.
+KADETTENBERET=H001=390=Stark.
+HOLZSCHILD=S003=352=Erweckt nicht viel Vertrauen.
+RUNDSCHILD=S005=353=Erweckt mehr Vertrauen.
+GLASSCHILD=S015=460=Zerbrechlich?!?
+SUMPFSCHILD DES BHAAL=S026=329=Der TodesfÅrst verwendete dieses Schild einst.
+110
+360
+40
+150
+10
+130
+220
+2400
+7800
+
+#713
+1
+Ich bin die RECHTE Hand des Swergenmeisters.
+0
+-1
+-1
+
+#716
+10
+Ich bin die LINKE Hand des Swergenmeisters.........psst...willst du etwas Swergenkraut?
+250
+2
+Gerne.
+Nein! Bleibt mir vom Leibe.
+239
+240
+
+#719
+2
+
+SWERGENHANF=E242=416=Ihr wisst wohl, was zu tun ist...
+1
+0
+241
+-1
+
+#722
+1
+Ich werde einen anderen GÑufer finden.
+0
+241
+-1
+50X5
+
+#725
+1
+Ich bin die LINKE Hand des Swergenmeisters.
+0
+-1
+-1
+
+#728
+1
+Ihr geniesst die Wirkung des Krautes.
+0
+-243
+-1
+220 X22
+
+#731
+3
+
+SWERGENHANF
+1
+0
+-1
+-1
+
+#734
+40
+Ihr betretret den Leuchtturm
+leucht1.map
+0
+0
+
+#737
+40
+Erster Stock
+leucht2.map
+0
+0
+
+#740
+40
+Parterre
+leucht1.map
+0
+0
+
+#743
+40
+Zweiter Stock
+leucht3.map
+0
+0
+
+#746
+40
+Dritter Stock
+leucht4.map
+0
+0
+
+#749
+40
+Vierter Stock
+leucht5.map
+0
+0
+
+#752
+1
+Leider falsch. Du darfst noch mal...
+0
+162
+-1
+
+#755
+1
+Ich werde deinen Erfolg gleich meinen Schwestern erzÑhlen.
+0
+252
+-1
+500X50
+
+#758
+1
+Mathilde sagt dass du ein wahres Genie bist. Auch Grethe ist begeistert.
+0
+-1
+-1
+
+#761
+14
+Spregt die Parole aus. Sonst gommt ihr nigt durg.
+4
+CHRULIBUK
+GRULIBUG
+GRULIBUK
+CHRULIBUG
+254
+255
+254
+254
+256
+
+#764
+1
+Der Zwerg scheint mit dem Kopf zu nicken, doch er lÑsst euch nicht passieren. Die Parole scheint nicht ganz zu stimmen.
+0
+-1
+-1
+
+#767
+25
+Gut, ihr gînnt weiter gehen!
+3
+5
+32
+0
+0
+0
+-781
+0
+250X25
+
+#770
+1
+Der Zwerg verzieht das Gesicht und starrt euch bîse an.
+0
+-1
+-1
+
+#773
+1
+Hallo. Ich in der hiesige Hirte. Mir ist es soooo langweilig. Das einzig Aufregende sind diese GerÑusche aus dem Wald dort drÅben.
+0
+258
+-1
+
+#776
+12
+
+HUND
+1
+288
+260
+
+#779
+1
+Danke vielvielmals. Endlich habe ich einen Hund, der meine SchÑfchen hÅtet. Aber ich habe immer noch ein Problem: Dort drÅben im Wald spukt es.
+0
+41
+-1
+500X50
+
+#782
+1
+Kannst du mir nicht irgendeine BeschÑftigung geben?
+0
+258
+-1
+
+#785
+1
+Die Truhe ist leer.
+0
+-1
+-1
+
+#788
+1
+(Ihr hîrt eine Stimme...) Macht euch vom Acker!
+0
+-1
+-1
+
+#791
+11
+
+4
+4
+265
+264
+
+#794
+1
+Ihr seid su swag um gegen den Trommler su bestehen. Trainiert bis Level 4.
+0
+263
+-1
+
+#797
+1
+Versugt euer GlÅg. Ihr seid genug vorbereitet.
+0
+333
+-1
+
+#800
+11
+
+4
+7
+268
+267
+
+#803
+1
+(der Kobold) Ich warne euch, geht nicht in diese Hîhlen bevor ihr Level 7 erreicht habt.
+0
+266
+-1
+
+#806
+1
+OK, wenn ihr es nicht lassen kînnt.
+0
+400
+-1
+
+#809
+2
+
+SPITZHACKE=E413=428=Ein stabiles Werkzeug. Von Zwergen fÅr Zwergen.
+1
+0
+0
+0
+200X20
+
+#812
+1
+Wenn ihr eure Objekte verkaufen wollt, so ist es entscheidend, an wen ihr euch wendet.
+0
+-1
+-1
+
+#815
+1
+Mit der LEERTASTE beschleunigt ihr den Textfluss. Mit der ENTER Taste fÅhrt ihr Aktionen aus. Versucht euch an der ZimmertÅr.
+0
+-1
+-1
+
+#818
+1
+Mit ESC gelangt ihr ins HauptmenÅ. Die Taste I fÅhrt euch in euer Inventar wessen ihr euch mit ESC wieder entledigt.
+0
+0
+0
+
+#821
+1
+An der Innenwand des Schrankes sind blutige Staben verewigt. Ihr bÅrdet euch den Inhalt auf. Fortan kînnt ihr mit der Taste S speichern. Der VollstÑndigjkeit halber seid ihr mit L des Ladens imstande.
+0
+-1
+804
+
+#824
+13
+
+KLEINER SCHLöSSEL
+1
+12
+146
+
+#827
+20
+Der tote Kopf freut sich aufs gefundenes Fressen.
+30
+40
+35
+500X50
+1500 X150
+1408
+100
+TOTER KOPF
+Er bewacht die BrÅcke mit Insbrunst.
+100X0
+KERKERSCHLöSSEL=U000=340=Ideal zum Schlîsser knacken.
+fight12.map
+0
+
+#830
+2
+Ihr nehmt den Trank an euch
+GRöNER TRANK=C007=389=Spendet dem Konsumenten sieben LP's.
+1
+0
+0
+873
+
+#833
+40
+
+flower11.map
+6
+6
+
+#836
+40
+
+flower12.map
+6
+6
+
+#839
+40
+
+flower13.map
+6
+6
+
+#842
+40
+
+flower14.map
+6
+6
+
+#845
+40
+
+flower15.map
+6
+6
+
+#848
+1
+Ein merwÅrdiges Monument. Ihr kînnt seine magische Aura fÅhlen.
+0
+-1
+-1
+
+#851
+2
+In der Truhe fîrdert ihr ein langes Schwert zutage.
+BIHéNDER=W011=361=Bedarf grosser Kraft.
+1
+0
+261
+326
+
+#854
+10
+Was wosch itz wider? Wieso chunnsch itz scho wider zu mir?
+200
+2
+Zahnradreparatur...
+Es ist nichts.
+285
+286
+
+#857
+3
+
+DEFEKTES ZAHNRAD
+1
+0
+-287
+-1
+100X10
+
+#860
+1
+De gang itz mau.
+0
+284
+-1
+
+#863
+2
+Nimm. Es isch wider ganz.
+ZAHNRAD=U000=412=Scheint repariert zu sein.
+1
+0
+163
+-1
+
+#866
+10
+Oooooooooh, hast du aber ein niedliches HÅndchen bei dir... Gibst du es mir?
+200
+2
+Hier hast du's
+Auf keinen Fall
+289
+260
+
+#869
+3
+
+HUND
+1
+0
+-259
+-1
+
+#872
+40
+Im Dunkeln  seht ihr listige Augen funkeln.
+hole2.map
+0
+0
+
+#875
+40
+Ihr tretet in das Licht
+demomap.map
+0
+0
+
+#878
+4
+Ihr findet wenige Åbrig gebliebene GoldstÅcke.
+7
+28X3
+0
+261
+326
+
+#881
+4
+Ihr findet wenige GoldstÅcke.
+7
+60X15
+0
+261
+326
+
+#884
+2
+Ein AusrÅstungsgegenstand.
+BURGSCHILD=S007=365=StandardausrÅstung eines Gardisten.
+1
+0
+261
+326
+
+#887
+1
+Tausende Termiten tummeln taumelnd.
+0
+-1
+-1
+
+#890
+13
+
+HANDELSPASS
+1
+298
+297
+
+#893
+1
+Ohne Ausweis habt ihr keinen Zutritt.
+0
+296
+-1
+
+#896
+30
+Ihr kînnt passieren.
+223
+20
+1
+0
+12
+xxxxxxYYYxYY
+0
+0
+0
+300X30
+
+#899
+25
+
+32
+7
+1
+0
+124
+0
+0
+125
+
+#902
+9
+
+10
+500
+1000
+1500
+2000
+3500
+5000
+6500
+8000
+9000
+10000
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+
+#905
+1
+Kauft frÅh eine Schaufel. Unter unsren FÅssen, gar manches liegt verborgen.
+0
+300
+-1
+
+#908
+1
+Habt ihr bereits alle GetrÑnke im Wirtshaus gekostet? Gewisse GetrÑnke liefert der Wirt ausschliesslich an Stammkunden.
+0
+300
+-1
+
+#911
+1
+Mit der Sichel schneidet ihr jene Pflanzen, die ihr nicht ausgraben kînnt.
+0
+300
+-1
+
+#914
+1
+Zwerge sind ein Vîlklein fÅr sich. Besonders ihre Sprache... Wenn ihr mit ihnen in Kontakt steht, achtet stets auf die korrekte Artikulation.
+0
+300
+-1
+
+#917
+1
+Der Waffenschmied Lars bietet euch ein breites Sortiment.
+0
+300
+-1
+
+#920
+1
+Das Wetter ist heute besonders prÑchtig.
+0
+300
+-1
+
+#923
+1
+Der Pfarrer ist ein (zensiert)! Alles, was ich ihm beichtete, hat dieses (zensiert) von Pfarrer in der Stadt verbreitet...
+0
+300
+-1
+
+#926
+1
+Schon gehîrt? Olaf soll ja..., tja man munkelt so... Der Herr Pfarrer hat mir geflÅstert...
+0
+300
+-1
+
+#929
+1
+Wir haben's schemÅtlich in unserer Stadt. Allesamt Schmendelers und Mendelers.
+0
+300
+-1
+
+#932
+1
+Schon gebeichtet?
+0
+300
+-1
+
+#935
+10
+Was wollt ihr?
+320
+3
+StÑrke steigern
+Geschicklchkeit verbessern
+Lebenspunkte erhîhen
+312
+313
+314
+
+#938
+4
+Ich werde mein Bestes versuchen.
+5
+8X0
+0
+315
+-1
+
+#941
+4
+Ich werde mein Bestes versuchen.
+10
+8X0
+0
+315
+-1
+
+#944
+4
+Ich werde mein Bestes versuchen.
+2
+30X0
+0
+315
+-1
+
+#947
+1
+Mehr kann ich euch nicht helfen.
+0
+-1
+-1
+
+#950
+20
+Ihr werdet angegriffen.
+30
+40
+25
+500X50
+1500X150
+164
+1
+TROMMLER
+Scheint relativ agressiv zu sein...
+80X0
+TROMMLERKOPF=U000=415=Blutig
+fight10.map
+0
+
+#953
+2
+Ihr findet hier haufenweise ZwergenmÅnzen.
+MöNZHAUFEN=U000=427=1000 ZwergenmÅnzen pro Haufen.
+1
+0
+0
+0
+
+#956
+1
+Hier seid ihr ja endlig. Wir benîtigen eure Hilfe. Ein seussliger Trommler belagert unser Gold. Begebt eug in die Satsgammer und magt dem Biest den Garaus. Dog hîrt mig suerst an: Ihr gînnt den Trommler erst besiegen, wenn ihr auf Level 4 aufgestiegen seid...
+0
+319
+-1
+200X20
+
+#959
+13
+
+TROMMLERKOPF
+1
+321
+320
+
+#962
+1
+Magt, was ig eug geboten! Tîtet ihn!
+0
+319
+-1
+
+#965
+1
+Gebt mir den Gopf! Ig seige eug was.
+0
+-322
+-1
+500X0
+
+#968
+2
+Der Zwergenmeister untersucht den blutigen Trommlerkopf ausfÅhrlich. Schlussendlich fasst er in die Hirnschale und fîrdert einen Stein zutage. Nicht ohne WÅrde Åberreicht er euch diesen.
+TROMMLERSTEIN=U000=387=Einer der vier Runensteine. Wie er wohl in den Kopf kam?
+1
+0
+-864
+-1
+
+#971
+1
+Habet Dang.
+0
+-1
+-1
+
+#974
+10
+Seid gegrÅsst. Interesse an einer mÑgtigen AusrÅstung? Gostenpungt: 9'151 MÅnsen (excl. MWST 8,8 %)... *summier, summier* 10'000 MÅnsen sind angemessen.
+80
+2
+Ja
+Nein
+326
+325
+
+#977
+1
+Ihr verpasst die Ganse eures Lebens.
+0
+324
+-1
+
+#980
+13
+
+MöNZHAUFEN
+10
+327
+332
+
+#983
+2
+Der Zwerg Åberreicht euch ein BÅndel.
+TROMMLERSCHLéCHTERSET=E328=417=Ein grosses BÅndel mit Zwergenrunen auf der Oberseite.
+1
+0
+-331
+-1
+100X10
+
+#986
+3
+Ihr entfaltet die gut verschlossene Verpackung.
+TROMMLERSCHLéCHTERSET
+1
+0
+-329
+-1
+100X10
+
+#989
+2
+
+TROMMLERPRöGEL=W010=345=Unscheinbar.
+1
+0
+-330
+-1
+
+#992
+2
+
+TROMMELFELL=A010=418=Hart aber grÅn.
+1
+0
+0
+-1
+
+#995
+4
+Um den Trommler besiegen zu gînnen, gibt es gein Patentresept. Aber ig habe einen Sauber, der eug helfen wird.
+2
+400X0
+0
+-335
+-1
+
+#998
+1
+Ihr habt suwenig MÅnsen.
+0
+324
+-1
+
+#1001
+40
+Ihr betretet die Schatzkammer
+schatz.map
+0
+0
+
+#1004
+40
+
+dworf.map
+0
+0
+
+#1007
+4
+
+1
+400X0
+0
+-336
+-1
+
+#1010
+25
+
+4
+16
+32
+338
+206
+0
+337
+-1
+
+#1013
+1
+Stets zu Diensten.
+0
+-1
+-1
+
+#1016
+1
+Ihr gedengt dog nigt wohl, mit dem Swergensauber belastet, unsere beseidene Ansiedlung frÅhseitig su verlassen?
+0
+-1
+-1
+
+#1019
+25
+
+4
+16
+32
+0
+0
+0
+-340
+-1
+
+#1022
+5
+
+2
+400 X0
+0
+323
+-1
+
+#1025
+2
+Es ist eine nÅtslige Gabe, seine Wunden nag dem Gampf selbst su heilen. Hier, nehmt diesen gîttligen Heiltrung. Ihr gînnt ihn aber nur einmal benÅtsen.
+GOTTES TRUNK=C050=453=Spendet seinem Konsumenten fÅnfzig LP's.
+1
+0
+342
+-1
+
+#1028
+1
+Mehr gann ig eug nigt unterstÅtsen.
+0
+-1
+-1
+
+#1031
+20
+Ihr greift die Spinnen an.
+14
+15
+8
+40X4
+50X5
+188
+3
+SPINNE
+Eine haarige, hÑssliche und ziemlich grosse Spinne.
+25X2
+SPINNENBEIN=0002=376=Frisch.
+fight2.map
+0
+
+#1034
+20
+Ihr attackiert die Augen.
+6
+8
+12
+30X3
+80X8
+193
+3
+BôSAUGEN
+Verachtende Bîsaugen.
+20X3
+KLEINE AUGéPFEL=0030=424=Appetitanregend.
+fight3.map
+0
+
+#1037
+20
+Ihr attackiert die Augen.
+8
+10
+14
+100X10
+150X15
+194
+2
+TODESAUGEN
+GefÅrchtete Todesaugen.
+30X3
+GROSSE AUGéPFEL=0075=425=Appetitanregend.
+fight4.map
+0
+
+#1040
+20
+Ihr attackiert das Muttertier.
+20
+20
+15
+100X20
+1000X100
+172
+3
+MUTTERSPINNE
+Sie sieht euch mit ihren tausend Augen an.
+50X5
+GIFTDRöSE=0075=423=Hîchstens zum Verkauf geeignet.
+fight4.map
+0
+
+#1043
+20
+Ihr greift die wendigen FledermÑuse an.
+12
+5
+12
+30X10
+70 X7
+186
+1
+WENDIGE FLEDERMAUS
+Schnell und gefÑhrlich.
+25X2
+KRéFTIGE FLEDERMAUSSCHWINGEN=0020=422=Diese Schwingen wurden hart erkÑmpft.
+fight3.map
+0
+
+#1046
+20
+Ihr greift die FledermÑuse an.
+10
+7
+10
+30X3
+40X4
+185
+2
+FLEDERMAUS
+Nur gefÑhrlich.
+20X2
+FLEDERMAUSSCHWINGEN=0015=421=Leicht zu kriegen.
+fight2.map
+0
+
+#1049
+1
+What the heck...
+0
+-1
+-1
+
+#1052
+1
+Ich geb dir gleich Mehl du Schmarotzer!
+0
+-35101
+-1
+
+#1055
+20
+Der MÅller stÅrzt sich auf euch.
+35
+20
+50
+1000X100
+500X50
+160
+2
+MöLLER
+Ein mies gelaunter MÅller.
+300X0
+MöLLERSTEIN=U000=386=Nach frischem Brot duftend.
+fight11.map
+0
+352
+
+#1058
+1
+Der MÅller ist in seine MÅhle zurÅck geflÅchtet.
+0
+0
+0
+
+#1061
+2
+
+METEORIT=U357=419=Das bleulich schimmernde Fragment eines Himmelskîrpers.
+1
+0
+261
+326
+
+#1064
+13
+
+METEORIT
+1
+356
+355
+
+#1067
+1
+Der Einblick in die Sternwarte bleibt euch nicht vergînnt.
+0
+354
+-1
+
+#1070
+1
+Ihr schiebt den Himmelskîrper in den Riss, der die Rinde des Planetariums ziert.
+0
+358
+527
+
+#1073
+1
+Ihr schiebt euch das StÅck in den Hintern... Es fÅhlt sich kÅhl an. Doch auf Dauer bewÑhrt es sich nicht und ist heutzutage sowieso nicht mehr Mode.
+0
+-1
+-1
+
+#1076
+40
+Voller Ehrfurcht betretet ihr das GebÑude.
+sternw.map
+0
+0
+
+#1079
+40
+
+lichtung.map
+0
+0
+
+#1082
+20
+Die Dendroiden wachen.
+20
+50
+20
+30X30
+500X50
+173
+8
+DENDROIDEN
+éusserst langsam, jedoch hîlzern.
+100X10
+SéGESPéNE=0100=420=Selbst errungen.
+fight5.map
+0
+
+#1085
+20
+Grausiges Getier steigt aus dem Dreck empor
+21
+21
+21
+0X0
+200X20
+167
+2
+DRECKMONSTER
+Schmutzig.
+25X10
+MATSCHKUGEL=0005=439=Ungeniessbar!
+fight6.map
+1
+28
+
+#1088
+20
+Zwischen den Knochen steigt grausiges Getier an die OberflÑche.
+21
+21
+21
+0X0
+200X20
+167
+2
+DRECKMONSTER
+Schmutzig.
+25X10
+MATSCHKUGEL=0005=439=Ungeniessbar!
+fight7.map
+1
+28
+
+#1091
+9
+
+2
+200
+10000
+36104
+0
+
+#1094
+9
+
+2
+1000
+10000
+36205
+0
+
+#1097
+13
+
+MöLLERSTEIN
+1
+367
+366
+
+#1100
+1
+Diese SÑule sieht aus, als mÅsse man etwas draufstellen...
+0
+365
+-1
+
+#1103
+1
+Das passt.
+881
+0
+386
+1000X0
+
+#1106
+13
+
+TROMMLERSTEIN
+1
+370
+369
+
+#1109
+1
+Diese SÑule sieht aus, als mÅsse man etwas draufstellen...
+0
+368
+-1
+
+#1112
+1
+Das passt.
+881
+0
+387
+1000X0
+
+#1115
+13
+
+DUNKELSTEIN
+1
+373
+372
+
+#1118
+1
+Diese SÑule sieht aus, als mÅsse man etwas draufstellen...
+0
+371
+-1
+
+#1121
+1
+Das passt.
+881
+0
+388
+1000X0
+
+#1124
+13
+
+LEUCHTSTEIN
+1
+376
+375
+
+#1127
+1
+Diese SÑule sieht aus, als mÅsse man etwas draufstellen...
+0
+374
+-1
+
+#1130
+1
+Das passt.
+881
+0
+385
+1000X0
+
+#1133
+26
+
+8
+4
+881
+386
+379
+0
+
+#1136
+1
+-IN GEDENKEN AN- Ritter HELMut, den PANTOFFELschuster Bert und zahlreiche SÑufer. All diese MÑnner ertranken klÑglich in diesem See. Ihre öberreste schmÅcken noch heute den Grund.
+0
+-1
+-1
+
+#1139
+26
+
+4
+4
+881
+387
+380
+0
+
+#1142
+26
+
+6
+5
+881
+385
+381
+0
+
+#1145
+26
+
+6
+3
+881
+388
+385
+0
+
+#1148
+40
+Die Runensteine wurden alle korrekt plaziert... Der Teleport ist nun mîglich.
+demomap.map
+26
+26
+383
+
+#1151
+25
+
+25
+26
+1
+384
+1328
+0
+-1
+-1
+
+#1154
+40
+Ihr spÅrt die Bedrohung.
+darkmap.map
+2
+7
+
+#1157
+25
+
+11
+6
+84
+-382
+0
+0
+-1
+-1
+
+#1160
+2
+Endlich! Ihr habt einen der Runensteine gefunden.
+DUNKELSTEIN=U000=388=Das Bîse ist deutlich spÅrbar.
+1
+0
+261
+326
+750 X0
+
+#1163
+2
+Offensichtlich wieder eine der Runen.
+LEUCHTSTEIN=U000=385=Es scheint als habe der Stein das Licht des Leuchtturms in sich aufgefangen.
+1
+0
+0
+0
+1000X0
+
+#1166
+2
+Ihr erntet bîse Blicke als Tribut eures unziehmlichen Benehmens... Dennoch lÑsst ihr eine Prise starken Tobaks mitlaufen.
+STARKER TOBAK=0003=441=Dieser Tobak ist einer der StÑrksten, wenn nicht der StÑrkste!
+1
+0
+0
+804
+30X3
+
+#1169
+10
+Petri Heil kÅhner Wandersmann. Erratet meine Profession.
+200
+8
+Schlachter.
+Trommler.
+Schmied.
+Schmed.
+Fischer.
+Maurer.
+MÅller.
+Friseur.
+390
+390
+390
+390
+391
+390
+390
+390
+
+#1172
+1
+Nein.
+0
+389
+-1
+
+#1175
+1
+In der Tat.
+0
+392
+-1
+20X2
+
+#1178
+10
+Habt ihr eine Ahnung vom Fischen?
+80
+2
+Ja!
+Nein.
+394
+393
+
+#1181
+1
+Wollt ihr euch nicht mit mir messen, was?
+0
+392
+-1
+
+#1184
+12
+
+KôDER
+6
+396
+395
+
+#1187
+1
+Ich weiss einen geheimen Fischersplatz, wo nur die Meister meines Faches verkehren. Bringt mir 6 Kîder (egal welcher QualitÑt) und kehrt wieder...
+0
+394
+-1
+
+#1190
+1
+Danke, nun besorgt erneut 6 Kîder, die ihr dann selbst benÅtzen dÅrft.
+0
+397
+-1
+25X3
+
+#1193
+10
+Hehe, war nur ein Scherz. Doch wartet...... etwas fehlt trotzdem noch.
+120
+1
+Scherzkeks.
+398
+
+#1196
+12
+
+ANGEL
+1
+500
+399
+
+#1199
+1
+Ihr benîtigt noch eine Angelrute.
+0
+398
+-1
+
+#1202
+40
+Ihr kînnt nicht ganz bei Sinnen sein, dieses dunkeleste aller Lîcher zu betreten...
+dung1.map
+0
+0
+
+#1205
+40
+Ihr vermîgt, dem Unheil zu entrinnen
+demomap.map
+0
+0
+
+#1208
+40
+Der Kerker des Dungeons.
+kerker.map
+0
+0
+
+#1211
+40
+
+dung1.map
+0
+0
+
+#1214
+40
+
+tor.map
+0
+0
+
+#1217
+40
+
+kerker.map
+0
+0
+
+#1220
+40
+Ich verspÅre hier eine verminderte AktivitÑt des Bîsen. Hier wird es uns gelingen, zu entrinnen.
+demomap.map
+29
+34
+407
+
+#1223
+25
+
+25
+45
+1
+408
+-890
+0
+-408
+0
+500 X50
+
+#1226
+1
+Der Zugang des Dungeons wurde verschÅttet.
+0
+-431
+-1
+
+#1229
+1
+Der Durchgang scheint euch verwehrt, doch gelangt ihr trotzdem weiter...
+0
+-1
+-1
+
+#1232
+9
+
+3
+200
+400
+10000
+41104
+41203
+0
+
+#1235
+20
+Ihr werdet attakiert.
+18
+17
+10
+70 X7
+35 X2
+212
+3
+SPINNE
+Eine haarige, hÑssliche und ziemlich grosse Spinne.
+30 X2
+SPINNENBEIN=0002=440=Frisch.
+fight8.map
+1
+
+#1238
+20
+Von der Decke des Dungeons greifen euch ein paar FledermÑuse an.
+16
+14
+20
+60 X6
+40X4
+185
+2
+FLEDERMéUSE
+Nur gefÑhrlich.
+33 X3
+FLEDERMAUSSCHWINGEN=0015=421=Leicht zu kriegen.
+fight8.map
+1
+
+#1241
+22
+
+42
+27
+416
+415
+
+#1244
+23
+
+42
+27
+0
+-1
+-1
+
+#1247
+1
+Ihr erachtet es nicht als sinnvoll, den gesamten Dungeon umzubuddeln.
+0
+-1
+-1
+
+#1250
+23
+Mit Hilfe der Spitzhacke grabt ihr euch einen Gang.
+40
+27
+0
+-417
+-1
+200X20
+
+#1253
+25
+
+40
+27
+32
+-414
+-9
+0
+-418
+-9
+
+#1256
+25
+
+42
+27
+32
+-419
+-9
+0
+-1
+-1
+
+#1259
+23
+
+40
+27
+0
+-1
+-1
+
+#1262
+1
+Der erste Bruder ist der frische und sich erneÅrnde.
+0
+-1
+-1
+
+#1265
+1
+Der zweite Bruder ist der heisse und temperamentvolle.
+0
+-1
+-1
+
+#1268
+1
+Der dritte Bruder ist der darbende und vergÑngliche.
+0
+-1
+-1
+
+#1271
+1
+Der vierte Bruder ist der kalte und verschlossene.
+0
+-1
+-1
+
+#1274
+14
+Wer sind die BrÅder?
+4
+JAHRESZEITEN
+DIE VIER JAHRESZEITEN
+VIER JAHRESZEITEN
+JAHR
+425
+425
+425
+425
+426
+0
+-1
+-1
+
+#1277
+1
+Ganz recht. Der Durchgang wird euch gewÑhrt.
+0
+0
+0
+500X50
+
+#1280
+1
+Diese Antwort stimmt nicht.
+0
+424
+-1
+
+#1283
+13
+
+KERKERSCHLöSSEL
+1
+429
+428
+
+#1286
+1
+Die TÅr ist verriegelt.
+0
+-1
+-1
+
+#1289
+1
+Sehr gut, mein Junge... Nur jetzt noch drehen und ich bin draussen.
+0
+0
+0
+100 X10
+
+#1292
+2
+Danke mein Junge, Komm, lass uns diesen Gestade verlassen.
+MAGIER=E440=217=Der Magier hat sich selbst mit einem Schrumpfzauber belegt und verlangt nun von euch, ihn herumzutragen.
+1
+0
+0
+0
+
+#1295
+25
+
+30
+34
+1336
+432
+218
+0
+-445
+-1
+
+#1298
+10
+Du hast mich gerettet mein Junge. Ich werde nun dein Bestreben, auf diese Insel zu kommen, beenden. 
+300
+3
+Woher wisst ihr...
+Wie das?
+ErfÅllt ihr mir drei WÅnsche?
+433
+434
+435
+
+#1301
+1
+LÑcherlich... Ich bin der grîsste Magier auf Irdeni! Gedankenlesen ist eine Kleinigkeit.
+0
+-434
+-1
+
+#1304
+1
+Ich werde nun mit meiner Macht einen bestÑndigen Regenbogen Åber die See legen, damit du hinÅber nach Nerebrod kommst... Machs gut mein Junge. Wir werden uns wiedersehen.
+0
+-436
+-1
+
+#1307
+1
+Sehe ich aus, als wÑre ich eine Fee?
+0
+-434
+-1
+20X2
+
+#1310
+25
+
+29
+33
+17
+0
+-88
+0
+-865
+-1
+
+#1313
+25
+
+29
+32
+1336
+0
+-88
+0
+-438
+-1
+
+#1316
+25
+
+29
+31
+1336
+0
+-88
+0
+-439
+-1
+
+#1319
+25
+
+29
+30
+20
+0
+-88
+0
+-443
+-1
+
+#1322
+27
+
+tor.map
+442
+441
+
+#1325
+1
+Hier kann ich dir nicht helfen, Junge.
+0
+-1
+-1
+
+#1328
+22
+
+3
+3
+406
+441
+
+#1331
+25
+
+29
+29
+1
+444
+217
+0
+0
+-11
+
+#1334
+1
+Hehe... Hier bin ich wieder. Ich sagte doch dass wir uns wiedersehen wÅrden. Aber nun sag' ich ade.
+0
+0
+0
+10X5
+
+#1337
+3
+
+MAGIER
+1
+0
+-1
+-1
+
+#1340
+2
+Ein lÑdiertes Pergament.
+PERGAMENT=U000=375=TRIGUAN REBUCHIL ALIGALEST
+1
+0
+261
+326
+
+#1343
+14
+Offensichtlich ist hier Gewalt von keinem Nutzen. Versucht es mit Kommunikation.
+1
+TRIGUAN
+448
+0
+
+#1346
+1
+Das Knirschen der TÅrangel ist unÅberhîrbar.
+0
+-453
+0
+100X10
+
+#1349
+14
+Offensichtlich ist hier Gewalt von keinem Nutzen. Versucht es mit Kommunikation.
+1
+REBUCHIL
+450
+0
+
+
+
+
+#1352
+1
+Das Knirschen der TÅrangel ist unÅberhîrbar.
+0
+-453
+0
+100 X10
+
+#1355
+14
+Offensichtlich ist hier Gewalt von keinem Nutzen. Versucht es mit Kommunikation.
+1
+ALIGALEST
+452
+0
+
+#1358
+1
+Das Knirschen der TÅrangel ist unÅberhîrbar.
+0
+-453
+0
+100X10
+
+#1361
+3
+
+PERGAMENT
+1
+0
+0
+0
+
+#1364
+22
+
+54
+50
+455
+456
+
+#1367
+1
+Von dieser Seite lÑsst sich die TÅre problemlos îffnen.
+0
+0
+0
+50 X5
+
+#1370
+1
+Von dieser Seite lÑsst sich die TÅre nicht îffnen.
+0
+-1
+-1
+
+#1373
+22
+
+48
+68
+458
+459
+
+#1376
+1
+Von dieser Seite lÑsst sich die TÅre problemlos îffnen.
+0
+0
+0
+
+#1379
+1
+Von dieser Seite lÑsst sich die TÅre nicht îffnen.
+0
+-1
+-1
+
+#1382
+5
+Ein rîtlicher Strahl fÑhrt auf euer Haupt darnieder. Offenbar habt ihr den falschen Sarg erwischt.
+1
+13 X12
+0
+461
+-1
+50X5
+
+#1385
+1
+Ihr wagt es nicht nochmal, diesen Sarg zu berÅhren.
+0
+-1
+-1
+
+#1388
+2
+Der Sarg îffnet sich ohne Wiederrede.
+APOLLOS AMPHORE=U000=456=GefÅllt mit einer zÑhen FlÅssigkeit.
+1
+0
+-463
+-1
+200 X20
+
+#1391
+25
+
+34
+94
+32
+0
+903
+0
+648
+904
+
+#1394
+10
+Was in Hades' Namen treibt ihr hier in diesen Hallen?!?
+320
+6
+Was geht das euch an?
+Was ist mit dem Alkohol?
+BlutsÑugewesen, stirb!
+Bin nur zum VergnÅgen hier.
+Mîchtest du gerne wissen, was?
+Bist du Grieche?
+465
+468
+465
+465
+465
+466
+
+#1397
+1
+Nana... nicht so rÅpelhaft. ErzÅrnt nicht Zeus mit eurem Gehabe.
+0
+469
+-1
+
+#1400
+1
+Nur ein Abkîmmling der grossen Rasse von Transsylvanien. Einige der hochedlen Vampire zogen es vor, im warmen SÅden ihre Residenz aufzuschlagen. Mich reizte auch der Wein.
+0
+469
+-1
+
+#1403
+1
+LÑsterlicher, schÑndlicher Alkohol. Seit der Todesnacht meiner Gemahlin habe ich mich dir hingegeben. (Wendet sich euch zu)
+0
+-469
+-1
+
+#1406
+10
+Ich liebe den Wein vor allen anderen FlÅssigkeiten. Deshalb wurde ich auch von der Gilde verstossen. Meine Leidenschaft galt mehr dem gÑrenden Trunk als dem pulsierenden Blut. Meine VorrÑte gehen zu Neige.
+200
+1
+Was kann ich tun?
+470
+
+#1409
+13
+
+APOLLOS AMPHORE
+1
+471
+464
+
+#1412
+1
+Bitte bringt mir meine letzte Flasche. Sie liegt im fÅnften Sarg. Doch seid gewarnt. TÑuschet euch nicht in der Zahl. Ein Fehler wÑre euer Verderben.
+0
+469
+-1
+
+#1415
+2
+Habet Dank fÅr eure edle Tat. Ich Åberreiche euch hiermit diese Seilwinde. Mit allen IrdeniÑischen Brunnen kompatibel.
+SEILWINDE=E473=457=Genormt.
+1
+0
+472
+-1
+
+#1418
+1
+Der Vampir gibt sich seiner Leidenschaft hin.
+0
+-1
+-1
+
+#1421
+27
+
+dung1.map
+475
+474
+
+#1424
+1
+Was wollt ihr hier mit einer SEILWINDE anfangen?
+0
+-1
+-1
+
+#1427
+22
+
+66
+97
+476
+474
+
+#1430
+25
+Ihr setzt die Seilwinde an ihre vorgesehene Stelle am BrunnengerÅst ein.
+66
+96
+0
+485
+553
+0
+-493
+-1
+500 X50
+
+#1433
+3
+
+SEILWINDE
+1
+0
+-1
+-1
+
+#1436
+27
+
+dung1.map
+480
+479
+
+#1439
+1
+Was wollt ihr hier mit einem EIMER anfangen?
+0
+-1
+-1
+
+#1442
+22
+
+66
+97
+481
+479
+
+#1445
+26
+
+66
+96
+0
+553
+482
+495
+
+#1448
+3
+
+EIMER
+1
+0
+-483
+-1
+
+#1451
+2
+Ihr fîrdert etwas aus dem Brunnen empor.
+KRAFTARMBAND=U000=459=Das Armband des Zelda-Helden Link. Welch ein Privileg, dieses Armband tragen zu dÅrfen... Doch wie kam es wohl in den Brunnen?
+1
+0
+-1
+-1
+200X20
+
+#1454
+1
+Der Brunnen ist bodenlos tief.
+0
+-1
+-1
+
+#1457
+1
+Eure Seilwinde macht sich sehr gut.
+0
+-1
+-1
+
+#1460
+12
+
+EXCALIBUR
+1
+488
+487
+
+#1463
+1
+Seit Jahrtausenden ziert das Schwert des Kînigs den Stein Kalibur. Die Gravur Incalibur veredelt den sonst armselig scheinenden Knauf der Waffe.
+0
+-1
+-1
+
+#1466
+1
+Der Ritter verneigt sich vor euch. Ihr seht, wie sich die Inschrift auf dem Schwert wandelt. Fortan nennt man es 'Excalibur'.
+0
+-489
+-1
+
+#1469
+30
+Der Ritter geht ab.
+171
+20
+-1
+0
+18
+XyyyyyxxxxxxYxYYYx
+0
+0
+0
+100X10
+
+#1472
+13
+
+KRAFTARMBAND
+1
+492
+491
+
+#1475
+1
+Vor euch seht ihr das vielbesungene Schwert Artus'
+0
+-1
+-1
+
+#1478
+2
+Ihr vermîgt das Schwert mit Hilfe eures Kraftarmbandes Kalibur zu entreissen. Als ihr die Klinge behutsam in euer Schaft steckt, gibt Kalibur ein hîrbares Stîhnen von sich.
+EXCALIBUR=E496=384=Macht mÑchtig Eindruck.
+1
+0
+494
+914
+250 X50
+
+#1481
+25
+
+66
+95
+32
+0
+552
+0
+-477
+-1
+
+#1484
+1
+Euer Interesse schwindet und ihr wendet euch ab.
+0
+-1
+-1
+
+#1487
+1
+Ihr benîtigt noch ein weiteres Utensil, um den Eimer in den Brunnen herablassen zu kînnen.
+0
+-1
+-1
+
+#1490
+27
+
+dung1.map
+498
+497
+
+#1493
+1
+Das Excalibur zu tragen seid ihr nicht befÑhigt.
+0
+-1
+-1
+
+#1496
+22
+
+60
+57
+499
+497
+
+#1499
+25
+Ihr kînnt es kaum mit eurem Gewissen vereinbaren, dieses magische Schwert in die TÅre zu rammen. Dennoch tut ihr es und wieder geht ein heiliges Relikt verloren.
+61
+57
+32
+0
+0
+0
+-80
+-1
+200X20
+
+#1502
+40
+Nun seid ihr bereit! Kommt mit...
+seeli.map
+13
+5
+501
+
+#1505
+1
+Vor euch seht ihr mein Reich, das fortan auch eurer Belange dienlich ist. Stellt euch ans Ufer und benutzt eure Rute. Doch wÑhlt den Ort eurer Jagd mit Bedacht.
+0
+-1
+-1
+
+#1508
+10
+Was willst du?
+200
+3
+Wo soll ich anfangen?
+Schon was gefangen?
+Ich will wieder zurÅck!
+505
+506
+503
+
+#1511
+40
+
+stadt1.map
+0
+0
+504
+
+#1514
+25
+
+10
+23
+1336
+507
+213
+0
+-1
+-1
+
+#1517
+1
+Versucht eure Rute mîglichst in freiem GewÑsser zu werfen.
+0
+520
+-1
+
+#1520
+1
+Keiner fischt so gut wie ich. Seht dort im Kessel, welche PrachtsstÅcke ich bereits gefangen habe.
+0
+520
+-1
+
+#1523
+40
+Ach so, ihr wollt wieder einmal fischen gehen...
+seeli.map
+0
+0
+
+#1526
+1
+Finger weg! Das ist MEINE Beute.
+0
+-1
+-1
+
+#1529
+20
+VerÑnstigte MÅcken umschwirren euch.
+1
+1
+1
+0 X0
+0X0
+215
+0
+MöCKE
+Schnell aber harmlos.
+2X1
+KôDER=0001=430=Viele Fische(r) werden euch beneiden.
+fight5.map
+1
+
+#1532
+22
+
+9
+14
+515
+511
+
+#1535
+22
+
+14
+17
+515
+512
+
+#1538
+22
+
+13
+9
+515
+513
+
+#1541
+22
+
+16
+12
+515
+514
+
+#1544
+1
+Hier sind keine Fische zu finden.
+0
+-1
+-1
+
+#1547
+13
+Ihr werft euren Kîder aus.
+KôDER
+1
+527
+528
+
+#1550
+2
+Ihr fischt einen alten Pantoffel aus dem See.
+PANTOFFEL=0003=434=Total vergammelt und feucht.
+1
+0
+-1
+-1
+15 X2
+
+#1553
+2
+Eine leere Flasche.
+LEERE FLASCHE=0003=346=Leer und unbrauchbar.
+1
+0
+-1
+-1
+15X2
+
+#1556
+2
+Ihr zieht einen verrosteten Helm ans Land.
+VERROSTETER HELM=0003=435=Schwerstens oxidiert.
+1
+0
+-1
+-1
+15X2
+
+#1559
+27
+
+seeli.map
+510
+514
+
+#1562
+12
+
+PANTOFFEL
+1
+521
+502
+
+#1565
+12
+
+LEERE FLASCHE
+1
+522
+502
+
+#1568
+12
+
+VERROSTETER HELM
+1
+523
+502
+
+#1571
+2
+Du armer unerfahrener Fischersbub. Hast wohl doch keine grosse Ahnung vom Fischershandwerk. Hier, nimm diesen kleinen Barsch als Geschenk.
+KLEINER BARSCH=U000=429=Frisch und munter.
+1
+0
+-524
+-1
+400 X40
+
+#1574
+40
+Lass uns zurÅckgehen.
+stadt1.map
+0
+0
+525
+
+#1577
+25
+
+10
+23
+-1336
+0
+0
+0
+-526
+-1
+
+#1580
+25
+
+9
+23
+-1336
+0
+0
+0
+-1
+-1
+
+#1583
+9
+
+4
+3000
+6000
+9000
+10000
+516
+517
+518
+597
+
+#1586
+1
+Keine Kîder mehr...
+0
+-1
+-1
+
+#1589
+1
+...und, was hast du dabei gesehen? - du sahst den geheimen Weiher der Fischerzunft?!? Ich kanns dir nicht glauben.
+0
+0
+0
+20X2
+
+#1592
+10
+
+250
+3
+Um was geht's?
+Not am Rat?
+Ich geh dann wieder...
+531
+531
+0
+
+#1595
+1
+Wir beneiden schon seit langer Zeit die Fischerszunft um ihre schînen ErtrÑge. Man munkelte, sie besÑssen einen versteckten SÅsswasserweiher inmitten eines Waldes.
+0
+532
+-1
+
+#1598
+10
+Wollt ihr uns bei der Suche helfen?
+80
+2
+Sicher.
+Nein.
+534
+533
+
+#1601
+1
+öberlegt es euch doch noch einmal.
+0
+532
+-1
+
+#1604
+1
+Bringt uns einen Beweis, dass ihr den Weiher gefunden habt.
+0
+535
+-1
+
+#1607
+13
+
+KLEINER BARSCH
+1
+536
+534
+
+#1610
+2
+Das ist ja ein PrachtsstÅck! Dieser Barsch kann nur von dem besagten Teich stammen... Nehmt diesen SchlÅssel als Dank.
+EISERNER SCHLöSSEL=U000=338=Der erste SchlÅssel des Leuchtturmes.
+1
+0
+537
+-1
+250X25
+
+#1613
+1
+Jetzt kînnen wir Heiko von der Fischersgilde endlich das Wasser reichen.
+0
+-1
+-1
+
+#1616
+1
+Ich bin Timo der Unwissende. Frage Gunnar, wenn du was wissen willst.
+0
+-1
+-1
+
+#1619
+1
+Achtung! BrÅchige Tritte.
+0
+-1
+-1
+
+#1622
+13
+
+EISERNER SCHLöSSEL
+1
+542
+541
+
+#1625
+1
+Ein eisernes SchlÅsselloch. Wozu es wohl dienen mag?
+0
+540
+-1
+
+#1628
+1
+Das passt.
+0
+0
+338
+500X50
+
+#1631
+13
+
+SILBERNER SCHLöSSEL
+1
+545
+544
+
+#1634
+1
+Ein silbernes SchlÅsselloch.
+0
+543
+-1
+
+#1637
+1
+Das passt.
+0
+0
+337
+500X50
+
+#1640
+13
+
+GöLDENER SCHLöSSEL
+1
+548
+547
+
+#1643
+1
+Ein gÅldenes SchlÅsselloch.
+0
+546
+-1
+
+#1646
+1
+Das passt ebenso.
+0
+0
+336
+500X50
+
+#1649
+26
+
+5
+4
+-899
+338
+551
+0
+
+#1652
+1
+Wieso wohl ist diese TÅre verschlossen?
+0
+-1
+-1
+
+#1655
+26
+
+4
+4
+-899
+337
+552
+0
+
+#1658
+26
+
+3
+4
+-899
+336
+553
+0
+
+#1661
+25
+Welch Wunder. Die Pforte îffnet sich.
+2
+4
+8
+0
+0
+0
+0
+0
+200X20
+
+#1664
+1
+Ihr erinnert euch vage an euer frÅheres Zuhause...
+0
+-1
+-1
+
+#1667
+10
+Ihr kommt mir wie gerufen. Ich brauche einen vertrauenswÅrdigen Boten, der mir einen Brief austragen kann... Ich selbst kann die Aufgabe leider nicht erledigen, da meine Frau schwer erkrankt ist. Wollt ihr mir helfen?
+200
+2
+Ich will.
+Keine Chance.
+557
+556
+
+#1670
+2
+Dann pflegt meine Frau in der Zwischenzeit! Ihr habt fÅr sie zu sorgen... Hier, nehmt den KammerschlÅssel.
+SILBERNER SCHLöSSEL=U000=337=Der zweite SchlÅssel.
+1
+0
+0
+0
+250X25
+
+#1673
+2
+So nehmt diese Botschaft und kehrt nicht mit ihr zurÅck!
+FILIGRANES PERGAMENT=0001=432=Zarte Schrift ziert den Umschlag.
+1
+0
+558
+-1
+
+#1676
+10
+Nu?
+200
+2
+Wohin austragen?
+Aufgabe erledigt.
+559
+560
+
+#1679
+1
+Ach ja, das vergass ich ja vor lauter Aufregung. Bringt den Brief zu meiner heimlichen Geliebten. Ich erwarte absolute Diskretion!
+0
+-1
+-1
+
+#1682
+12
+Ich werde euch wohl durchsuchen mÅssen, damit ich die Wahrheit erkennen kann.
+FILIGRANES PERGAMENT
+1
+561
+562
+
+#1685
+1
+Was haben wir denn da? Ihr habt mich angelogen! Aber nun hurtig, kleiner Bote... Bringt den Brief zu meiner Geliebten.
+0
+-1
+-1
+
+#1688
+13
+
+ROSE
+1
+564
+563
+
+#1691
+2
+Ich konnte nichts finden, was eure Untreue beweisen kînnte. Hier nehmt diesen SchlÅssel als Beweis meines Dankes.
+SILBERNER SCHLöSSEL=U000=337=Der zweite SchlÅssel.
+1
+0
+0
+0
+150 X15
+
+#1694
+2
+Sieh ei da. Ihr bringt mir auch noch eine Rose von meiner geliebten Anke mit. Das weiss ich zu schÑtzen.
+RUBIN=0200=436=Ein edler Stein.
+1
+0
+-565
+-1
+
+#1697
+2
+Und hier nehmt diesen SchlÅssel als weiteren Beweis meines Dankes.
+SILBERNER SCHLöSSEL=U000=337=Der zweite SchlÅssel.
+1
+0
+0
+0
+
+#1700
+13
+
+FILIGRANES PERGAMENT
+1
+568
+567
+
+#1703
+1
+Ich bin so traurig. Mein Geliebter musste von mir scheiden. Seine Frau trieb den Keil.
+0
+566
+-1
+
+#1706
+2
+Oooooooooooooooh, wie lieb von dir... Hier hast du eine Rose als Dankeschîn. Du kannst sie fÅr dich behalten. 
+ROSE=U000=433=Eine stachelige BlÅte. Wahrscheinlich ein kaktusartiges GewÑchs.
+1
+0
+569
+-1
+250X25
+
+#1709
+10
+DU bist mein Allerliebster. Verweile doch ein Weilchen.
+300
+7
+Wonneproppen.
+Turteltaube.
+ZuckernÑschen
+HerzensmÑuschen.
+Goldlîckchen
+NachtigÑllchen
+Was ist mit Gerhard?!?
+570
+570
+570
+570
+570
+570
+574
+
+#1712
+9
+
+3
+3333
+6666
+10000
+571
+572
+573
+
+#1715
+1
+SÅss...
+0
+569
+-1
+
+#1718
+1
+Wie herzig!
+0
+569
+-1
+
+#1721
+1
+
+0
+569
+-1
+
+#1724
+1
+(Stille)
+0
+0
+-1
+100X10
+
+#1727
+13
+
+RUNENVERZEICHNIS
+1
+109
+109
+
+#1730
+1
+Mein Mann geht fremd. Aber er beschuldigt mich immer wieder meiner AffÑre mit dem Herrn Pfarrer. Ich war schliesslich auch mal jung.
+0
+577
+-1
+
+#1733
+2
+Bitte bringt diesen KirchenschlÅssel dem Pfarrer zurÅck. Und richtet ihm aus, das es mir immer noch leid tut.
+KIRCHENSCHLöSSEL=U000=339=Kein Kommentar.
+1
+0
+578
+-1
+
+#1736
+1
+Bitte erfÅllt mir diesen Wunsch, bevor ich das Zeitliche segne...
+0
+-1
+-1
+
+#1739
+2
+Ihr îffnet die Truhe... Ein helles Band liegt darin. Es ist von magischen Runen gezeichnet.
+KLERIKERBAND=E580=437=Dieses Band verschafft seinem TrÑger Zugang zu einer geheimen Kapelle. Dabei mÅsst ihr euch innerhalb der Stadt befinden.
+1
+0
+261
+326
+200X20
+
+#1742
+27
+
+chapel.map
+581
+582
+
+#1745
+40
+Das Band tut seine Dienste.
+stadt1.map
+41
+10
+790
+
+#1748
+27
+
+stadt1.map
+583
+584
+
+#1751
+40
+Das Klerikerband trÑgt euch davon.
+chapel.map
+16
+29
+
+#1754
+1
+Das Band ist hier von keinem Nutzen.
+0
+-1
+-1
+
+#1757
+1
+Ziemlich tief... Auf jeden Fall wollt ihr einen Åberhasteten Sturz nicht riskieren.
+0
+-1
+-1
+
+#1760
+27
+
+chapel.map
+588
+587
+
+#1763
+1
+Das Seil hier zu gebrauchen, macht keinen Sinn.
+0
+-1
+-1
+
+#1766
+22
+
+28
+28
+589
+590
+
+#1769
+40
+Ihr lÑsst euch in das Grab herab.
+grab1.map
+0
+0
+
+#1772
+22
+
+27
+13
+591
+592
+
+#1775
+40
+Ihr lÑsst euch in das Grab herab.
+grab2.map
+0
+0
+
+#1778
+22
+
+28
+7
+593
+594
+
+#1781
+40
+Ihr lÑsst euch in das Grab herab.
+grab3.map
+0
+0
+
+#1784
+22
+
+2
+13
+595
+587
+
+#1787
+40
+Ihr lÑsst euch in das Grab herab.
+grab4.map
+0
+0
+
+#1790
+40
+Ihr wandelt wieder unter den Lebenden.
+chapel.map
+0
+0
+
+#1793
+1
+Ihr geht leer aus.
+0
+-1
+-1
+
+#1796
+1
+Freund... Ihr solltet nicht in des Teufels Hîhle, wenn das Unheil noch darin. Hîret meine Worte. Viele schon haben den Hochmut ihrem eigenen Leben vorgezogen, welche nicht auf mich gehîrt.
+0
+0
+-1
+50X5
+
+#1799
+1
+Niemand hîrt mich an... (snif) Und doch meine ich es nur gut mit den Todgesagten.
+0
+-1
+-1
+
+#1802
+9
+
+3
+2000
+5000
+10000
+60101
+60702
+0
+
+#1805
+20
+Ihr trefft auf Untote.
+35
+35
+30
+300X40
+600 X60
+220
+2
+ZOMBIE
+Untot.
+120 X20
+
+fight8.map
+1
+28
+
+#1808
+5
+Euer unprofessionelles Verhalten, lîst eine Blitzfalle aus. Ihr verliert einige eurer Lebenspunkte!
+1
+34 X5
+0
+-603
+-1
+
+#1811
+2
+Zitternd vermîgt ihr dennoch, den Schatz zu bergen.
+ERSTER BAND=U000=443=Konfuzianische Mînchsausbildung: Nahkampf
+1
+0
+-647
+-1
+200X20
+
+#1814
+2
+Ihr îffnet den Sarg und staunt. MekwÅrdigerweise liegen zwei Skelette im Sarg. Das eine ist wohlerhalten in Kriegsmontur gerÅstet. Ihr bemÑchtigt euch der GegenstÑnde. Ihr findet einen Erzhelm.
+ERZHELM=H008=395=Der ursprÅngliche Besitzer dieses Helm vermochte dem Unheil nicht zu entrinnen.
+1
+0
+-605
+-1
+
+#1817
+2
+Ihr findet ein paar Ritterstiefel.
+RITTERSTIEFEL=B010=404=Der ursprÅngliche Besitzer dieser Stiefel biss zu frÅh ins Gras.
+1
+0
+-606
+-1
+
+#1820
+2
+Ihr findet eine RÅstung.
+RöSTUNG=A015=328=Der ursprÅngliche Besitzer dieser RÅstung scheiterte in seinem Bestreben.
+1
+0
+-647
+-1
+
+#1823
+20
+Ihr trefft auf mindere Untote.
+30
+30
+25
+230 X40
+450 X45
+219
+2
+GESTALTENWANDLER
+Untot.
+100X10
+
+fight8.map
+1
+28
+
+#1826
+5
+Euer unprofessionelles Verhalten, lîst eine Feuerfalle aus. Ihr verliert einige eurer Lebenspunkte!
+1
+34X5
+0
+-609
+-1
+
+#1829
+2
+Zitternd vermîgt ihr dennoch, den Schatz zu bergen.
+ZWEITER BAND=U000=443=Konfuzianische Mînchsausbildung: BestienbÑndigung
+1
+0
+-647
+-1
+200X20
+
+#1832
+5
+Euer unprofessionelles Verhalten, lîst eine Indyfalle aus. Ihr verliert einige eurer Lebenspunkte!
+1
+34X5
+0
+-611
+-1
+
+#1835
+2
+Zitternd vermîgt ihr dennoch, den Schatz zu bergen.
+DRITTER BAND=U000=443=Konfuzianische Mînchsausbildung: Meditation
+1
+0
+-647
+-1
+200X20
+
+#1838
+13
+
+ERSTER BAND
+1
+614
+613
+
+#1841
+1
+Sei gegrÅsst. Ich begann erst letztes Jahr meine Mînchsausbildung. Mein Wissensdurst ist ungestillt. Bringe mir MEHR Lernmittel!!!
+0
+612
+-1
+
+#1844
+1
+Vielen Dank... Ich werde mich sogleich ins Studienzimmer begeben. Adieu, Bruder.
+0
+0
+0
+100X10
+
+#1847
+26
+
+17
+10
+31
+0
+621
+622
+
+#1850
+1
+Sei gegrÅsst. Ich begann vor drei Jahren meine Mînchsausbildung. Mein Wissensdurst ist stets ungestillt. Bringe mir MEHR Lernmittel!!!
+0
+615
+-1
+
+#1853
+1
+Vielen Dank... Ich werde mich sogleich ins Studienzimmer begeben. Adieu, Bruder.
+0
+0
+0
+100X10
+
+#1856
+26
+
+18
+10
+31
+0
+623
+622
+
+#1859
+1
+Sei gegrÅsst. Ich begann vor fÅnf Jahren meine Mînchsausbildung. Mein Wissensdurst ist immer noch ungestillt. Bringe mir MEHR Lernmittel!!!
+0
+618
+-1
+
+#1862
+1
+Vielen Dank... Ich werde mich sogleich ins Studienzimmer begeben. Adieu, Bruder. Und damit ich's nicht vergesse...
+0
+-624
+0
+
+#1865
+13
+
+ZWEITER BAND
+1
+617
+616
+
+#1868
+1
+Hilf zuerst meinem jÅngeren Bruder.
+0
+-1
+-1
+
+#1871
+13
+
+DRITTER BAND
+1
+620
+619
+
+#1874
+25
+Der Mînchsmeister erwartet euch am Hauptportal und hier...
+16
+26
+33
+625
+165
+0
+-785
+0
+
+#1877
+10
+Meine Lehrlinge berichtete mir von euren Taten. Ihr seid ein tugendhafter junger Mann. Sagt, wollt ihr in Gottes Dienste treten?
+320
+3
+Ihr sprecht mir aus dem Herzen.
+Mit derartigen Tolpatschen? Niemals!
+Ich habe anderweitig zu tun.
+626
+627
+628
+
+#1880
+2
+Dann seid ihr fortan ein Priester des Lichtes und mîget stets unter dessen Schein Taten tun. Hier, nehmt diese Robe. Ich wÅnsche euch alles Gute. 
+MôNCHSROBE=0375=444=Ein Geschenk des Obermînchs.
+1
+0
+630
+-1
+
+#1883
+1
+LÑsterliche Ratte. Besudelt nicht lÑnger diese Hallen. Hinfort!
+0
+629
+-1
+500X50
+
+#1886
+1
+Dies ist ein gÅltiges Argument. Gott mîge Åber euch wachen. Ihr seid immer willkommen.
+0
+625
+-1
+
+#1889
+5
+Seid ihr wahnsinnig? Wollt ihr mich herausfordern? Hier, nehmt dies! (wirft Feuerball)
+1
+60 X10
+0
+-1
+-1
+
+#1892
+1
+Gott behÅte euch.
+0
+-1
+-1
+
+#1895
+12
+
+MôNCHSROBE
+1
+632
+119
+
+#1898
+10
+Ich sehe. Ihr habt eine Robe des Hohenklosters bei euch. Ich wÅrde euch ein Vermîgen zahlen. Was meint ihr zu 1000 GoldstÅcken?
+200
+5
+In Ordnung.
+Kein Interesse.
+2'000 GS.
+5'000 GS.
+10'000 GS.
+633
+0
+634
+635
+636
+
+#1901
+4
+Hier, nehmt das Geld.
+7
+1000 X0
+0
+-637
+-1
+
+#1904
+4
+Naja.... Mit 2000 bin ich einverstanden.
+7
+2000X0
+0
+-637
+-1
+
+#1907
+10
+Hîchstens 1'500.... Mehr ist mir die Robe nicht wert.
+120
+3
+Ok.
+2500 GS.
+4000 GS.
+638
+639
+636
+
+#1910
+1
+Seid ihr Åbergeschnappt? Kein Mensch wÅrde eine solche Summe bezahlen.
+0
+640
+-1
+
+#1913
+3
+
+MôNCHSROBE
+1
+0
+640
+-1
+200X20
+
+#1916
+4
+Mit 1500 bin ich einverstanden.
+7
+1500 X0
+0
+-637
+-1
+
+#1919
+10
+Mein letztes Angebot: 2000 GS.
+120
+2
+Ok.
+3000 GS.
+634
+636
+
+#1922
+1
+Der Pfarrer scheint euch nicht mehr zu beachten. Er ist in einen Bibeltext vertieft.
+0
+640
+-1
+
+#1925
+1
+Der marmorne Altarstein sorgt fÅr eine mystische Stimmung.
+0
+-1
+-1
+
+#1928
+15
+Udo's KriegsgerÑte Ankauf. Ich kaufe alles, was ihr nicht mehr braucht.
+W
+A
+S
+B
+H
+50
+
+#1931
+1
+ôstliche Handelsniederlassung.
+0
+-1
+-1
+
+#1934
+1
+Betriebsferien. Der Wirt ist nicht anwesend.
+0
+-1
+-1
+
+#1937
+1
+Ohne passende Utensilie werdet ihr dieses Hindernis nicht bewÑltigen.
+0
+-1
+-1
+
+#1940
+40
+HÑndlerstadt.
+stadt2.map
+0
+0
+
+#1943
+25
+
+2
+3
+32
+0
+903
+0
+648
+904
+
+#1946
+1
+Der Sarg ist nun leer.
+0
+-1
+-1
+
+#1949
+25
+Als ihr den Hebel betÑtigt, bewegt sich die Wand hinter euch.
+28
+60
+32
+0
+0
+0
+-650
+-1
+
+#1952
+25
+
+29
+59
+32
+0
+0
+0
+-651
+-1
+
+#1955
+25
+
+29
+61
+32
+0
+0
+0
+-652
+-1
+
+#1958
+25
+
+30
+60
+32
+0
+0
+0
+-653
+-1
+
+#1961
+25
+
+28
+61
+-6
+0
+0
+0
+-654
+-1
+
+#1964
+25
+
+28
+59
+-6
+0
+0
+0
+-655
+-1
+
+#1967
+25
+
+30
+61
+-6
+0
+0
+0
+-656
+-1
+
+#1970
+25
+
+30
+59
+-6
+0
+0
+0
+-662
+-1
+
+#1973
+1
+Der Hebel lÑsst sich nicht mehr bewegen.
+0
+-1
+-1
+
+#1976
+2
+Sain's griesst. Wos hammn's denn fÅr'n Problem? Kommenns nicht weiter? Jo mai, Do nehmen's doch den SchlÅssel hier. (Der Geist entschwindet euren Augen)
+ZAHNRADSCHLöSSEL=U000=339=Aus Metall.
+1
+0
+0
+0
+50X5
+
+#1979
+13
+
+ZAHNRADSCHLöSSEL
+1
+660
+661
+
+#1982
+1
+Ihr steckt den SchlÅssel in die fÅr ihn geschaffene Aussparung.
+32
+0
+0
+
+#1985
+1
+Es ist euch unbegreiflich.
+0
+-1
+-1
+
+#1988
+25
+
+36
+60
+32
+658
+1340
+0
+657
+913
+200X20
+
+#1991
+16
+Mein Name ist Balthasar. Ich bin der hiesige Schuhmacher.
+7
+SCHUHE DES MANITU=B002=449=Servus. Saind's deppert? Des gibt bloss zwei Gschigg...
+RODEOSTIEFEL=B005=405=Mit Sporen versehen.
+ARISTOKRATENSOHLEN=B007=400=Flauschig und weich.
+PFERDEHUFE=B010=406=Frisch beschlagen.
+SCHLANGENHAUT=B012=408=Schuppig.
+ENGELSFöSSE=B016=407=Ihr fÅhlt euch wie im siebten Himmel.
+PALADINSSTIEFEL=B019=409=GÅlden schimmernd verleihen sie der Morgenrîte ew'gen Glanz.
+8900
+500
+800
+1400
+2100
+3200
+4700
+
+#1994
+16
+Guten Tag. BedÅrft ihr magischer TrÑnke?
+6
+HEILDRINK=C001=452=Dieser Trank heilt einen Lebenspunkt. Mit Rîhrchen und Vitamin C.
+KLEINER HEILTRANK=C006=347=Heilt sechs Lebenspunkte.
+MODERATER HEILTRANK=C010=348=Dieser Trank heilt zehn Lebenspunkte.
+GROBER HEILTRANK=C014=349=Heilt vierzehn Lebenspunkte, gar.
+HEILTRUNK=C020=450=Heilt zwanzig Lebenspunkte.
+GOTTES TRUNK=C050=453=Spendet seinem Konsumenten fÅnfzig LP's.
+5
+10
+20
+30
+40
+100
+
+#1997
+16
+Guten Tag. WÅnscht ihr, verschiedensten Ramsch zu kaufen?
+7
+TOBAK=0005=441=Dieser Tobak ist einer der StÑrksten, jedoch nicht der StÑrkste.
+KAPUTTES ZAHNRAD=0012=413=BeschÑdigt.
+SWERGENHANF=E242=416=Ihr wisst wohl, was zu tun ist...
+VERROSTETER HELM=0003=435=Schwerstens oxidiert.
+WIESENBLUME=F001=324=Eine nicht besonders seltene Blume.
+MISTSTöCK=0003=458=Ein StÅck Mist. Was habt ihr anderes erwartet?
+UNIVERSALKARTE=E851=463=Auf der Karte ist sogar die Insel Nerebrod verzeichnet.
+30
+70
+330
+120
+20
+50
+620
+
+#2000
+1
+Magt bloss geinen Unsinn! Wir wagen Åber unsere Waren. Stelen ist untersagt.
+0
+-1
+-1
+
+#2003
+16
+Seid gegrÅsst. Mîgtet ihr meine Helme begutagten?
+7
+FILZHUT=H002=391=Fusselfrei.
+WIKINGERSCHéDEL=H005=393=Gehîrnt.
+NASENSCHöTZER=H007=394=Geruchsneutral.
+BôSER HELM=H010=396=Sicher im Strassenverkehr.
+SONNENKOPF=H016=398=Blendende Erscheinung.
+DRACHENTOPF=H021=397=GrÅn und hart.
+TEUFELSKAPPE=H025=399=Made in hell.
+100
+300
+800
+1600
+3100
+4700
+6400
+
+#2006
+16
+Moin su Diensten. Welges GriegsgerÑt behagt eug am meisten?
+8
+BASTWAMS=A002=360=Diese leichte RÅstung scheint ziemlich bequem zu sein.
+KETTENPANZER=A008=451=Mottenfrei.
+GORGONENRöSTUNG=A015=358=Aus Gorgonenhaut gefertigt.
+NAGARöSTUNG=A020=359=Das silberne Metall der Nagakînigin ziert die OberflÑche.
+BURGSCHILD=S007=365=StandardausrÅstung eines Gardisten.
+EISERNES RUNDSCHILD=S010=364=Aus der Zwergenschmiede.
+SCHILD JAKOBI=S014=343=Der heilige Jakob trug diesen Schild im zweiten Kreuzzug.
+GOLDSCHILD=S022=355=Blendend.
+80
+440
+2310
+4800
+370
+720
+1490
+5300
+
+#2009
+1
+Die Ameisen arbeiten fleissig. Ihr entdeckt ein glitzerndes Etwas inmitten dem Gewimmel, traut euch jedoch nicht, mit blossen HÑnden in den Haufen zu greifen. Ein Halm des MÅllerfeldes wÑre hier von Nutzen.
+0
+-1
+-1
+
+#2012
+27
+
+demomap.map
+672
+671
+
+#2015
+1
+Warum gedenkt ihr, den Halm hier zu benutzen?
+0
+-1
+-1
+
+#2018
+22
+
+60
+31
+675
+673
+
+#2021
+22
+
+61
+30
+675
+674
+
+#2024
+22
+
+62
+31
+675
+671
+
+#2027
+2
+Mit etwas FingerspitzengefÅhl stochert ihr geschickt im Haufen herum, sodass ihr schliesslich als Ergebnis einen Rubin in den HÑnden haltet.
+EDLER RUBIN=0250=436=Ein besonders edler Stein.
+1
+0
+-676
+-1
+500X50
+
+#2030
+25
+
+61
+31
+-1360
+0
+0
+0
+-677
+-1
+
+#2033
+3
+
+HALM
+1
+0
+-678
+-1
+
+#2036
+2
+
+HALM=0005=414=Ihr habt ihn bereits amortisiert.
+1
+0
+-1
+-1
+
+#2039
+9
+
+10
+1000
+2000
+3000
+4000
+5000
+6000
+7000
+8000
+9000
+10000
+680
+681
+682
+683
+684
+685
+686
+687
+688
+689
+
+#2042
+1
+Der MÅller ist ein Geizhals. Er wohnt alleine in seiner MÅhle und will nicht gestîrt werden. Wagt nicht, seinem Eigentum etwas anzutun!
+0
+-1
+-1
+
+#2045
+1
+Unser BÅrgermeister ist fett. Er kÅmmert sich nicht um unser aller wohl.
+0
+-1
+-1
+
+#2048
+1
+Auf der Insel herrscht eine lÑstige Ameisenplage. Ob das wohl mit dem milden Winter zu tun haben mag?
+0
+-1
+-1
+
+#2051
+1
+Unser Dorf ist fÅr sein grosses Warenangebot bekannt. Schaut euch ruhig um.
+0
+-1
+-1
+
+#2054
+1
+Auf der Suche nach Werkzeugen? Dann seid ihr in Kanderburgh besser bedient.
+0
+-1
+-1
+
+#2057
+1
+Seid gewarnt: Der TrîdelhÑndler Fridolin zieht seinen Profit zumal aus Hehlerwaren.
+0
+-1
+-1
+
+#2060
+1
+Die GerÅchtekÅche brodelt. Man munkelt, dass in den Bergen eine geheime Zwergensiedlung existieren soll. Woher nehmen die wohl sonst ihre Waren her?
+0
+-1
+-1
+
+#2063
+1
+Von Nerebrod weiss man nicht viel. Bei guten Wetterbedingungen, kann man einen Turm erspÑhen.
+0
+-1
+-1
+
+#2066
+1
+RÅstet euch vor dem Kampf stets mit TrÑnken aus.
+0
+-1
+-1
+
+#2069
+1
+Kobolden ist nicht zu trauen. HÅtet euch vor deren unlauterem GeschwÑtz.
+0
+-1
+-1
+
+#2072
+10
+Tagchen auch. Ersucht ihr um den Rat eines WÅrdentrÑgers?
+320
+5
+Bîse Gestalt im Nebenzimmer?
+Seid ihr der BÅrgermeister?
+Beherrscht ihr den Kopfstand?
+Ich benîtige einen Handelpass.
+Nein danke...
+691
+691
+692
+697
+0
+
+#2075
+1
+FÅr AusswÑrtige ist diese Information tabu und ohnehin von keinem Nutzen.
+0
+-1
+-1
+
+#2078
+10
+FÅr 250 GS werde ich es versuchen. Wollt ihr das Schauspiel geniessen?
+80
+2
+Gerne.
+Nein.
+693
+0
+
+#2081
+11
+
+7
+250
+832
+694
+
+#2084
+1
+Ihr kînnt mich leider nicht bezahlen. Geht weg...
+0
+690
+-1
+
+#2087
+5
+
+7
+250X0
+0
+-696
+-1
+
+#2090
+4
+So, ich denke ihr habt genug Freude gehabt.
+3
+250X25
+0
+690
+177
+
+#2093
+13
+
+GEMéLDE
+1
+699
+698
+
+#2096
+1
+Es bedarf grossen Aufwandes einen neuen und ausserdem gefÑlschten Pass herzustellen. Wenn ihr mir jedoch ein schînes GemÑlde als Gegenleistung beschafft, kommen wir ins GesprÑch.
+0
+690
+-1
+
+#2099
+2
+Wie schîn es ist. Hier nehmt den gefÑlschten Handelpass und seid's zufrieden.
+HANDELSPASS=U000=455=Der BÅrgermeister hat ihn anfertigen lassen.
+1
+0
+690
+-1
+300X30
+
+#2102
+40
+
+demomap.map
+0
+0
+
+#2105
+40
+
+flower1.map
+6
+6
+
+#2108
+40
+
+flower2.map
+6
+6
+
+#2111
+40
+
+flower3.map
+6
+6
+
+#2114
+40
+
+flower4.map
+6
+6
+
+#2117
+40
+
+flower5.map
+6
+6
+
+#2120
+40
+
+flower6.map
+6
+6
+
+#2123
+40
+
+flower7.map
+6
+6
+
+#2126
+40
+
+flower8.map
+6
+6
+
+#2129
+40
+
+flower9.map
+6
+6
+
+#2132
+40
+
+flower10.map
+6
+6
+
+#2135
+40
+
+flower0.map
+6
+6
+
+#2138
+30
+
+200
+20
+0
+-1
+11
+YYXXXYXXXXX
+0
+0
+0
+
+#2141
+4
+In der Schublade findet ihr einige MÅnzen.
+7
+150X50
+0
+184
+887
+
+#2144
+40
+
+fort1.map
+8
+11
+
+#2147
+1
+Ein gewichtig Opfer musst du darlegen, um durch meine FlÅgel zu schreiten.
+0
+-1
+-1
+
+#2150
+10
+Besitzt ihr die StÑrke um hinter dieser TÅr zu bestehen?
+150
+3
+Garantiert.
+Weiss nicht.
+Keinesfalls.
+717
+718
+719
+
+#2153
+25
+Dann sei euch der Weg freigegeben.
+10
+24
+8
+0
+0
+0
+722
+-1
+100X10
+
+#2156
+1
+Soviel ich weiss ist die Unsicherheit keine ritterliche Tugend. Trainiert hart und kehrt dann wieder.
+0
+716
+-1
+
+#2159
+1
+Dann bereitet euch weiter auf die Herausforderung vor.
+0
+716
+-1
+
+#2162
+10
+Besitzt ihr das Geschick um hinter dieser TÅr zu bestehen?
+150
+3
+Garantiert.
+Weiss nicht.
+Keinesfalls.
+721
+723
+724
+
+#2165
+25
+Dann sei euch der Weg freigegeben.
+10
+25
+8
+0
+0
+0
+722
+-1
+100X10
+
+#2168
+1
+Zîgert niemals auf euren Wegen.
+0
+-1
+-1
+
+#2171
+1
+Soviel ich weiss ist die Unsicherheit keine ritterliche Tugend. Trainiert hart und kehrt dann wieder.
+0
+720
+-1
+
+#2174
+1
+Dann bereitet euch weiter auf die Herausforderung vor. Mit eurer Einstellung werdet ihr nicht bestehen.
+0
+720
+-1
+
+#2177
+9
+
+5
+1000
+2000
+3000
+5000
+10000
+726
+727
+728
+729
+730
+
+#2180
+4
+Ihr findet grosse Mengen Gold.
+7
+400X100
+0
+261
+326
+
+#2183
+4
+Ihr findet sehr viel Gold.
+7
+200X10
+0
+261
+326
+
+#2186
+4
+Ihr findet viel Gold.
+7
+100X30
+0
+261
+326
+
+#2189
+4
+Ihr findet Gold.
+7
+80X20
+0
+261
+326
+
+#2192
+4
+Ihr findet wenige GoldstÅcke.
+7
+50X20
+0
+261
+326
+
+#2195
+2
+Ihr findet einen Wikingerhelm.
+NORDMANNSHELM=H006=393=Erstaunlich gut erhalten.
+1
+0
+0
+0
+
+#2198
+23
+
+82
+73
+0
+-1
+-1
+
+#2201
+23
+
+69
+54
+0
+-1
+-1
+
+#2204
+23
+
+97
+65
+0
+-1
+-1
+
+#2207
+23
+
+89
+72
+0
+-1
+-1
+
+#2210
+23
+
+88
+55
+0
+-1
+-1
+
+#2213
+23
+
+93
+68
+0
+-1
+-1
+
+#2216
+23
+
+71
+40
+0
+-1
+-1
+
+#2219
+23
+
+85
+50
+0
+-1
+-1
+
+#2222
+23
+
+82
+48
+0
+-1
+-1
+
+#2225
+23
+
+62
+47
+0
+-1
+-1
+
+#2228
+23
+
+82
+37
+0
+-1
+-1
+
+#2231
+23
+
+90
+42
+0
+-1
+-1
+
+#2234
+23
+
+65
+41
+0
+-1
+-1
+
+#2237
+23
+
+91
+36
+0
+-1
+-1
+
+#2240
+23
+
+71
+57
+0
+-778
+-1
+
+#2243
+23
+
+82
+61
+0
+-1
+-1
+
+#2246
+23
+
+73
+52
+0
+-1
+-1
+
+#2249
+23
+
+94
+58
+0
+-1
+-1
+
+#2252
+23
+
+85
+67
+0
+-1
+-1
+
+#2255
+23
+
+95
+49
+0
+-1
+-1
+
+#2258
+23
+
+97
+53
+0
+-1
+-1
+
+#2261
+23
+
+76
+32
+0
+-1
+-1
+
+#2264
+23
+
+99
+43
+0
+-1
+-1
+
+#2267
+23
+
+76
+41
+0
+-1
+-1
+
+#2270
+23
+
+78
+34
+0
+-1
+-1
+
+#2273
+23
+
+92
+39
+0
+-1
+-1
+
+#2276
+23
+
+81
+45
+0
+-1
+-1
+
+#2279
+23
+
+94
+29
+0
+-1
+-1
+
+#2282
+23
+
+96
+37
+0
+-1
+-1
+
+#2285
+23
+
+98
+71
+0
+-1
+-1
+
+#2288
+23
+
+90
+30
+0
+-1
+-1
+
+#2291
+23
+
+82
+55
+0
+-1
+-1
+
+#2294
+23
+
+98
+77
+0
+-1
+-1
+
+#2297
+23
+
+87
+62
+0
+-1
+-1
+
+#2300
+23
+
+67
+41
+0
+-1
+-1
+
+#2303
+23
+
+81
+41
+0
+-1
+-1
+
+#2306
+23
+
+69
+45
+0
+-1
+-1
+
+#2309
+23
+
+90
+62
+0
+-1
+-1
+
+#2312
+23
+
+78
+47
+0
+-1
+-1
+
+#2315
+23
+
+95
+24
+0
+-1
+-1
+
+#2318
+23
+
+81
+30
+0
+-1
+-1
+
+#2321
+23
+
+91
+45
+0
+-1
+-1
+
+#2324
+23
+
+96
+74
+0
+-1
+-1
+
+#2327
+23
+
+92
+76
+0
+-1
+-1
+
+#2330
+23
+
+79
+67
+0
+-1
+-1
+
+#2333
+1
+Das Portal ist nicht aktiviert.
+0
+-1
+-1
+
+#2336
+25
+
+71
+57
+32
+-779
+-1388
+0
+-1
+-1
+
+#2339
+23
+
+54
+36
+0
+-1
+-1
+
+#2342
+1
+Die TÅre ist verschlossen.
+0
+-1
+-1
+
+#2345
+3
+
+ZWERGENPAROLE
+1
+0
+0
+0
+
+#2348
+16
+Ich verkaufe euch Kîder zu einem guten Preis, damit ihr sie nicht selbst beschaffen mÅsst.
+3
+KôDER=0001=430=Viele Fische(r) werden euch beneiden.
+KôDER=0001=430=Viele Fische(r) werden euch beneiden.
+KôDER=0001=430=Viele Fische(r) werden euch beneiden.
+10
+10
+10
+
+#2351
+16
+Waffen aus Swergenstahl haben die beste GualitÑt.
+5
+DRACHENSCHWERT=W015=361=Mit Drachenblut gehÑrtet.
+TITANENAXT=W017=357=Aus der Schmiede der Titanen.
+SINUSKLINGE=W022=369=Eineindeutig prÑzis.
+EISEN DER UROGS=W024=366=Schreit nach Blut.
+MAGIESCHWAXT=W026=367=Eine undefinierbare Mischung...
+2400
+3100
+5200
+6500
+7300
+
+#2354
+15
+Mein Name ist Thilo. Ich kaufe euch alljene GegenstÑnde ab, deren ihr ÅberdrÅssig geworden seid.
+0
+0
+C
+E
+F
+2
+
+#2357
+2
+...nehmt diesen goldenen SchlÅssel als Dankeschîn.
+GöLDENER SCHLöSSEL=U000=336=Aus edelstem Metall gefertigt.
+1
+0
+0
+0
+
+#2360
+45
+
+30
+787
+
+#2363
+46
+
+30
+62
+
+#2366
+1
+Die Sichel ist schartig geworden. Ihr verkauft sie besser wieder.
+0
+-1
+-1
+
+#2369
+1
+Hebt euch von Dannen.
+0
+-1
+-1
+
+#2372
+12
+
+GöLDENER SCHLöSSEL
+1
+791
+0
+
+#2375
+3
+Das Klerikerband lîst sich in Luft auf. Scheinbar benîtigt ihr es nicht mehr.
+KLERIKERBAND
+1
+0
+-793
+-1
+
+#2378
+2
+Eine Sichel liegt in der Truhe. Ihr nehmt sie an euch.
+SICHEL=U800=351=Eine Sichel.
+1
+0
+261
+326
+
+#2381
+25
+
+41
+9
+4
+-794
+-1388
+0
+-1
+-1
+
+#2384
+40
+Ihr findet euch auf dem Friedhof wieder.
+chapel.map
+0
+0
+795
+
+#2387
+25
+
+17
+28
+1
+-796
+-1388
+0
+-1
+-1
+
+#2390
+40
+Ihr seid zurÅck in der Stadt.
+stadt1.map
+0
+0
+
+#2393
+20
+Ihr nehmt euch die Giftspinnen vor.
+18
+17
+10
+70 X7
+35X2
+212
+3
+GIFTSPINNE
+Eine haarige, hÑssliche und zudem giftige Spinne.
+30X2
+GIFTBEIN=0002=440=Frisch.
+fight2.map
+0
+
+#2396
+20
+Ihr knîpft euch die riesige Giftspinne vor.
+18
+17
+10
+70X7
+35X2
+211
+3
+GIFTMUTTERTIER
+Ein haariges, hÑssliches und zudem giftiges Muttertier.
+30X2
+GIFTBEIN=0002=440=Frisch.
+fight2.map
+0
+
+#2402
+24
+
+48
+-48
+802
+801
+
+#2405
+1
+Die Sichel hier zu benÅtzen grenzt an Wahnsinn!
+0
+-1
+-1
+
+#2408
+25
+Als ihr einen Halm abschneidet, tritt der MÅller laut schnaubend aus SEINER MÅhle.
+40
+43
+7
+806
+160
+0
+-803
+0
+
+#2411
+2
+
+HALM=U670=414=Ein Strohhalm... Ihr behaltet ihn als TrophÑe. Mîge er euch GlÅck bescheren.
+1
+0
+-804
+-1
+
+#2414
+3
+
+SICHEL
+1
+0
+-805
+0
+
+#2417
+2
+
+SICHEL=0050=351=Eine Sichel.
+1
+1
+0
+0
+
+#2420
+12
+
+ZAHNRAD
+1
+823
+807
+
+#2423
+10
+Was fÑllt euch ein? Seid ihr von Sinnen?
+320
+6
+Nein. Hm zwar...
+Eeeeehm...
+Ich will Mehl!
+Probleme?
+Knecht gefÑllig?
+Wollte nicht stîren...
+808
+808
+813
+814
+821
+822
+
+#2426
+10
+Frechheit! Erst die Ernte ruinieren, dann noch aufsÑssig tun. Das kann ich nicht akzeptieren. Ihr solltet euch mal den MÅller-Knigge zu GemÅte fÅhren... Das war wirklich starker Tobak!
+320
+3
+Starker Tobak?
+Wollt ihr welchen?
+(Nichts sagen)
+809
+811
+810
+
+#2429
+1
+Schwer von Begriff, was?
+0
+806
+-1
+
+#2432
+1
+Hats dir etwa die Sprache verschlagen?
+0
+806
+-1
+
+#2435
+13
+
+STARKER TOBAK
+1
+812
+0
+
+#2438
+1
+Du weisst mich zu besÑnftigen. Ich bin dir nicht mehr bîse.
+0
+829
+-1
+200X50
+
+#2441
+1
+Ich geb dir gleich Mehl du Schmarotzer!
+0
+-35101
+-1
+
+#2444
+10
+In der Tat. Die MÅhle dreht ja nicht mehr. Ein Zahnrad des Getriebes ist zerbrochen und es bedarf einer Schreinerhand um es wieder zusammenzuflicken.
+200
+3
+Wie kann ich helfen?
+Dein Problem...
+Komme spÑter wieder.
+817
+815
+816
+
+#2447
+1
+
+0
+-35101
+-1
+
+#2450
+1
+
+0
+806
+-1
+
+#2453
+12
+
+DEFEKTES ZAHNRAD
+
+820
+818
+
+#2456
+2
+
+DEFEKTES ZAHNRAD=U000=413=BeschÑdigt.
+1
+0
+-819
+-1
+
+#2459
+25
+
+7
+23
+1
+284
+161
+0
+-820
+-1
+
+#2462
+1
+Besorge mir ein neues hîlzernes Zahnrad.
+0
+806
+-1
+
+#2465
+1
+Einen Knecht brauche ich nicht. Aber du kînntest mir einen Dienst erweisen.
+0
+-814
+-1
+
+#2468
+1
+Dann geh!
+0
+806
+-1
+
+#2471
+10
+Gibst du mir dein Zahnrad?
+80
+2
+Ja
+Nein
+824
+815
+
+#2474
+3
+Danke.
+ZAHNRAD
+1
+0
+-825
+-1
+
+#2477
+25
+
+40
+40
+1
+0
+1296
+0
+-826
+-1
+
+#2480
+25
+
+40
+41
+1
+0
+1304
+0
+-827
+-1
+
+#2483
+25
+
+41
+40
+1
+0
+1300
+0
+-828
+-1
+
+#2486
+25
+
+41
+41
+1
+0
+1308
+0
+829
+-1
+
+#2489
+10
+Was willst du denn noch?
+200
+2
+Gegenleistung?
+Nichts.
+830
+0
+
+#2492
+2
+Hier hast du etwas........ nÅtzliches...
+MöLLERSTEIN=U000=386=Sieht Ñusserts nutzlos aus.
+1
+0
+831
+-1
+
+#2495
+1
+Du solltest zufrieden sein. Ich beschere nicht jeden so reichlich wie dich.
+0
+-1
+-1
+
+#2498
+1
+Los geht's.
+0
+695
+225
+
+#2501
+10
+Hallo. Endlich befreit mich jemand aus diesm dunklen Verlies. Ich bin euch unendlich dankbar. Bisher wurde ich von dem bîsen Zauberer Arthur gefangengehalten. Mit Hilfe eines naiven Helden vermochte er seinem Kerker zu entrinnen und plant nun neue Schandtaten.
+250
+4
+Wer seid ihr?
+Der andere Zauberer?
+Naiver Held?
+Ich habe genug gehîrt.
+834
+835
+836
+0
+
+#2504
+1
+Ich bin nur ein unbedeutender ZauberkÅnstler.
+0
+-1
+-1
+
+#2507
+1
+Dieser bîse, bîse Magier lÑsst nicht mit sich spassen... Nehmt euch vor ihm in Acht.
+0
+-1
+-1
+
+#2510
+10
+Arthur wurde seit Jahrhunderten in einem Kerker des dunkelsten Verlieses auf Irdeni gefangen gehalten. Zahlreiche dressierte Kreaturen sollten verhindern, dass dem Magier die Flucht gelÑnge.
+250
+2
+ErzÑhlt weiter...
+Ich will nichts mehr hîren.
+837
+0
+
+#2513
+10
+Der beschrankteste Held in der Geschichte Irdenis besiegte den toten Kopf und befreite den fÅrchterlichen Magier. Gleich darauf verbannte Arthur mich hierher.
+250
+3
+Warum wurdet ihr verbannt?
+Wie sieht Arthur aus?
+Ich will nichts wissen.
+838
+839
+0
+
+#2516
+10
+Eeeehmmm... Weil.... weil ich seine Existenz bedrohte... Er trat oft auf Geburtstagspartys von Kindern auf, um sie mit Zaubertricks zu beeindrucken. Ich machte ihm dieses Gewerbe streitig. Er war sich keine Konkurrenz gewohnt.
+320
+5
+Deshalb schmort ihr hier unten?
+Ihr erleidet ein schweres Schicksal.
+Zaubert ihr mir einen Hasen herbei?
+Ich will einen Kartentrick sehen.
+Ich hau ab.
+840
+840
+841
+841
+0
+
+#2519
+1
+Dieser mÑchtige Magier kann sich in beliebige Gestalten verwandeln. Er ist zu allem fÑhig.
+0
+-1
+-1
+
+#2522
+1
+Ganz recht.
+0
+-1
+-1
+
+#2525
+1
+UnwÅrdiger!!! Der mÑchtige Arthur gibt sich nicht mit solchen Spielereien ab! So tretet mir noch einmal gegenÅber und ihr werdet klÑglich unterliegen.
+0
+842
+1404
+
+#2528
+25
+
+7
+7
+85
+99901
+1407
+0
+-843
+-1
+
+#2531
+25
+
+9
+7
+85
+855
+1405
+0
+-844
+-1
+
+#2534
+25
+
+8
+8
+85
+855
+1406
+0
+845
+-1
+
+#2537
+1
+Nun gibt's kein ZurÅck.
+0
+99901
+-1
+
+#2540
+25
+
+8
+6
+85
+0
+0
+0
+-847
+-1
+
+#2543
+25
+
+9
+7
+85
+0
+0
+0
+-848
+-1
+
+#2546
+25
+
+7
+7
+85
+0
+0
+0
+-849
+-1
+
+#2549
+25
+
+8
+8
+85
+0
+0
+0
+-853
+0
+
+#2552
+40
+Ihr beschliesst, euch vorerst noch auf der Oberwelt herumzutreiben.
+demomap.map
+26
+26
+
+#2555
+50
+
+#2558
+40
+
+darkmap.map
+0
+0
+
+#2561
+25
+
+8
+10
+85
+854
+217
+0
+0
+0
+
+#2564
+30
+Das hast du sehr gut gemacht, mein Junge. Ich gratuliere. Du hast Irdeni vor seinem bevorstehenden Schicksal gerettet. Ach Åbrigens... Stulz lÑsst dich grÅssen. Machs gut und lebe wohl.
+217
+20
+0
+1
+5
+YYYYY
+0
+-858
+-1
+
+#2567
+1
+Nur ein Trugbild.
+0
+0
+0
+
+#2570
+9
+
+4
+2500
+5000
+7500
+10000
+857
+868
+869
+870
+
+#2573
+1
+BééééééH!
+0
+-1
+-1
+
+#2576
+28
+
+50
+900
+
+#2585
+6
+
+#2588
+7
+Ihr schreibt einen Eintrag ins Tagebuch.
+Ich muss Otto von Kanderburgh, den Freund meines Vaters aufsuchen. Er hilft mir weiter.
+0
+-353
+-1
+
+#2591
+7
+Ihr schreibt einen Eintrag ins Tagebuch.
+Ich muss einen Weg in die Zwergenstadt finden. Vielleicht hilft mir der Zwergenmeister weiter.
+0
+-106
+-1
+
+#2594
+7
+Ihr schreibt einen Eintrag ins Tagebuch.
+Ich habe von einem Magier gehîrt, der in einer Hîhle gefangen sein soll. Ich sollte dieses GemÑuer finden.
+0
+-339
+-1
+
+#2597
+7
+
+Ihr habt euch keine Notizen mehr gemacht.
+0
+-437
+-1
+
+#2600
+20
+Ihr knîpft euch die Winzlinge vor.
+11
+9
+7
+25X2
+30X3
+175
+3
+GOBO
+Dieser Goblin ist euch zuwider.
+25X5
+GOBLINAXT=0004=465=Der Besitzer hÑngt noch immer an seiner Axt.
+fight3.map
+0
+
+#2603
+40
+Ihr seid geblendet.
+lichtung.map
+0
+0
+
+#2606
+1
+Mé.
+0
+-1
+-1
+
+#2609
+1
+BéWAA...
+0
+-1
+-1
+
+#2612
+1
+Mé. WAAA!
+0
+-1
+-1
+
+
+
+
+
+#2702
+45
+
+30
+901
+
+#2705
+40
+
+heimap.map
+7
+8
+902
+
+#2708
+46
+
+30
+903
+
+#2711
+28
+
+50
+904
+
+#2714
+30
+Ach Vater, Ich hÑtte dir noch so Manches zu sagen gehabt... Viele Abenteuer hÑtten wir noch zusammen bestreiten kînnen. Aber auch ohne dich...
+160
+20
+8
+2
+12
+xxxxxxxxxxyy
+0
+-905
+0
+
+#2717
+25
+Endlich kann euer Vater in Frieden ruhen. Ihr habt den dunklen Schatten von seinem Antliz verbannt. Kommt, lasst uns ihn vergraben.
+5
+8
+8
+0
+160
+0
+-906
+0
+
+#2720
+45
+
+30
+907
+
+#2723
+46
+
+10
+908
+
+#2726
+30
+
+195
+20
+7
+2
+8
+xxxxxxxx
+0
+-909
+0
+
+#2729
+25
+Was geht denn hier ab? Soll das denn schon das Ende sein? Das ist doch wohl nicht euer Ernst?!? Diesen Schluss kînnt ihr den Spielern nicht antun!...
+6
+10
+8
+0
+195
+0
+-910
+0
+
+#2732
+45
+OH DOCH!!!.... UND OB!!!
+30
+911
+
+#2735
+28
+
+50
+912
+
+#2738
+99
+
+#2741
+10
+...
+200
+4
+Was starrst'de blîd???
+Dîdl!
+Willste Zoff?
+Scheiss Statue.
+0
+0
+914
+0
+
+#2744
+10
+...murmel...
+200
+3
+F*** YOU!
+Genug der Blîdelei.
+Langweiler
+915
+0
+0
+
+#2747
+51
+Die Statue fackelt nicht lange und beugt sich vor... Ein Schauern Åberkommt euch.
+7
+0
+0
+-1
+
+
+#2750
+1
+Was wollen sie den? Informierensiesich doch selber? Sehense, ich bin beschÑftigt!
+0
+-1
+-1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#2996
+1
+Erfahr.
+0
+-1
+-1
+999 X0
+
+
+#2999
+20
+
+90
+100
+90
+0X0
+0X0
+1404
+0
+ARTHUR
+Der mÑchtige Magier, welcher Irdeni seit Jahren in Atem hÑlt.
+120X0
+
+fight9.map
+0
+846
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#3002
+9
+
+8
+100
+300
+600
+1000
+1500
+2000
+2500
+10000
+1007
+1006
+1005
+1004
+1003
+1002
+1001
+0
+
+#3005
+2
+Ihr findet einige Edelsteine.
+EDELSTEIN=0020=462=Seltene Steine niedriger Werte.
+3
+0
+-1
+-1
+
+#3008
+2
+Ihr findet viele Edelsteine.
+EDELSTEIN=0020=377=Ein seltener Stein mittleren Werts.
+5
+0
+-1
+-1
+
+#3011
+2
+Ihr findet einen Heiltrunk.
+HEILTRUNK=C020=450=Heilt zwanzig Lebenspunkte.
+1
+0
+-1
+-1
+
+#3014
+2
+Ihr findet einen Heiltrunk.
+HEILTRUNK=C020=450=Heilt zwanzig Lebenspunkte.
+1
+0
+-1
+-1
+
+#3017
+2
+Ihr findet einen starken Heiltrunk.
+GOTTES TRUNK=C050=453=Spendet seinem Konsumenten fÅnfzig LP's.
+1
+0
+-1
+-1
+
+#3020
+2
+Ihr findet einen merkwÅrdigen Trunk.
+TEUFELSBRöHE=C100=453=Saft aus dem Sumpfe Belzebub.
+1
+0
+-1
+-1
+
+#3023
+2
+Ihr findet eine Masse von HeiltrÅnken.
+HEILTRUNK=C020=450=Heilt zwanzig Lebenspunkte.
+4
+0
+-1
+-1
+

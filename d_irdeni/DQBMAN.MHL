@@ -1,0 +1,321 @@
+(0)
+õLibrary Manager Online Help ÄÄÄÄ-
+õ
+õProgram environment ÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õThe interface of this program is mainly made up of two windows: the modules
+selection window and the module description one; by pressing TAB you can
+switch between these two windows at any time. Let's see their purpose.
+õ
+õş Modules selection: this window allows you to select which modules to
+include into your custom copy of the DirectQB library. Modules that are
+currently installed into the library are marked with "Installed", otherwise
+with "Not installed". By default, installed modules are automatically
+selected; selected modules are highlighed in white, and they'll be linked
+together to create DirectQB when you choose to build it. Press SPACE to
+select/deselect a module, and ENTER to build the library when you're done.
+õ
+õş Module description: while you select a module into the previous window,
+its description will be shown into this one. When you're working on this
+window, you can use the cursor keys to scroll up and down its contents.
+õ
+õUsing the Library Manager ÄÄÄÄÄÄ-
+õ
+õOnce you've finished selecting the modules for your custom DQB copy, you can
+press ENTER to build the library. On the first time you build DQB, the program
+will ask you the full path of your working copy of QuickBasic 4.5; enter it,
+or press ESC to abort. Now a summary of the operations will appear, and again
+you'll be able to press ESC to abort, or ENTER to continue. Congratulations!
+If all goes well, at this time the program will begin creating the following
+files:
+õ
+õ- DQB.LIB
+õ- DQB.QLB
+õ- DIRECTQB.BI
+õ- CALLS.BAS
+õ- CALLS.OBJ
+õ
+õThe first three files are what you need to run DQB under QuickBasic; please
+refer to the DIRECTQB.DOC file for details on how to use them. CALLS.BAS and
+CALLS.OBJ are temporary files and you can delete them if you wish. Once the
+building process ends, a log file will appear on the screen, showing you
+possible compilation erros, as well as all the hidden shell operations that
+the library manager has done to build DirectQB. You can check this log file at
+any time: it's named INSTALL.LOG. At this time you can press ENTER to exit to
+DOS, or ESC to come back to the modules selection.
+õ
+õKeys summary ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õ<F1> shows this help page
+õ<ESC> aborts operations or quits
+õ<ENTER> builds the library
+õ<TAB> selects window
+õ<cursor keys> move module selection bar (under left window) or scrolls module
+description (under right window)
+õ<SPACE> selects/deselects modules (works only under left window)
+~
+(1)
+õMAIN.OBJ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õThis is the main library module; it contains initialization code, several
+general purpose functions (including layers handling and high precision
+timer), all the global variables, plus all the internal library procedures.
+For this reasons, this module must be always added into your own custom DQB
+release, and it cannot be removed.
+õ
+õNotes ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õThe DQB high precision timer may be incompatible with other libraries or TSR
+programs using advanced timing routines, such as SBMIDI. DirectQB does not
+install it automatically at startup, but it's installed the first time you
+call DQBsetFrameRate. If you never call this function, you should never have
+any problems.
+õ
+õFunctions list: ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+õ
+õDQBinit, DQBver, DQBmapLayer, DQBclose, DQBinitVGA, DQBinitText,
+DQBsetBaseLayer, DQBcopyLayer, DQBclearLayer, DQBwait, DQBsetFrameRate,
+DQBframeReady, DQBsort, DQBangle, DQBerror$, DQBid$, DQBpeek, DQBpoke
+~
+(2)
+õDRAW.OBJ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õAdds primitives support to DirectQB. This includes point, line, ellipse, box,
+full box, paint and more; there's also basic support for sprite handling and
+scrolling.
+õ
+õNotes ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õFor extra sprite handling routines, you should also include the SPRITES.OBJ
+module.
+õ
+õFunctions list: ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+õ
+õDQBcopyTransLayer, DQBcopyHitLayer, DQBpset, DQBpoint, DQBline, DQBgline,
+DQBellipse, DQBbox, DQBboxf, DQBpaint, DQBscroll, DQBscrollArea,
+DQBsetTransPut, DQBsetSolidPut, DQBget, DQBput
+~
+(3)
+õIMAGE.OBJ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õThis module contains functions to load/save images in several common formats;
+if you plan to use BMP, PCX or BSAVEd images, add it to your DQB release. It
+also contains a FLI animations player.
+õ
+õNotes ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õThe FLI player supports only FLI and not FLC files.
+õ
+õFunctions list: ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+õ
+õDQBloadImage, DQBsaveImage, DQBplayFLI, DQBopenFLI, DQBplayFLIstep,
+DQBcloseFLI
+~
+(4)
+õSPRITE.OBJ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õIf you're searching for special sprites handling routines, this module is
+made for you. Adds selectable clipping box, sprite scaling, roto-zooming,
+supports fliped sprites, allows you to draw them directly from EMS, and it
+has optimized routines to draw your sprites very quickly. It also includes
+an useful pixel-perfect collision detection routine...
+õ
+õNotes ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õYou can also use this module without including DRAW.OBJ, but this is not
+recommended.
+õ
+õFunctions list: ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+õ
+õDQBsize, DQBsetClipBox, DQBsPut, DQBrPut, DQBfPut, DQBxPut, DQBmPut, DQBhPut,
+DQBtPut, DQBpPut, DQBputOver, DQBcollide, DQBcollideOnLayer,
+DQBsetCollideMethod
+~
+(5)
+õBIT.OBJ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õAdds some useful bit handling routines, so you can easily read, set, reset,
+shift or toggle single bits from any variable.
+õ
+õNotes ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õUseful for low-level programming, and to creare boolean-like variable types.
+õ
+õFunctions list: ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+õ
+õDQBsetBit, DQBresetBit, DQBreadBit, DQBtoggleBit, DQBshiftLeft, DQBshiftRight
+~
+(6)
+õPALETTE.OBJ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õPalette handling routines are stored into this module. It includes single
+color customization routines, as well as palette fading plus some extra
+features.
+õ
+õNotes ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õnone
+õ
+õFunctions list: ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+õ
+õDQBsetCol, DQBgetCol, DQBfindCol, DQBfindPalCol, DQBsetPal, DQBgetPal,
+DQBfadeIn, DQBfadeStepIn, DQBfadeTo, DQBfadeStepTo, DQBpalOff, DQBpalRotate
+~
+(7)
+õFONT.OBJ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õThis module contains fast routines to print text onto your layers, with a
+lot of special effects. Includes support for non-fixed sized, transparent
+fonts, styles (including bold, italic and underlined), blended and textured
+text.
+õ
+õNotes ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õYou can easily create fonts for DirectQB by using the DQBTools program.
+õ
+õFunctions list: ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+õ
+õDQBprint, DQBprints, DQBlen, DQBsetBIOSfont, DQBsetFont, DQBsetTextBackCol,
+DQBsetTextStyle, DQBloadFont, DQBsetTextSpacing, DQBsetFontTexture,
+DQBsetTextBMap
+~
+(8)
+õDISK.OBJ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õAdds directory and general disk handling capabilities to DirectQB; among
+other things, it includes an useful function to retrieve directory entries.
+õ
+õNotes ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õDirectory handling routines support Windows long filenames.
+õ
+õFunctions list: ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+õ
+õDQBdir$, DQBdrive$, DQBpath$, DQBnumDrives, DQBsetDrive$, DQBchDir
+~
+(9)
+õBLENDING.OBJ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õColor blending support module. Color blending is a technique that can be used
+to achieve translucency and generally almost every colors based special effect.
+õ
+õNotes ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õThis module is required if you plan to use the several DQB functions that
+allow color blending, otherwise you'll obtain no results by calling them.
+õ
+õFunctions list: ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+õ
+õDQBfilterBox, DQBbPut, DQBcreateBMap, DQBsetBMap, DQBgetBMap,
+DQBcopyBlendLayer, DQBloadBMap, DQBsaveBMap, DQBremoveBMap
+~
+(10)
+õKEYBOARD.OBJ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õAs the name says, this module adds keyboard input support to your copy of
+DirectQB. It contains a custom keyboard handler, that allows you to detect
+multiple keypresses, plus several replacements for the standard QB keyboard
+input routines, all using this new handler.
+õ
+õNotes ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õThe keyboard handler can be activated or deactivated at program runtime.
+While it's active, you should never use the standard QB routines that use the
+BIOS as INPUT, INKEY$ and so on.
+õ
+õFunctions list: ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+õ
+õDQBinstallKeyboard, DQBremoveKeyboard, DQBkey, DQBreadKey, DQBwaitKey,
+DQBasc, DQBinkey$
+~
+(11)
+õJOYSTICK.OBJ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õTired of the slow and generally inefficient old joystick routines of QB? This
+module holds fast routines to handle your joysticks, with support for joypads
+(2 or 4 buttons) as well as for analog joysticks.
+õ
+õNotes ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õnone
+õ
+õFunctions list: ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+õ
+õDQBjoyDetected, DQBpollJoy, DQBjoyX, DQBjoyY, DQBjoyMove, DQBjoyFire,
+DQBresetJoy, DQBsetJoySens
+~
+(12)
+õMOUSE.OBJ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õThe mouse module will satisfy all your wishes about mouse handling: among the
+usual routines to know the exact position and buttons status, it includes
+customizable mouse range, shape and speed. And the mouse status is
+automatically updated without the need to call any refreshing function.
+õ
+õNotes ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õYou can use the DQBTools program to create you own mouse cursor shapes.
+õ
+õFunctions list: ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+õ
+õDQBmouseDetected, DQBmouseX, DQBmouseY, DQBmouseLB, DQBmouseRB,
+DQBsetMousePos, DQBmouseShow, DQBmouseHide, DQBsetMouseRange,
+DQBsetMouseShape, DQBsetMouseSpeed, DQBresetMouse
+~
+(13)
+õSOUND.OBJ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õThis module adds sound capabilities to your DQB programs. The advanced sound
+engine contained within this module is capable to handle up to 32 sounds
+simultaneously playing, with different frequencies and volumes. All the sounds
+are stored and played from EMS, so you also save extra memory for your
+program.
+õ
+õNotes ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õThe sound engine hooks the soundcard IRQ and uses DMA transfers to play a
+continuous sound stream. This may slow down a little your programs on very
+old machines, such as 386s, and it also depends on the number of voices
+activated at the same time. If you plan to use an external sound library such
+as BWSB, do not include this module.
+õ
+õFunctions list: ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+õ
+õDQBinstallSB, DQBloadSound, DQBloadRawSound, DQBplaySound, DQBinUse,
+DQBpauseSound, DQBresumeSound, DQBstopVoice, DQBsetVoiceVol, DQBremoveSB,
+DQBsetVolume
+~
+(14)
+õ3D.OBJ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õVery fast triangle drawing functions for 3D programming: includes support for
+flat and gouraud shading, as well as for affine texture mapping. All of these
+functions also support color blending.
+õ
+õNotes ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õnone
+õ
+õFunctions list: ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+õ
+õDQBtri, DQBgtri, DQBttri, DQBbtri, DQBbgtri, DQBbttri, DQBfttri,
+DQBsetTextureSize
+~
+(15)
+õDATAFILE.OBJ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õDatafile functions allow you to decode data from your datafiles created with
+the DQB Datafile Encoder program (DQBENC).
+õ
+õNotes ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-
+õ
+õnone
+õ
+õFunctions list: ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+õ
+õDQBopenDataFile, DQBunpackImage, DQBunpackSprite, DQBunpackSound,
+DQBunpackPalette, DQBunpackBMap, DQBunpackFont, DQBunpackCursor, DQBunpackUser,
+DQBcloseDataFile
+~
+
+

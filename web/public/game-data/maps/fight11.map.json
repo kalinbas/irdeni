@@ -1,0 +1,149 @@
+{
+  "name": "fight11.map",
+  "originalName": "FIGHT11.MAP",
+  "width": 5,
+  "height": 5,
+  "start": {
+    "x": 0,
+    "y": 0
+  },
+  "outsideTile": 0,
+  "source": "map",
+  "rows": [
+    [
+      {
+        "terrain": -7,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -7,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -7,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -7,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -7,
+        "event": 0,
+        "object": 0
+      }
+    ],
+    [
+      {
+        "terrain": -7,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 7,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 7,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 7,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -7,
+        "event": 0,
+        "object": 0
+      }
+    ],
+    [
+      {
+        "terrain": -7,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 7,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 7,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 7,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -7,
+        "event": 0,
+        "object": 0
+      }
+    ],
+    [
+      {
+        "terrain": -1,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 1,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 1,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": 7,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -7,
+        "event": 0,
+        "object": 0
+      }
+    ],
+    [
+      {
+        "terrain": -1,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -1,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -1,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -7,
+        "event": 0,
+        "object": 0
+      },
+      {
+        "terrain": -7,
+        "event": 0,
+        "object": 0
+      }
+    ]
+  ]
+}

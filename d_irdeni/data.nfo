@@ -1,0 +1,21 @@
+OUTFILE = data.sba
+INCLUDEFILE = data.sbx
+IMAGE: sprites1 = sprites1.bmp
+IMAGE: sprites2 = sprites2.bmp
+IMAGE: sprites3 = sprites3.bmp
+IMAGE: sprites4 = sprites4.bmp
+IMAGE: sprites5 = sprites5.bmp
+IMAGE: sprites6 = sprites6.bmp
+IMAGE: sprites7 = leer.bmp
+IMAGE: sprites8 = leer.bmp
+IMAGE: sprites9 = anisprit.bmp
+IMAGE: anim = anim.bmp
+IMAGE: rahmen = rahmen.bmp
+IMAGE: logo = logo.bmp
+IMAGE: logo2 = logo2.bmp
+IMAGE: tode = todessch.bmp
+IMAGE: haupt = hinger3.bmp
+PALETTE: palet = logo.bmp
+FONT: irdeni = irdeni.fnt
+
+

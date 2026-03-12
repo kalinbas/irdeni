@@ -1,0 +1,4 @@
+OUTFILE = graphics.bin
+INCLUDEFILE = graphics.bi
+IMAGE: logo = logo.bmp
+
