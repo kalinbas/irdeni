@@ -1842,8 +1842,13 @@
 
 @media (max-width: 900px) and (orientation: landscape) {
   .app-shell {
+    overflow: hidden;
     padding-top: calc(0.75rem + env(safe-area-inset-top));
     padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
+  }
+
+  .experience-grid {
+    width: 100%;
   }
 
   .hero-copy h1 {
@@ -1851,21 +1856,55 @@
     font-size: clamp(1.7rem, 4vw, 2.6rem);
   }
 
-  .viewport-panel {
-    padding: 0.75rem;
-  }
-
-  .viewport-frame {
+  .viewport-panel.play-mode {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) clamp(10rem, 28vw, 12rem);
+    align-items: stretch;
+    gap: 0.55rem;
     padding: 0.55rem;
   }
 
-  .game-stage {
-    width: min(100%, calc((100dvh - 9.5rem) * 1.6));
+  .viewport-panel.play-mode .viewport-frame {
+    min-height: 0;
+    height: 100%;
+    padding: 0.45rem;
+  }
+
+  .viewport-panel.play-mode .game-stage {
+    width: min(100%, calc((100dvh - 4.75rem) * 1.6));
   }
 
   .title-art-panel {
     min-height: auto;
     padding: 1rem;
+  }
+
+  .mobile-controls {
+    align-self: stretch;
+    margin-top: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.5rem;
+    min-height: 0;
+  }
+
+  .mobile-dpad,
+  .mobile-utility-grid {
+    min-height: 0;
+  }
+
+  .mobile-control-button {
+    min-height: clamp(2.5rem, 12.5dvh, 3.05rem);
+    padding: 0.45rem 0.55rem;
+  }
+
+  .mobile-direction-button {
+    font-size: 1.1rem;
+  }
+
+  .mobile-action-button,
+  .mobile-utility-button {
+    font-size: 0.78rem;
   }
 }
 
