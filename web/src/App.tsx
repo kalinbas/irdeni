@@ -1,5 +1,6 @@
 import { useEffect, useEffectEvent, useRef, useState, type CSSProperties } from 'react'
 import './App.css'
+import { getCurrentLanguage, getDocumentLanguage, getEventFileName, getUiText, readLanguageFromSearch } from './i18n'
 
 const CANVAS_WIDTH = 320
 const CANVAS_HEIGHT = 200
@@ -34,40 +35,7 @@ const TILE_SHEET_FILES = [
   'anim.bmp',
 ]
 
-const AVATAR_OPTIONS = [
-  { id: 1, name: 'Bauer' },
-  { id: 2, name: 'Elf' },
-  { id: 3, name: 'Samurai' },
-  { id: 4, name: 'Magier' },
-  { id: 5, name: 'Bodybuilder' },
-  { id: 6, name: 'Mendeler' },
-]
-
-const EQUIPMENT_LABELS = [
-  { slot: 21, label: 'Helm' },
-  { slot: 22, label: 'Waffe' },
-  { slot: 23, label: 'Rüstung' },
-  { slot: 24, label: 'Schild' },
-  { slot: 25, label: 'Stiefel' },
-]
-
-const CREDIT_LINES = [
-  'Dead Head Studios',
-  'Base programming: Bastian Kälin',
-  'Graphical design: Bastian Kälin & Simon Junker',
-  'Level design: Simon Junker',
-  'Story: Bastian Kälin & Simon Junker',
-  'Event programming: Bastian Kälin & Simon Junker',
-  'Graphics: Simon Junker',
-  'Game test: Bastian Kälin & Simon Junker',
-  'Special thanks to the original team and testers.',
-]
-
 type SaveSlotId = 'quicksave'
-
-const SAVE_SLOT_DEFINITIONS: Array<{ id: SaveSlotId; label: string; emptyText: string }> = [
-  { id: 'quicksave', label: 'Spielstand', emptyText: 'Noch kein Spielstand vorhanden.' },
-]
 
 type Direction = 'up' | 'down' | 'left' | 'right'
 
@@ -76,6 +44,11 @@ const DIRECTION_CONFIG: Record<Direction, { dx: number; dy: number; facing: numb
   down: { dx: 0, dy: 1, facing: 1, label: 'South' },
   left: { dx: -1, dy: 0, facing: 2, label: 'West' },
   right: { dx: 1, dy: 0, facing: 3, label: 'East' },
+}
+
+function getSaveSlotDefinitions() {
+  const ui = getUiText(getCurrentLanguage())
+  return ui.saveSlots.map((slot) => ({ ...slot })) as Array<{ id: SaveSlotId; label: string; emptyText: string }>
 }
 
 type ViewportState = {
@@ -414,7 +387,7 @@ function cloneInventory(inventory: Array<InventorySlot | null>) {
 }
 
 function createEmptySaveSummaries(): SaveSlotSummary[] {
-  return SAVE_SLOT_DEFINITIONS.map((slot) => ({
+  return getSaveSlotDefinitions().map((slot) => ({
     id: slot.id,
     label: slot.label,
     emptyText: slot.emptyText,
@@ -452,6 +425,7 @@ function createRuntimeSnapshot(runtime: Runtime): RuntimeSnapshot {
 }
 
 function restoreRuntime(content: LoadedContent, snapshot: RuntimeSnapshot): Runtime {
+  const ui = getUiText(getCurrentLanguage())
   const restoredMaps = cloneMapRecord(content.mapsByName)
   const savedMaps = snapshot.maps ?? {}
 
@@ -500,7 +474,7 @@ function restoreRuntime(content: LoadedContent, snapshot: RuntimeSnapshot): Runt
       : null,
     gameStarted: snapshot.gameStarted !== false,
     gameEnded: Boolean(snapshot.gameEnded),
-    status: snapshot.status || 'Spielstand geladen.',
+    status: snapshot.status || ui.saveLoaded,
   }
 }
 
@@ -520,12 +494,13 @@ function createSaveRecord(slotId: SaveSlotId, runtime: Runtime): SaveRecord {
 }
 
 function summarizeSaveRecord(slotId: SaveSlotId, record: SaveRecord | null): SaveSlotSummary {
-  const definition = SAVE_SLOT_DEFINITIONS.find((slot) => slot.id === slotId)
+  const ui = getUiText(getCurrentLanguage())
+  const definition = getSaveSlotDefinitions().find((slot) => slot.id === slotId)
 
   return {
     id: slotId,
     label: definition?.label ?? slotId,
-    emptyText: definition?.emptyText ?? 'Leerer Spielstand.',
+    emptyText: definition?.emptyText ?? ui.emptySaveRecord,
     hasSave: Boolean(record),
     savedAt: record?.savedAt ?? null,
     playerName: record?.playerName ?? null,
@@ -536,9 +511,11 @@ function summarizeSaveRecord(slotId: SaveSlotId, record: SaveRecord | null): Sav
 }
 
 function openSaveDatabase() {
+  const ui = getUiText(getCurrentLanguage())
+
   return new Promise<IDBDatabase>((resolve, reject) => {
     if (typeof window === 'undefined' || !window.indexedDB) {
-      reject(new Error('IndexedDB ist nicht verfuegbar.'))
+      reject(new Error(ui.indexedDbUnavailable))
       return
     }
 
@@ -557,12 +534,13 @@ function openSaveDatabase() {
     }
 
     request.onerror = () => {
-      reject(request.error ?? new Error('Speicherdatenbank konnte nicht geoeffnet werden.'))
+      reject(request.error ?? new Error(ui.saveDbOpenFailure))
     }
   })
 }
 
 async function readSaveRecord(slotId: SaveSlotId) {
+  const ui = getUiText(getCurrentLanguage())
   const database = await openSaveDatabase()
 
   return new Promise<SaveRecord | null>((resolve, reject) => {
@@ -576,7 +554,7 @@ async function readSaveRecord(slotId: SaveSlotId) {
 
     transaction.onabort = () => {
       database.close()
-      reject(transaction.error ?? new Error('Speicherstand konnte nicht geladen werden.'))
+      reject(transaction.error ?? new Error(ui.saveLoadFailure))
     }
 
     request.onsuccess = () => {
@@ -585,12 +563,13 @@ async function readSaveRecord(slotId: SaveSlotId) {
     }
 
     request.onerror = () => {
-      reject(request.error ?? new Error('Speicherstand konnte nicht gelesen werden.'))
+      reject(request.error ?? new Error(ui.saveReadFailure))
     }
   })
 }
 
 async function writeSaveRecord(record: SaveRecord) {
+  const ui = getUiText(getCurrentLanguage())
   const database = await openSaveDatabase()
 
   return new Promise<void>((resolve, reject) => {
@@ -605,12 +584,12 @@ async function writeSaveRecord(record: SaveRecord) {
 
     transaction.onabort = () => {
       database.close()
-      reject(transaction.error ?? new Error('Speicherstand konnte nicht geschrieben werden.'))
+      reject(transaction.error ?? new Error(ui.saveWriteFailure))
     }
 
     transaction.onerror = () => {
       database.close()
-      reject(transaction.error ?? new Error('Speicherstand konnte nicht geschrieben werden.'))
+      reject(transaction.error ?? new Error(ui.saveWriteFailure))
     }
   })
 }
@@ -953,6 +932,7 @@ function removeInventoryAmount(runtime: Runtime, slot: number, amount: number) {
 }
 
 function addInventoryItem(runtime: Runtime, rawItem: string, amount: number) {
+  const ui = getUiText(getCurrentLanguage())
   const parsed = parseItemString(rawItem)
 
   if (!parsed || amount <= 0) {
@@ -980,7 +960,7 @@ function addInventoryItem(runtime: Runtime, rawItem: string, amount: number) {
     if (entry?.type === '0' && entry.count === 1) {
       const dropped = entry.name
       runtime.inventory[slot] = { ...parsed, count: amount }
-      return `Ihr habt ${dropped} weggeworfen, da der Rucksack voll war.`
+      return ui.bagFullDropped(dropped)
     }
   }
 
@@ -990,7 +970,7 @@ function addInventoryItem(runtime: Runtime, rawItem: string, amount: number) {
     if (entry?.type === '0') {
       const dropped = entry.name
       runtime.inventory[slot] = { ...parsed, count: amount }
-      return `Ihr habt ${dropped} weggeworfen, da der Rucksack voll war.`
+      return ui.bagFullDropped(dropped)
     }
   }
 
@@ -1000,11 +980,11 @@ function addInventoryItem(runtime: Runtime, rawItem: string, amount: number) {
     if (entry && entry.type !== 'U') {
       const dropped = entry.name
       runtime.inventory[slot] = { ...parsed, count: amount }
-      return `Ihr habt ${dropped} weggeworfen, da der Rucksack voll war.`
+      return ui.bagFullDropped(dropped)
     }
   }
 
-  return `Ihr habt keinen Platz für ${parsed.name} in eurem Rucksack.`
+  return ui.noBagSpace(parsed.name)
 }
 
 function getEquipmentSlotByType(itemType: string) {
@@ -1040,17 +1020,18 @@ function getAttributeSlotByType(itemType: string) {
 }
 
 function equipInventoryItem(runtime: Runtime, bagSlot: number) {
+  const ui = getUiText(getCurrentLanguage())
   const selected = runtime.inventory[bagSlot]
 
   if (!selected) {
-    return 'Dieser Platz ist leer.'
+    return ui.emptySlot
   }
 
   const equipmentSlot = getEquipmentSlotByType(selected.type)
   const attributeSlot = getAttributeSlotByType(selected.type)
 
   if (equipmentSlot === 0 || attributeSlot === 0) {
-    return 'Dieses Objekt kann nicht ausgerüstet werden.'
+    return ui.cannotEquip
   }
 
   const previous = runtime.inventory[equipmentSlot]
@@ -1068,7 +1049,7 @@ function equipInventoryItem(runtime: Runtime, bagSlot: number) {
     shiftInventoryDown(runtime, bagSlot)
   }
 
-  return `${selected.name} ausgerüstet.`
+  return ui.equippedItem(selected.name)
 }
 
 function getFirstFilledBagSlot(runtime: Runtime) {
@@ -1149,6 +1130,7 @@ function getActiveMapName(runtime: Runtime) {
 }
 
 function createNewRuntime(content: LoadedContent, name: string, avatar: number): Runtime {
+  const ui = getUiText(getCurrentLanguage())
   const stats = Array.from({ length: 11 }, () => 0)
   stats[1] = 20
   stats[2] = 20
@@ -1181,7 +1163,7 @@ function createNewRuntime(content: LoadedContent, name: string, avatar: number):
     battle: null,
     gameStarted: true,
     gameEnded: false,
-    status: 'Die Gold Edition wartet auf euch.',
+    status: ui.runtimeReady,
   }
 }
 
@@ -1251,6 +1233,9 @@ function findBattleEnemyById(battle: BattleState, enemyId: number) {
 }
 
 function App() {
+  const language = readLanguageFromSearch(typeof window !== 'undefined' ? window.location.search : '')
+  const ui = getUiText(language)
+  const searchParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : new URLSearchParams()
   const runtimeRef = useRef<Runtime | null>(null)
   const contentRef = useRef<LoadedContent | null>(null)
   const overlayResolverRef = useRef<((value: unknown) => void) | null>(null)
@@ -1271,13 +1256,13 @@ function App() {
   const retainedInlineDialogTextRef = useRef('')
 
   const [renderVersion, setRenderVersion] = useState(0)
-  const [loadingMessage, setLoadingMessage] = useState('Loading Gold Edition content...')
+  const [loadingMessage, setLoadingMessage] = useState<string>(ui.loadingContent)
   const [isContentReady, setIsContentReady] = useState(false)
   const [overlay, setOverlay] = useState<OverlayState | null>(null)
   const [fullscreenSupported, setFullscreenSupported] = useState(false)
   const [isViewportMaximized, setIsViewportMaximized] = useState(false)
   const [spriteSheets, setSpriteSheets] = useState<Map<number, SpriteSheetSet>>(new Map())
-  const [startName, setStartName] = useState('Wanderer')
+  const [startName, setStartName] = useState<string>(ui.defaultPlayerName)
   const [startAvatar, setStartAvatar] = useState(1)
   const [textInputValue, setTextInputValue] = useState('')
   const [inventorySelection, setInventorySelection] = useState(1)
@@ -1306,7 +1291,7 @@ function App() {
   const battleDuelEnemy = battleDuel && activeBattle ? findBattleEnemyById(activeBattle, battleDuel.enemyId) : null
   const hasActiveRun = Boolean(runtime?.gameStarted && !runtime?.gameEnded)
   const savedGameSummary = saveSlots[0] ?? null
-  const isDebugMode = typeof window !== 'undefined' && new URLSearchParams(window.location.search).has('debug')
+  const isDebugMode = searchParams.has('debug')
   const isBlockingMessageOverlay = overlay?.type === 'message' && overlay.blocking !== false
   const isAmbientMessageOverlay = overlay?.type === 'message' && overlay.blocking === false
   const isMobileViewport = viewportState.coarsePointer && Math.min(viewportState.width, viewportState.height) <= 900
@@ -1315,31 +1300,31 @@ function App() {
     ...(hasActiveRun
       ? [
           {
-            label: 'Zurueck zum Spiel',
+            label: ui.menuResumeGame,
             variant: 'ghost' as const,
             action: () => resumeGame(),
           },
         ]
       : []),
     {
-      label: 'Spiel laden',
+      label: ui.menuLoadGame,
       variant: 'ghost',
       action: () => {
         void loadSavedGameFromMenu()
       },
     },
     {
-      label: 'Neues Spiel',
+      label: ui.menuNewGame,
       variant: 'primary',
       action: () => setScreen('newGame'),
     },
     {
-      label: 'Credits',
+      label: ui.menuCredits,
       variant: 'ghost',
       action: () => setScreen('creditsMenu'),
     },
     {
-      label: 'Beenden',
+      label: ui.menuQuit,
       variant: 'ghost',
       action: () => openMainMenu(true),
     },
@@ -1437,7 +1422,7 @@ function App() {
       : undefined
 
   function focusNewGameAvatarByIndex(index: number) {
-    const avatar = AVATAR_OPTIONS[index]
+    const avatar = ui.avatarOptions[index]
 
     if (!avatar) {
       return
@@ -1450,7 +1435,7 @@ function App() {
   }
 
   function focusSelectedNewGameAvatar() {
-    const selectedIndex = AVATAR_OPTIONS.findIndex((avatar) => avatar.id === startAvatar)
+    const selectedIndex = ui.avatarOptions.findIndex((avatar) => avatar.id === startAvatar)
     focusNewGameAvatarByIndex(selectedIndex >= 0 ? selectedIndex : 0)
   }
 
@@ -1499,7 +1484,7 @@ function App() {
         }
 
         const manifest = (await manifestResponse.json()) as Manifest
-        const eventsResponse = await fetch(getAssetUrl('game-data/events.json'))
+        const eventsResponse = await fetch(getAssetUrl(`game-data/${getEventFileName(language)}`))
 
         if (!eventsResponse.ok) {
           throw new Error(`events request failed with ${eventsResponse.status}`)
@@ -1532,10 +1517,10 @@ function App() {
         }
 
         setIsContentReady(true)
-        setLoadingMessage(`Loaded ${manifest.counts.maps} maps and ${manifest.counts.eventBlocks} Gold events.`)
+        setLoadingMessage(ui.loadingSuccess(manifest.counts.maps, manifest.counts.eventBlocks))
       } catch (error) {
-        const message = error instanceof Error ? error.message : 'unknown error'
-        setLoadingMessage(`Could not load Gold Edition data: ${message}`)
+        const message = error instanceof Error ? error.message : ui.unknownError
+        setLoadingMessage(ui.loadingFailure(message))
       }
     }
 
@@ -1544,7 +1529,7 @@ function App() {
     return () => {
       cancelled = true
     }
-  }, [])
+  }, [language, ui])
 
   useEffect(() => {
     let cancelled = false
@@ -1609,7 +1594,7 @@ function App() {
           return
         }
 
-        const message = error instanceof Error ? error.message : 'Unbekannter Speicherfehler.'
+        const message = error instanceof Error ? error.message : ui.unknownStorageError
         setSaveScreenMessage(message)
         setSaveSlots(createEmptySaveSummaries())
       }
@@ -1620,7 +1605,15 @@ function App() {
     return () => {
       cancelled = true
     }
-  }, [])
+  }, [ui])
+
+  useEffect(() => {
+    if (typeof document === 'undefined') {
+      return
+    }
+
+    document.documentElement.lang = getDocumentLanguage(language)
+  }, [language])
 
   useEffect(() => {
     const updateViewportState = () => {
@@ -2310,7 +2303,7 @@ function App() {
         if (event.key === 'ArrowDown') {
           event.preventDefault()
 
-          if (avatarIndex + 3 < AVATAR_OPTIONS.length) {
+          if (avatarIndex + 3 < ui.avatarOptions.length) {
             focusNewGameAvatarByIndex(avatarIndex + 3)
           } else {
             newGameStartButtonRef.current?.focus()
@@ -2615,7 +2608,7 @@ function App() {
       overlayResolverRef.current = () => resolve()
       setOverlay({
         type: 'credits',
-        lines: CREDIT_LINES,
+        lines: [...ui.creditLines],
       })
     })
   }
@@ -2701,7 +2694,7 @@ function App() {
 
   async function saveGameToSlot(slotId: SaveSlotId, showScreenMessage = true) {
     const activeRuntime = runtimeRef.current
-    const slotDefinition = SAVE_SLOT_DEFINITIONS.find((slot) => slot.id === slotId)
+    const slotDefinition = getSaveSlotDefinitions().find((slot) => slot.id === slotId)
 
     if (!activeRuntime) {
       return
@@ -2712,7 +2705,7 @@ function App() {
       setSaveSlots([await readSavedGameSummary()])
 
       if (showScreenMessage) {
-        const saveMessage = `${slotDefinition?.label ?? 'Spielstand'} gespeichert.`
+        const saveMessage = ui.saveStored(slotDefinition?.label ?? getSaveSlotDefinitions()[0].label)
         setSaveScreenMessage(saveMessage)
         setDialogPageIndex(0)
         setOverlay({
@@ -2722,10 +2715,10 @@ function App() {
         })
       }
 
-      activeRuntime.status = `${slotDefinition?.label ?? 'Spielstand'} gespeichert.`
+      activeRuntime.status = ui.saveStored(slotDefinition?.label ?? getSaveSlotDefinitions()[0].label)
       refresh()
     } catch (error) {
-      const message = error instanceof Error ? error.message : 'Speichern fehlgeschlagen.'
+      const message = error instanceof Error ? error.message : ui.saveWriteFailure
 
       if (showScreenMessage) {
         setSaveScreenMessage(message)
@@ -2758,7 +2751,7 @@ function App() {
 
   async function loadSavedGameFromMenu() {
     if (!savedGameSummary?.hasSave) {
-      setSaveScreenMessage('Kein Spielstand vorhanden.')
+      setSaveScreenMessage(ui.saveMissing)
       return
     }
 
@@ -2769,14 +2762,14 @@ function App() {
     const content = contentRef.current
 
     if (!content) {
-      return 'Laden fehlgeschlagen.'
+      return ui.saveLoadFailed
     }
 
     try {
       const record = await readSaveRecord(slotId)
 
       if (!record) {
-        const message = 'Dieser Spielstand ist leer.'
+        const message = ui.saveEmpty
         const activeRuntime = runtimeRef.current
 
         setSaveScreenMessage(message)
@@ -2799,7 +2792,7 @@ function App() {
       refresh()
       return null
     } catch (error) {
-      const message = error instanceof Error ? error.message : 'Laden fehlgeschlagen.'
+      const message = error instanceof Error ? error.message : ui.saveLoadFailed
       const activeRuntime = runtimeRef.current
 
       setSaveScreenMessage(message)
@@ -2830,7 +2823,7 @@ function App() {
 
     if (gained > 0) {
       runtimeToMutate.stats[3] += gained
-      runtimeToMutate.status = `+${gained} EP`
+      runtimeToMutate.status = ui.experienceGain(gained)
     }
   }
 
@@ -2878,7 +2871,7 @@ function App() {
       runtimeToMutate.stats[1] = runtimeToMutate.stats[2]
       runtimeToMutate.stats[3] -= 500 * runtimeToMutate.stats[4]
       runtimeToMutate.stats[4] += 1
-      runtimeToMutate.status = `Ihr seid auf Level ${runtimeToMutate.stats[4]} aufgestiegen.`
+      runtimeToMutate.status = ui.levelUp(runtimeToMutate.stats[4])
     }
   }
 
@@ -2891,7 +2884,7 @@ function App() {
 
     activeRuntime.gameEnded = true
     activeRuntime.battle = null
-    activeRuntime.status = 'Ihr seid gefallen.'
+    activeRuntime.status = ui.deathStatus
     refresh()
     setScreen('death')
   }
@@ -2906,7 +2899,7 @@ function App() {
     setSaveScreenMessage('')
     initialMapRevealPendingRef.current = true
     setHideSceneUntilReveal(true)
-    runtimeRef.current = createNewRuntime(content, startName.trim() || 'Wanderer', startAvatar)
+    runtimeRef.current = createNewRuntime(content, startName.trim() || ui.defaultPlayerName, startAvatar)
     setScreen('game')
     refresh()
 
@@ -2959,7 +2952,7 @@ function App() {
     const block = activeRuntime.eventsById[Math.abs(normalizedCode)]
 
     if (!block) {
-      activeRuntime.status = `Fehlendes Event ${Math.abs(normalizedCode)}.`
+      activeRuntime.status = ui.missingEvent(Math.abs(normalizedCode))
       refresh()
       return
     }
@@ -3018,7 +3011,7 @@ function App() {
       }
 
       case 6: {
-        await waitForMessage(activeRuntime.almanach || 'Noch kein Tagebucheintrag vorhanden.', 'Tagebuch')
+        await waitForMessage(activeRuntime.almanach || ui.noJournalEntry, ui.journalMessageTitle)
         return
       }
 
@@ -3043,7 +3036,7 @@ function App() {
             await waitForMessage(text)
           }
         } else {
-          await waitForMessage('Ihr habt nicht genug Geld!')
+          await waitForMessage(ui.notEnoughMoney)
         }
 
         await applyPostMutation(activeRuntime, context, createPostEventMutation(cursor))
@@ -3155,7 +3148,7 @@ function App() {
 
           activeRuntime.stats[7] += saleValue
           removeInventoryAmount(activeRuntime, selectedSlot, selectedItem.count)
-          activeRuntime.status = `${selectedItem.name} verkauft.`
+          activeRuntime.status = ui.soldItem(selectedItem.name)
           refresh()
         }
       }
@@ -3188,13 +3181,13 @@ function App() {
           initialSelection = selectedIndex
 
           if (activeRuntime.stats[7] - price < 0) {
-            shopNotice = 'Ihr habt nicht genug Gold.'
+            shopNotice = ui.notEnoughGold
             continue
           }
 
           activeRuntime.stats[7] -= price
           const message = addInventoryItem(activeRuntime, item.raw, 1)
-          activeRuntime.status = message || `Ihr habt ${item.name} gekauft!`
+          activeRuntime.status = message || ui.boughtItem(item.name)
           refresh()
         }
       }
@@ -3222,7 +3215,7 @@ function App() {
         await waitForMessage(text)
 
         if (!battleBaseMap) {
-          activeRuntime.status = `Kampfkarte ${battleMapName} fehlt.`
+          activeRuntime.status = ui.missingBattleMap(battleMapName)
           refresh()
           return
         }
@@ -3292,7 +3285,7 @@ function App() {
         }
 
         if (sourceTargetCell) {
-          activeRuntime.status = `${enemyName} erscheinen auf ${battleBaseMap.originalName}.`
+          activeRuntime.status = ui.enemiesAppear(enemyName, battleBaseMap.originalName)
         }
 
         activeRuntime.battle = {
@@ -3355,7 +3348,7 @@ function App() {
         await waitForMessage(cursor.readString())
         activeRuntime.player.x = cursor.readInt()
         activeRuntime.player.y = cursor.readInt()
-        activeRuntime.status = `Position geändert zu ${activeRuntime.player.x}/${activeRuntime.player.y}.`
+        activeRuntime.status = ui.positionChanged(activeRuntime.player.x, activeRuntime.player.y)
         refresh()
         await applyPostMutation(activeRuntime, context, createPostEventMutation(cursor))
         return
@@ -3523,14 +3516,14 @@ function App() {
 
       case 99: {
         activeRuntime.gameEnded = true
-        activeRuntime.status = 'Das Ende ist erreicht.'
+        activeRuntime.status = ui.gameEndReached
         refresh()
         await waitForCredits()
         return
       }
 
       default: {
-        activeRuntime.status = `Nicht implementierter Eventtyp ${eventType}.`
+        activeRuntime.status = ui.unimplementedEventType(eventType)
         refresh()
       }
     }
@@ -3546,7 +3539,7 @@ function App() {
     const nextMap = activeRuntime.maps[mapName]
 
     if (!nextMap) {
-      activeRuntime.status = `Karte ${mapName} fehlt.`
+      activeRuntime.status = ui.missingMap(mapName)
       refresh()
       return
     }
@@ -3572,7 +3565,7 @@ function App() {
     activeRuntime.mapName = mapName
     activeRuntime.player.x = targetX > 0 ? targetX : nextMap.start.x
     activeRuntime.player.y = targetY > 0 ? targetY : nextMap.start.y
-    activeRuntime.status = `Karte gewechselt zu ${nextMap.originalName}.`
+    activeRuntime.status = ui.mapChanged(nextMap.originalName)
     refresh()
 
     await sleep(80)
@@ -3638,7 +3631,7 @@ function App() {
       activeRuntime.player.y = battle.sourceTarget.y
     }
 
-    activeRuntime.status = mode === 'victory' ? 'Der Kampf ist gewonnen.' : 'Ihr entkommt dem Schlachtfeld.'
+    activeRuntime.status = mode === 'victory' ? ui.battleWon : ui.battleEscaped
     refresh()
 
     if (battle.afterEventId > 0) {
@@ -3822,7 +3815,7 @@ function App() {
     refresh()
 
     if (activeRuntime.stats[1] <= 0) {
-      activeRuntime.status = `${battle.enemyName} war zu stark.`
+      activeRuntime.status = ui.battleTooStrong(battle.enemyName)
       refresh()
       await handleDeath()
       return
@@ -3835,11 +3828,11 @@ function App() {
       activeRuntime.stats[7] += diceNumber(battle.enemyGoldFormula)
       const inventoryMessage = addInventoryItem(activeRuntime, battle.enemyReward, 1)
       handleLevelUps(activeRuntime)
-      activeRuntime.status = inventoryMessage || `${battle.enemyName} besiegt.`
+      activeRuntime.status = inventoryMessage || ui.battleDefeated(battle.enemyName)
       refresh()
 
       if (inventoryMessage) {
-        await waitForMessage(inventoryMessage, 'Kampf')
+        await waitForMessage(inventoryMessage, ui.battleTitle)
       }
 
       if (battle.enemies.length === 0) {
@@ -3926,7 +3919,7 @@ function App() {
       battle.stepCounter += TILE_SIZE
 
       if (!isPassable(targetCell)) {
-        activeRuntime.status = `Der Weg nach ${DIRECTION_CONFIG[direction].label} ist versperrt.`
+        activeRuntime.status = ui.wayBlocked(ui.directionLabels[direction])
         refresh()
 
         if (battle.stepCounter >= battle.enemySpeed * 10) {
@@ -3988,7 +3981,7 @@ function App() {
     const targetCell = getMapCell(currentMap, targetX, targetY)
 
     if (!isPassable(targetCell)) {
-      activeRuntime.status = `Der Weg nach ${DIRECTION_CONFIG[direction].label} ist versperrt.`
+      activeRuntime.status = ui.wayBlocked(ui.directionLabels[direction])
       refresh()
       return
     }
@@ -4031,7 +4024,7 @@ function App() {
     const targetCell = getMapCell(activeRuntime.maps[activeRuntime.mapName], targetX, targetY)
 
     if (!targetCell || targetCell.event <= 0) {
-      activeRuntime.status = 'Hier gibt es nichts zu tun.'
+      activeRuntime.status = ui.nothingToDo
       refresh()
       return
     }
@@ -4061,7 +4054,7 @@ function App() {
     if (selected.type === 'C') {
       activeRuntime.stats[1] = Math.min(activeRuntime.stats[2], activeRuntime.stats[1] + selected.power)
       removeInventoryAmount(activeRuntime, inventorySelection, 1)
-      activeRuntime.status = `${selected.name} benutzt.`
+      activeRuntime.status = ui.itemUsed(selected.name)
       setInventorySelection(getFirstFilledBagSlot(activeRuntime))
       refresh()
       return
@@ -4078,12 +4071,12 @@ function App() {
       return
     }
 
-    activeRuntime.status = 'Dieses Objekt kann nicht direkt benutzt werden.'
+    activeRuntime.status = ui.cannotUseDirectly
     refresh()
   }
 
   const selectedInventoryItem = runtime?.inventory[inventorySelection] ?? null
-  const selectedInventoryDescription = selectedInventoryItem?.description?.trim() || 'Keine Beschreibung vorhanden.'
+  const selectedInventoryDescription = selectedInventoryItem?.description?.trim() || ui.noDescription
   const shopEntries =
     inlineScreenOverlay?.type === 'shopBuy'
       ? inlineScreenOverlay.items.map((item, index) => ({
@@ -4111,7 +4104,7 @@ function App() {
     inlineScreenOverlay?.type === 'shopBuy' || inlineScreenOverlay?.type === 'shopSell'
       ? (inlineScreenOverlay.notice ?? '')
       : ''
-  const selectedShopDescription = selectedShopEntry?.item.description?.trim() || 'Keine Beschreibung vorhanden.'
+  const selectedShopDescription = selectedShopEntry?.item.description?.trim() || ui.noDescription
   const debugMapOptions = contentRef.current
     ? [...contentRef.current.manifest.maps].sort((left, right) => left.originalName.localeCompare(right.originalName))
     : []
@@ -4124,16 +4117,13 @@ function App() {
   const weaponBonus = runtime?.inventory[22]?.power ?? 0
   const armorBonus = (runtime?.inventory[23]?.power ?? 0) + (runtime?.inventory[24]?.power ?? 0)
   const dexterityBonus = (runtime?.inventory[21]?.power ?? 0) + (runtime?.inventory[25]?.power ?? 0)
-  const journalText = runtime?.almanach || 'Noch kein Tagebucheintrag vorhanden.'
+  const journalText = runtime?.almanach || ui.noJournalEntry
   const landscapeNotice = requiresLandscapeMode ? (
     <section className="mobile-landscape-notice" aria-live="polite">
       <div className="mobile-landscape-card">
-        <p className="eyebrow">Mobile play</p>
-        <h2>Rotate to landscape</h2>
-        <p>
-          Irdeni uses a wide 320x200 playfield and touch controls. Turn your phone sideways to continue playing on
-          mobile.
-        </p>
+        <p className="eyebrow">{ui.mobilePlayEyebrow}</p>
+        <h2>{ui.rotateLandscapeTitle}</h2>
+        <p>{ui.rotateLandscapeBody}</p>
       </div>
     </section>
   ) : null
@@ -4145,7 +4135,7 @@ function App() {
           <section className="front-window-shell">
             <section className="front-main-window front-loading-screen">
               <div className="front-window-body front-loading-body">
-                <p className="eyebrow">Irdeni Gold</p>
+                <p className="eyebrow">{ui.loadingEyebrow}</p>
                 <p className="intro">{loadingMessage}</p>
               </div>
             </section>
@@ -4159,11 +4149,11 @@ function App() {
                 <div className="front-window-banner front-boot-banner">
                   <img
                     src={screen === 'bootLogo' ? screenArt.logo : screenArt.logo2}
-                    alt={screen === 'bootLogo' ? 'Simba Entertainment' : 'Dead Head Studios'}
+                    alt={screen === 'bootLogo' ? ui.bootLogoAltA : ui.bootLogoAltB}
                     className="front-window-art boot-art"
                   />
                 </div>
-                <span className="screen-skip">Press any key or click to skip</span>
+                <span className="screen-skip">{ui.bootSkip}</span>
               </section>
             </button>
           </section>
@@ -4173,14 +4163,10 @@ function App() {
           <section className="front-window-shell">
             <section className="front-main-window front-menu-screen">
               <div className="front-window-banner front-menu-banner">
-                <img src={screenArt.title} alt="Irdeni Gold title art" className="front-window-art front-menu-art" />
+                <img src={screenArt.title} alt={ui.titleArtAlt} className="front-window-art front-menu-art" />
                 <div className="front-menu-overlay">
-                  <p className="eyebrow">Hauptmenu</p>
-                  <p className="front-subnote">
-                    {saveScreenMessage
-                      ? saveScreenMessage
-                      : 'Waehlt einen Eintrag aus dem Menue.'}
-                  </p>
+                  <p className="eyebrow">{ui.menuTitle}</p>
+                  <p className="front-subnote">{saveScreenMessage || ui.menuPrompt}</p>
                   <div className="menu-actions menu-overlay-actions">
                     {menuEntries.map((entry, index) => (
                       <button
@@ -4207,9 +4193,9 @@ function App() {
               <button type="button" className="death-screen-button" onClick={() => acknowledgeDeathScreen()}>
                 <section className="front-main-window death-window">
                   <div className="front-window-banner death-banner">
-                    <img src={screenArt.death} alt="Todesscreen" className="front-window-art death-art" />
+                    <img src={screenArt.death} alt={ui.deathAlt} className="front-window-art death-art" />
                   </div>
-                  <span className="screen-skip death-hint">Beliebige Taste oder tippen</span>
+                  <span className="screen-skip death-hint">{ui.deathHint}</span>
                 </section>
               </button>
             ) : (
@@ -4218,20 +4204,20 @@ function App() {
                   {screen === 'newGame' ? (
                     <>
                       <div className="front-screen-heading">
-                        <p className="eyebrow">Neues Spiel</p>
+                        <p className="eyebrow">{ui.newGameTitle}</p>
                         <button
                           ref={newGameCloseButtonRef}
                           type="button"
                           className="window-close-button"
                           onClick={() => setScreen('menu')}
-                          aria-label="Zurueck zum Hauptmenu"
+                          aria-label={ui.backToMenuAria}
                         >
                           X
                         </button>
                       </div>
                       <div className="front-screen-content front-newgame-layout">
                         <label className="field-label" htmlFor="player-name">
-                          Name
+                          {ui.nameLabel}
                         </label>
                         <input
                           id="player-name"
@@ -4242,9 +4228,9 @@ function App() {
                           maxLength={18}
                         />
                         <div className="front-avatar-section">
-                          <p className="field-label">Waehlt euer Aussehen.</p>
+                          <p className="field-label">{ui.chooseAppearance}</p>
                           <div className="avatar-picker">
-                            {AVATAR_OPTIONS.map((avatar) => (
+                            {ui.avatarOptions.map((avatar) => (
                               <button
                                 key={avatar.id}
                                 ref={(element) => {
@@ -4277,7 +4263,7 @@ function App() {
                           onClick={() => void startNewGame()}
                           disabled={!contentRef.current}
                         >
-                          Abenteuer beginnen
+                          {ui.startAdventure}
                         </button>
                       </div>
                     </>
@@ -4286,15 +4272,15 @@ function App() {
                   {screen === 'creditsMenu' ? (
                     <>
                       <div className="front-screen-heading">
-                        <p className="eyebrow">Credits</p>
-                        <button type="button" className="window-close-button" onClick={() => setScreen('menu')} aria-label="Zurueck zum Hauptmenu">
+                        <p className="eyebrow">{ui.creditsTitle}</p>
+                        <button type="button" className="window-close-button" onClick={() => setScreen('menu')} aria-label={ui.backToMenuAria}>
                           X
                         </button>
                       </div>
                       <div className="front-screen-content front-credits-layout">
                         <div className="credits-marquee inline-credits">
                           <div className="credits-track">
-                            {CREDIT_LINES.map((line) => (
+                            {ui.creditLines.map((line) => (
                               <p key={line}>{line}</p>
                             ))}
                           </div>
@@ -4320,21 +4306,21 @@ function App() {
           {isDebugMode ? (
             <div className="viewport-toolbar">
               <div>
-                <strong>{activeMap?.originalName ?? 'Waiting for content...'}</strong>
+                <strong>{activeMap?.originalName ?? ui.debugWaitingForContent}</strong>
                 <span>
                   {runtime?.battle
-                    ? `Battle mode · ${runtime.battle.enemies.length} enemies remaining`
+                    ? ui.debugBattleMode(runtime.battle.enemies.length)
                     : activeMap
-                      ? `${activeMap.width}x${activeMap.height} · Explore mode`
-                      : 'Gold runtime not started yet'}
+                      ? ui.debugExploreMode(activeMap.width, activeMap.height)
+                      : ui.debugRuntimeNotStarted}
                 </span>
-                <span className="toolbar-hint">Enter/Space Aktion · S Speichern · L Laden · I Inventar · J Almanach · F Fenster · Shift+F Browser · Esc Menu</span>
+                <span className="toolbar-hint">{ui.debugToolbarHint}</span>
               </div>
 
               <div className="toolbar-actions">
                 <div className="debug-map-controls">
                   <label className="sr-only" htmlFor="debug-map-select">
-                    Jump to map
+                    {ui.debugJumpToMap}
                   </label>
                   <select
                     id="debug-map-select"
@@ -4343,7 +4329,7 @@ function App() {
                     onChange={(event) => setDebugMapSelection(event.target.value)}
                     disabled={!runtime?.gameStarted || Boolean(overlay)}
                   >
-                    <option value="">Jump to map...</option>
+                    <option value="">{ui.debugJumpPlaceholder}</option>
                     {debugMapOptions.map((mapEntry) => (
                       <option key={mapEntry.name} value={mapEntry.name}>
                         {mapEntry.originalName} ({mapEntry.name})
@@ -4356,7 +4342,7 @@ function App() {
                     onClick={() => void jumpToDebugMap()}
                     disabled={!runtime?.gameStarted || !debugMapSelection || Boolean(overlay)}
                   >
-                    Jump
+                    {ui.debugJump}
                   </button>
                 </div>
               </div>
@@ -4371,12 +4357,12 @@ function App() {
                   width={CANVAS_WIDTH}
                   height={CANVAS_HEIGHT}
                   className="game-canvas"
-                  aria-label="Irdeni canvas"
+                  aria-label={ui.canvasAria}
                 />
 
                 {battleDuel && battleDuelEnemy && activeBattle ? (
                   <>
-                    <section className="battle-fight-panel battle-fight-top-panel" aria-label="Kampfstatus">
+                    <section className="battle-fight-panel battle-fight-top-panel" aria-label={ui.battleStatusAria}>
                       <div className="battle-fighter battle-fighter-player">
                         <div className="battle-hit-stack battle-hit-stack-player">
                           <strong className="battle-hit-current">{battleDuel.enemyHitText || '\u00a0'}</strong>
@@ -4414,12 +4400,12 @@ function App() {
                       </div>
                     </section>
 
-                    <section className="battle-fight-panel battle-fight-bottom-panel" aria-label="Kampfbeschreibung">
+                    <section className="battle-fight-panel battle-fight-bottom-panel" aria-label={ui.battleDescriptionAria}>
                       <h2>{activeBattle.enemyName}:</h2>
                       {battleDescriptionLines.map((line, index) => (
                         <p key={`${activeBattle.enemyName}-${index}`}>{line}</p>
                       ))}
-                      {battleDuel.allowInventory ? <span className="battle-fight-hint">I Inventar</span> : null}
+                      {battleDuel.allowInventory ? <span className="battle-fight-hint">{ui.battleInventoryHint}</span> : null}
                     </section>
                   </>
                 ) : null}
@@ -4516,41 +4502,41 @@ function App() {
                 ) : null}
 
                 {inlineScreenOverlay?.type === 'inventory' && runtime ? (
-                  <section className="main-window-screen inventory-screen" aria-label="Inventar">
+                  <section className="main-window-screen inventory-screen" aria-label={ui.inventoryAria}>
                     <div className="main-window-header">
-                      <h2>Inventar</h2>
+                      <h2>{ui.inventoryTitle}</h2>
                     </div>
 
                     <div className="inventory-screen-layout">
                       <div className="retro-stat-list">
                         <p>
-                          Kraft: <strong>{runtime.stats[5] - weaponBonus}</strong>
+                          {ui.statStrength}: <strong>{runtime.stats[5] - weaponBonus}</strong>
                           {weaponBonus > 0 ? <span> +{weaponBonus}</span> : null}
                         </p>
                         <p>
-                          Abwehr: <strong>{runtime.stats[6] - armorBonus}</strong>
+                          {ui.statDefense}: <strong>{runtime.stats[6] - armorBonus}</strong>
                           {armorBonus > 0 ? <span> +{armorBonus}</span> : null}
                         </p>
                         <p>
-                          Geschick: <strong>{runtime.stats[10] - dexterityBonus}</strong>
+                          {ui.statDexterity}: <strong>{runtime.stats[10] - dexterityBonus}</strong>
                           {dexterityBonus > 0 ? <span> +{dexterityBonus}</span> : null}
                         </p>
                         <p>
-                          LP: <strong>{runtime.stats[1]}/{runtime.stats[2]}</strong>
+                          {ui.statHp}: <strong>{runtime.stats[1]}/{runtime.stats[2]}</strong>
                         </p>
                         <p>
-                          Gold: <strong>{runtime.stats[7]}</strong>
+                          {ui.goldLabel}: <strong>{runtime.stats[7]}</strong>
                         </p>
                         <p>
-                          Exp: <strong>{runtime.stats[3]}</strong>
+                          {ui.statExp}: <strong>{runtime.stats[3]}</strong>
                         </p>
                         <p className="player-line">
-                          <strong>{runtime.player.name}</strong> - Level {runtime.stats[4]}
+                          <strong>{runtime.player.name}</strong> - {ui.levelLabel} {runtime.stats[4]}
                         </p>
                       </div>
 
                       <div className="retro-equipment-panel">
-                        {EQUIPMENT_LABELS.map(({ slot, label }) => (
+                        {ui.equipmentLabels.map(({ slot, label }) => (
                           <div key={slot} className="retro-equipment-row">
                             <span>{label}:</span>
                             <div className="retro-item-box equipment-box">
@@ -4562,7 +4548,7 @@ function App() {
                         ))}
                       </div>
 
-                      <div className="retro-bag-grid" role="grid" aria-label="Rucksack">
+                      <div className="retro-bag-grid" role="grid" aria-label={ui.bagAria}>
                         {Array.from({ length: MAX_BAG_SLOTS }, (_, index) => {
                           const slot = index + 1
                           const item = runtime.inventory[slot]
@@ -4584,7 +4570,7 @@ function App() {
                       </div>
 
                       <div className="retro-item-details">
-                        <h3>{selectedInventoryItem?.name ?? 'Leer'}</h3>
+                        <h3>{selectedInventoryItem?.name ?? ui.emptyItemSlotTitle}</h3>
                         <p>{selectedInventoryDescription}</p>
                       </div>
 
@@ -4593,9 +4579,9 @@ function App() {
                 ) : null}
 
                 {inlineScreenOverlay?.type === 'journal' && runtime ? (
-                  <section className="main-window-screen journal-screen" aria-label="Almanach">
+                  <section className="main-window-screen journal-screen" aria-label={ui.journalAria}>
                     <div className="main-window-header">
-                      <h2>Almanach</h2>
+                      <h2>{ui.journalTitle}</h2>
                     </div>
 
                     <div className="journal-screen-body">
@@ -4609,12 +4595,12 @@ function App() {
                 {(inlineScreenOverlay?.type === 'shopBuy' || inlineScreenOverlay?.type === 'shopSell') && runtime ? (
                   <section
                     className={`main-window-screen shop-screen ${inlineScreenOverlay.type === 'shopBuy' ? 'buy-screen' : 'sell-screen'}`}
-                    aria-label={inlineScreenOverlay.type === 'shopBuy' ? 'Kaufen' : 'Verkaufen'}
+                    aria-label={inlineScreenOverlay.type === 'shopBuy' ? ui.buyTitle : ui.sellTitle}
                   >
                     <div className="main-window-header">
-                      <h2>{inlineScreenOverlay.type === 'shopBuy' ? 'Kaufen' : 'Verkaufen'}</h2>
-                      <div className="shop-gold-box" aria-label="Gold">
-                        <span>Gold</span>
+                      <h2>{inlineScreenOverlay.type === 'shopBuy' ? ui.buyTitle : ui.sellTitle}</h2>
+                      <div className="shop-gold-box" aria-label={ui.goldLabel}>
+                        <span>{ui.goldLabel}</span>
                         <strong>{runtime.stats[7]}</strong>
                       </div>
                     </div>
@@ -4642,7 +4628,7 @@ function App() {
                                 />
                               ) : null}
                               {selectedShopEntry.item.count > 1 ? (
-                                <span className="slot-count">x{selectedShopEntry.item.count}</span>
+                                <span className="slot-count">{ui.shopCountPrefix}{selectedShopEntry.item.count}</span>
                               ) : null}
                             </div>
 
@@ -4652,12 +4638,12 @@ function App() {
                             </div>
                           </div>
 
-                          <div className="shop-price-box" aria-label="Preis">
-                            <span>Preis</span>
-                            <strong>{selectedShopEntry.price} Gold</strong>
+                          <div className="shop-price-box" aria-label={ui.priceLabel}>
+                            <span>{ui.priceLabel}</span>
+                            <strong>{selectedShopEntry.price} {ui.goldLabel}</strong>
                           </div>
 
-                          <div className="shop-carousel" role="list" aria-label="Auswahl">
+                          <div className="shop-carousel" role="list" aria-label={ui.selectionLabel}>
                             {shopCarouselIndices.map((entryIndex) => {
                               const entry = shopEntries[entryIndex]
                               const isActive = entryIndex === selectedShopIndex
@@ -4678,7 +4664,7 @@ function App() {
                                     {entry.item.imageId ? (
                                       <SpriteIcon tileId={entry.item.imageId} spriteSheets={spriteSheets} className="retro-sprite" />
                                     ) : null}
-                                    {entry.item.count > 1 ? <span className="slot-count">x{entry.item.count}</span> : null}
+                                    {entry.item.count > 1 ? <span className="slot-count">{ui.shopCountPrefix}{entry.item.count}</span> : null}
                                   </div>
                                   <strong>{entry.label}</strong>
                                 </button>
@@ -4688,7 +4674,7 @@ function App() {
                         </>
                       ) : (
                         <div className="shop-empty-panel">
-                          <p>Keine passenden Gegenstaende vorhanden.</p>
+                          <p>{ui.noMatchingItems}</p>
                         </div>
                       )}
                     </div>
@@ -4696,23 +4682,23 @@ function App() {
                 ) : null}
 
                 {inlineScreenOverlay?.type === 'mapView' && runtime ? (
-                  <section className="main-window-screen mapview-screen" aria-label="Gebietskarte">
+                  <section className="main-window-screen mapview-screen" aria-label={ui.mapAria}>
                     <div className="main-window-header">
-                      <h2>Gebietskarte</h2>
+                      <h2>{ui.mapTitle}</h2>
                     </div>
 
                     <div className="map-screen-body">
                       <div className="map-screen-frame">
-                        <canvas ref={mapCanvasRef} className="map-canvas inline-map-canvas" aria-label="Full map overview" />
+                        <canvas ref={mapCanvasRef} className="map-canvas inline-map-canvas" aria-label={ui.mapCanvasAria} />
                       </div>
                     </div>
                   </section>
                 ) : null}
 
                 {inlineScreenOverlay?.type === 'credits' ? (
-                  <section className="main-window-screen credits-inline-screen" aria-label="Credits">
+                  <section className="main-window-screen credits-inline-screen" aria-label={ui.creditsAria}>
                     <div className="main-window-header">
-                      <h2>Credits</h2>
+                      <h2>{ui.creditsTitle}</h2>
                     </div>
 
                     <div className="credits-inline-body">
@@ -4727,11 +4713,11 @@ function App() {
               </div>
             ) : (
               <div className="start-card">
-                <h2>Begin A Gold Edition Run</h2>
-                <p>The runtime loads the original Gold content and starts from event `1`.</p>
+                <h2>{ui.startCardTitle}</h2>
+                <p>{ui.startCardBody}</p>
 
                 <label className="field-label" htmlFor="player-name">
-                  Name
+                  {ui.nameLabel}
                 </label>
                 <input
                   id="player-name"
@@ -4742,7 +4728,7 @@ function App() {
                 />
 
                 <div className="avatar-picker">
-                  {AVATAR_OPTIONS.map((avatar) => (
+                  {ui.avatarOptions.map((avatar) => (
                     <button
                       key={avatar.id}
                       type="button"
@@ -4770,7 +4756,7 @@ function App() {
                   }}
                   disabled={!contentRef.current}
                 >
-                  Start Gold Adventure
+                  {ui.startGoldAdventure}
                 </button>
               </div>
             )}
@@ -4778,28 +4764,28 @@ function App() {
           </div>
 
           {showMobileControls ? (
-            <section className="mobile-controls" aria-label="Mobile controls">
+            <section className="mobile-controls" aria-label={ui.mobileControlsAria}>
               {fullscreenSupported ? (
                 <button
                   type="button"
                   className="mobile-control-button mobile-fullscreen-button"
                   onClick={() => void toggleFullscreen()}
                   disabled={mobileControlButtonsDisabled}
-                  aria-label="Toggle browser fullscreen"
-                  title="Toggle browser fullscreen"
+                  aria-label={ui.fullscreenAria}
+                  title={ui.fullscreenAria}
                 >
                   ⛶
                 </button>
               ) : null}
 
-              <div className="mobile-dpad" role="group" aria-label="Movement controls">
+              <div className="mobile-dpad" role="group" aria-label={ui.movementControlsAria}>
                 <span className="mobile-dpad-spacer" aria-hidden="true" />
                 <button
                   type="button"
                   className="mobile-control-button mobile-direction-button"
                   onClick={() => handleDirectionalInput('up')}
                   disabled={mobileControlButtonsDisabled}
-                  aria-label="Move up"
+                  aria-label={ui.moveUpAria}
                 >
                   ▲
                 </button>
@@ -4809,7 +4795,7 @@ function App() {
                   className="mobile-control-button mobile-direction-button"
                   onClick={() => handleDirectionalInput('left')}
                   disabled={mobileControlButtonsDisabled}
-                  aria-label="Move left"
+                  aria-label={ui.moveLeftAria}
                 >
                   ◀
                 </button>
@@ -4818,16 +4804,16 @@ function App() {
                   className="mobile-control-button mobile-action-button"
                   onClick={() => handleConfirmInput({ allowTextSubmit: true })}
                   disabled={mobileControlButtonsDisabled}
-                  aria-label="Action"
+                  aria-label={ui.actionAria}
                 >
-                  Act
+                  {ui.actionButton}
                 </button>
                 <button
                   type="button"
                   className="mobile-control-button mobile-direction-button"
                   onClick={() => handleDirectionalInput('right')}
                   disabled={mobileControlButtonsDisabled}
-                  aria-label="Move right"
+                  aria-label={ui.moveRightAria}
                 >
                   ▶
                 </button>
@@ -4837,21 +4823,21 @@ function App() {
                   className="mobile-control-button mobile-direction-button"
                   onClick={() => handleDirectionalInput('down')}
                   disabled={mobileControlButtonsDisabled}
-                  aria-label="Move down"
+                  aria-label={ui.moveDownAria}
                 >
                   ▼
                 </button>
                 <span className="mobile-dpad-spacer" aria-hidden="true" />
               </div>
 
-              <div className="mobile-utility-grid" role="group" aria-label="Game shortcuts">
+              <div className="mobile-utility-grid" role="group" aria-label={ui.shortcutsAria}>
                 <button
                   type="button"
                   className="mobile-control-button mobile-utility-button"
                   onClick={() => handleBackInput()}
                   disabled={mobileControlButtonsDisabled}
                 >
-                  Back
+                  {ui.backButton}
                 </button>
                 <button
                   type="button"
@@ -4859,7 +4845,7 @@ function App() {
                   onClick={() => handleInventoryShortcut()}
                   disabled={mobileControlButtonsDisabled}
                 >
-                  Bag
+                  {ui.bagButton}
                 </button>
                 <button
                   type="button"
@@ -4867,7 +4853,7 @@ function App() {
                   onClick={() => handleJournalShortcut()}
                   disabled={mobileControlButtonsDisabled}
                 >
-                  Journal
+                  {ui.journalButton}
                 </button>
                 <button
                   type="button"
@@ -4875,7 +4861,7 @@ function App() {
                   onClick={() => handleSaveShortcut()}
                   disabled={mobileControlButtonsDisabled}
                 >
-                  Save
+                  {ui.saveButton}
                 </button>
               </div>
             </section>

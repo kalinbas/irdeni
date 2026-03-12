@@ -9,7 +9,11 @@
 </p>
 
 <p align="center">
-  <a href="https://kalinbas.github.io/irdeni/"><strong>Play the live game on GitHub Pages</strong></a>
+  <a href="https://kalinbas.github.io/irdeni/"><strong>Play live in German</strong></a>
+  ·
+  <a href="https://kalinbas.github.io/irdeni/?lang=en"><strong>Play in English</strong></a>
+  ·
+  <a href="https://kalinbas.github.io/irdeni/?lang=es-mx"><strong>Jugar en español de México</strong></a>
 </p>
 
 We originally made Irdeni during high school, and because of that this project has a lot of emotional value for us. This repository exists to make that game playable again on modern machines and in modern browsers, while staying as close as possible to the original work.
@@ -51,7 +55,10 @@ The goal of this GitHub project is not to remake Irdeni into something completel
 
 ## Play
 
-- Live game: [kalinbas.github.io/irdeni](https://kalinbas.github.io/irdeni/)
+- Live game, German default: [kalinbas.github.io/irdeni](https://kalinbas.github.io/irdeni/)
+- Live game, English: [kalinbas.github.io/irdeni/?lang=en](https://kalinbas.github.io/irdeni/?lang=en)
+- Live game, Mexican Spanish: [kalinbas.github.io/irdeni/?lang=es-mx](https://kalinbas.github.io/irdeni/?lang=es-mx)
+- Short Spanish alias: [kalinbas.github.io/irdeni/?lang=es](https://kalinbas.github.io/irdeni/?lang=es)
 - Local dev server: `http://localhost:5173/`
 
 If this project is deployed from another GitHub account, the GitHub Pages URL becomes `https://<owner>.github.io/irdeni/`.
