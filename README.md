@@ -1,7 +1,7 @@
 # Irdeni
 
 <p align="center">
-  <img src="d_irdeni/disk.jpg" alt="Original Irdeni Gold disk" width="320">
+  <img src="docs/readme/irdeni-box-photo.jpg" alt="Irdeni Gold box and floppy disk" width="420">
 </p>
 
 <p align="center">
