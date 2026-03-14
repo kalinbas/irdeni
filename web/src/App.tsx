@@ -2406,6 +2406,17 @@ function App() {
       return
     }
 
+    const eventTarget = event.target
+    const isEditableTarget =
+      eventTarget instanceof HTMLInputElement ||
+      eventTarget instanceof HTMLTextAreaElement ||
+      eventTarget instanceof HTMLSelectElement ||
+      (eventTarget instanceof HTMLElement && eventTarget.isContentEditable)
+
+    if (isEditableTarget) {
+      return
+    }
+
     const isStandaloneModifierKey =
       event.key === 'Shift' || event.key === 'Control' || event.key === 'Alt' || event.key === 'Meta' || event.key === 'CapsLock'
 
