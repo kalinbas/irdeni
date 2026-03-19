@@ -1106,6 +1106,10 @@ function formatShopItemName(item: InventorySlot) {
   return item.name
 }
 
+function formatShopEntryLabel(item: InventorySlot) {
+  return item.count > 1 ? `${item.count} ${formatShopItemName(item)}` : formatShopItemName(item)
+}
+
 function getSellEntries(runtime: Runtime | null, overlay: OverlayState | null): SellEntry[] {
   if (!runtime || overlay?.type !== 'shopSell') {
     return []
@@ -2727,6 +2731,15 @@ function App() {
     })
   }
 
+  async function confirmShopTransaction(action: 'buy' | 'sell', item: InventorySlot, price: number) {
+    const prompt =
+      action === 'buy'
+        ? ui.confirmBuyItem(formatShopEntryLabel(item), price, ui.goldLabel)
+        : ui.confirmSellItem(formatShopEntryLabel(item), price, ui.goldLabel)
+    const answer = await waitForChoice(prompt, [ui.confirmNo, ui.confirmYes])
+    return answer === 2
+  }
+
   async function waitForMapView() {
     await new Promise<void>((resolve) => {
       overlayResolverRef.current = () => resolve()
@@ -3270,24 +3283,35 @@ function App() {
         const text = cursor.readString()
         const allowedTypes = Array.from({ length: 5 }, () => cursor.readString())
         const multiplier = cursor.readInt()
+        let initialSelection = 0
 
         for (;;) {
-          const selectedSlot = await waitForSellShop(text, allowedTypes, multiplier)
+          const selectedSlot = await waitForSellShop(text, allowedTypes, multiplier, '', initialSelection)
 
           if (selectedSlot === null) {
             return
           }
 
+          const sellEntries = getSellEntries(activeRuntime, { type: 'shopSell', text, allowedTypes, multiplier })
+          const selectedEntryIndex = sellEntries.findIndex((entry) => entry.slot === selectedSlot)
           const selectedItem = activeRuntime.inventory[selectedSlot]
 
           if (!selectedItem) {
             continue
           }
 
+          initialSelection = selectedEntryIndex >= 0 ? selectedEntryIndex : initialSelection
+
           const saleValue =
             selectedItem.type === 'E'
               ? TOOL_VALUE * selectedItem.count * multiplier
               : selectedItem.power * selectedItem.count * multiplier
+
+          const confirmed = await confirmShopTransaction('sell', selectedItem, saleValue)
+
+          if (!confirmed) {
+            continue
+          }
 
           activeRuntime.stats[7] += saleValue
           removeInventoryAmount(activeRuntime, selectedSlot, selectedItem.count)
@@ -3322,6 +3346,12 @@ function App() {
           }
 
           initialSelection = selectedIndex
+
+          const confirmed = await confirmShopTransaction('buy', item, price)
+
+          if (!confirmed) {
+            continue
+          }
 
           if (activeRuntime.stats[7] - price < 0) {
             shopNotice = ui.notEnoughGold
@@ -4249,7 +4279,7 @@ function App() {
           item,
           price: inlineScreenOverlay.prices[index] ?? 0,
           actionValue: index,
-          label: formatShopItemName(item),
+          label: formatShopEntryLabel(item),
         }))
       : inlineScreenOverlay?.type === 'shopSell'
         ? getSellEntries(runtime, inlineScreenOverlay).map(({ slot, item, price }) => ({
@@ -4257,7 +4287,7 @@ function App() {
             item,
             price,
             actionValue: slot,
-            label: item.count > 1 ? `${item.count} ${formatShopItemName(item)}` : formatShopItemName(item),
+            label: formatShopEntryLabel(item),
           }))
         : []
   const selectedShopIndex = wrapIndex(shopSelection, shopEntries.length)
